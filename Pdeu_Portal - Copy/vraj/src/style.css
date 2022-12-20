@@ -1,0 +1,465 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root{
+
+/* Reusable css component */
+--body-font: "Poppins", sans-serif;
+--font-regular: 400;
+--font-medium: 500;
+--font-semi-bold: 600;
+
+--color-blue: #1F3368;
+--color-orange: #F68C1F;
+--color-white:#f2F2F1;
+--color-black:#222222;
+
+--font-size-content: 1.125rem;
+--font-size-description: 1rem;
+--font-size-heading: 3rem;
+--font-size-subheading: 2rem;
+--font-size-forms:1.5rem;
+--font-size-input: 1.25rem;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: var(--body-font);
+}
+/**********************************NAVBAR*****************************/
+.Nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: var(--color-blue);
+    font-weight: var(--font-regular);
+    }
+
+.nav__elements{
+    display: flex;
+    list-style: none;
+    }
+.nav__item{
+    padding: 10px;
+}
+
+.nav__item a{
+    text-decoration: none;
+    color: var(--color-white);
+    font-size: var(--font-size-content);
+}
+
+.nav__item a:hover{
+    color: var(--color-orange);
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--color-orange);
+    color: #fff;
+    border-radius: 0.3rem;
+    margin-right: 10px;
+    width: 60px;
+    padding-left: 15px;
+  }
+
+  .button:hover {
+    background-color: var(--color-white);
+    color: var(--color-orange);
+  }
+  /************************************HOMEPAGE***********************************/
+
+    .Homepage{
+        display: flex;
+        justify-content: center;
+        font-size: var(--font-size-subheading);
+        padding-top: 5rem;
+        height: 500px;
+        background-image: url(./images/Homepage_bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .Homepage h2{
+        color: var(--color-orange);
+        margin-right: 2rem;
+        font-size: var(--font-size-heading);
+    }
+
+    .Homepage_heading{
+        width: 500px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .Homepage_span{
+        color: var(--color-blue);
+        font-size: 4rem;
+    }
+    
+
+  /************************************FORM**************************************/
+  .form{
+    background-color: var(--color-blue);
+    height: 420px;
+    width: 420px;
+    border-radius: 1rem;
+    font-size: var(--font-size-content);
+    margin-left: 5rem;
+    padding-left: 25px;
+    opacity: 0.85;
+}
+
+ .form h3{
+    color: var(--color-white);
+    font-size: var(--font-size-subheading);
+    padding-top: 15px;
+    padding-bottom: 10px;
+    margin: 0;
+    padding-right: 20px;
+}
+
+.form input{
+    font-size: var(--font-size-input);
+}
+
+.form__items{
+    margin-left: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    color: var(--color-orange);
+    }
+
+.form__input{
+    width: 380px;
+    height: 50px;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--color-white);    
+}
+
+.form__input:focus{
+    outline: none;
+}
+
+.submitbtn{
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-orange);
+    color: var(--color-white);
+    font-size: var(--font-size-forms);
+    width: 380px;
+}
+
+form > button{
+    border: none;
+    }
+
+.submitbtn:hover{
+    background-color: var(--color-white);
+    color: var(--color-orange);
+}
+
+.form__newdata{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1rem;
+    width: 380px;
+    font-size: var(--font-size-content);
+}
+
+.form__newdata a{
+    text-decoration: none;
+    color: var(--color-orange);
+    font-size: var(--font-size-content);
+}
+
+/**********************************INFOPAGE***********************************/
+.Infopage{
+    height: 680px;
+    padding-left: 2rem;
+    background-image: url(./images/infopage.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 1440px 420px;
+
+}
+
+.Infopage h2{
+    margin-top: 0;
+    color: var(--color-orange);
+    margin-right: 2rem;
+    font-size: var(--font-size-subheading);
+    padding-top: 3rem;
+    margin-bottom: 0;
+    border-bottom: #F68C1F 3px solid;
+    font-weight: var(--font-semi-bold);
+}
+
+.Infopage p{
+    color: var(--color-whitez);
+    font-size: var(--font-size-discription);
+    font-weight: var(--font-regular);
+}
+
+/***********************************CARDS*************************************/
+/* .Homepage_card {  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 38em 1.25fr;
+    gap: 0em 1em;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Main_Card Side_Card"
+      ". .";
+      background-color: var(--color-white);
+      padding: 1rem;
+      padding-top: 2rem;
+      height: 680px;      
+  } */
+
+  .Article{
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    background-color: var(--color-blue);
+  }
+  
+  
+  /* .Homepage_card:first-child{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .Homepage_card:last-child{
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  } */
+
+
+
+  .Main_Card {
+     /* grid-area: Main_Card;  */
+    background-color: var(--color-white);
+    border-radius: 0.5rem;
+    margin: 1rem;
+    height: 95.5%;
+    }
+  
+    .Main_Card_Img{
+        height: 24rem;
+        /* border-bottom: #1F3368 3px solid; */
+        overflow: hidden;
+    }
+    .Main_Card_Heading h4{
+        padding: 0;
+        margin: 0;
+        padding-bottom: 10px;
+        font-size: var(--font-size-forms);
+        /* font-weight: var(--font-bold); */
+        padding-left: 1rem;
+        color: var(--color-orange);
+    }
+    .Main_Card_Heading h5{
+        padding: 0;
+        margin: 0;
+        padding-bottom: 5px;
+        font-size: var(--font-size-content);
+        font-weight: var(--font-medium);
+        padding-left: 1rem;
+        color: var(--color-black);
+    }
+
+    .Main_Card_Heading p{
+        margin: 0;
+        padding: 0;
+        font-size: var(--font-size-description);
+        padding-left: 1rem;
+        font-weight: var(--font-regular);
+        color: var(--color-black);
+    }
+
+    .Main_Card_Heading ul{
+        margin: 0;
+        padding-left: 1rem;
+        padding-top: 10px;
+    }
+/*******************************************************************************/
+    .blue_button_item{
+        padding: 10px;
+    }
+    
+    .blue_button_item a{
+        text-decoration: none;
+        color: var(--color-white);
+        font-size: var(--font-size-content);
+
+    }
+    
+    .blue_button_item a:hover{
+        color: var(--color-blue);
+    }
+    
+
+    .blue_button {
+        display: inline-block;
+        background-color: var(--color-blue);
+        color: #fff;
+        border-radius: 0.3rem;
+        margin-right: 10px;
+        width: 60px;
+        padding-left: 15px;
+        border: #1F3368 1px solid;
+      }
+    
+      .blue_button:hover {
+        background-color: var(--color-white);
+        color: var(--color-blue);
+      }
+    /*****************************************************************************************/
+
+    .Side_Card_parent{
+        display: flex;
+        flex-direction: column;
+    }
+
+  .Side_Card { 
+    display: flex;
+    /* grid-area: Side_Card; */
+    background-color: var(--color-white);
+    height: 12rem;
+    border-radius: 0.5rem;
+    margin: 1rem;
+   }
+
+
+.Side_Card_Img{
+    /*height: 10rem;*/
+    height: 100%;
+    /* width: 12rem; */
+    overflow: hidden;
+    /* border-right: #1F3368 3px solid; */
+    /* margin-right: 1rem;
+    padding-right: 1rem;*/
+}
+
+.Side_Card_Heading{
+    /* margin: 1rem; */
+    padding: 1rem;
+    padding-top: 10px;
+}
+.Side_Card_Heading h4{
+    margin: 0;
+    padding: 0;
+    font-size: var(--font-size-forms);
+    /*padding-left: 1rem;*/
+    color: var(--color-orange);
+}
+
+
+.Side_Card_Heading p{
+margin: 0;
+padding: 0;
+font-size: var(--font-size-description);
+font-weight: var(--font-regular);
+color: var(--color-black);
+}
+
+.Side_Card_Heading ul{
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+}
+/***********************************PORTAL INFO*********************************/
+.Portal_info{
+    height: 680px;
+    padding-left: 2rem;
+    /* background-image: url(./images/infopage.png); */
+    /* background-repeat: no-repeat; */
+    /* background-position: bottom; */
+    /* background-size: 1440px 420px; */
+
+}
+
+.Portal_info h2{
+    margin-top: 0;
+    color: var(--color-orange);
+    margin-right: 2rem;
+    font-size: var(--font-size-subheading);
+    padding-top: 3rem;
+    margin-bottom: 0;
+    border-bottom: #F68C1F 3px solid;
+    font-weight: var(--font-semi-bold);
+}
+
+.Portal_info p{
+    color: var(--color-whitez);
+    font-size: var(--font-size-discription);
+    font-weight: var(--font-regular);
+}
+
+
+
+
+
+/***********************************FOOTER************************************/
+.Footer{
+    display: flex;
+    height: 220px;
+    width: 100%;
+}
+
+.Footer_Container1{
+    width:33.5%;
+    height: 100%;
+    background-color: var(--color-orange);
+    opacity: 0.8;
+    background-image: url(./images/Pdeu_transparent_logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 318px 93px;
+}
+
+.Footer_Container2{
+    width:66.5%;
+    height: 100%;
+    background-color: var(--color-blue);
+    background-image: url(./images/footer_img.png);
+    opacity: 0.9;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;    
+}
+
+.Footer_heading h4{
+    margin: 0;
+    padding: 0;
+    color: var(--color-white);
+    font-size: var(--font-size-forms);
+    padding-left: 1rem;
+    padding-top: 1rem;
+    font-weight: var(--font-medium);
+}
+
+.footer_links{
+    display: flex;
+    justify-content: space-evenly;
+    align-content:center;
+}
+
+.Footer_links1 ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .Footer_links2 ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
