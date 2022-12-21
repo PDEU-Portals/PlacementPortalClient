@@ -9,13 +9,13 @@ import Portal_info from "./components/Portal_info";
 import Footer from "./components/Footer";
 export default function App(){
     return(
-        <div>
+        <>
             <Header />
             <Homepage />
             <Infopage/>            
             <Article/>
             <Portal_info/>
             <Footer/>
-        </div>
+        </>
     )
 }
