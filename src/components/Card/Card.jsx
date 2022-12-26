@@ -1,7 +1,7 @@
 import "./Card.css"
 const Card = (props) => {
     const stars = (stars) => {
-        return (<img src={"./images/stars" + stars + ".png"} />)
+        return (<img style={{}} src={"./images/stars" + stars + ".png"} />)
     }
 
     return (<>
@@ -12,7 +12,7 @@ const Card = (props) => {
                     <p style={{ margin: "0 2vw", color: "#F68C1F", fontWeight: "500" }}>
                     {props.data.rollNo}
                     </p>
-                    <h6>{props.data.name}</h6>
+                    <h6 className="font-medium">{props.data.name}</h6>
                     <p>{props.data.emailId}</p>
                 </div>
                 <div className="stars">
@@ -23,12 +23,12 @@ const Card = (props) => {
 
                 </div>
                 <div className="projectWrapper">
-                    <div><h6>{props.data.paperTitle}</h6>
+                    <div><h6 className="font-medium">{props.data.paperTitle}</h6>
                         <p>{props.data.paperBody}</p>
                     </div>
                     <div></div>
                     <div>
-                        <h6>{props.data.projectTitle}</h6>
+                        <h6 className="font-medium">{props.data.projectTitle}</h6>
                         <p>{props.data.projectBody}</p>
                     </div>
                 </div>

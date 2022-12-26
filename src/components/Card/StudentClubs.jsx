@@ -1,6 +1,6 @@
 const Clubs=()=>{
     return(<div style={{backgroundColor:"#F2F2F1",width:"85vw"}} className="mx-auto rounded-xl font-medium" >
-    <div  className="grid grid-cols-1 md:grid-cols-2 py-2 px-8 ">
+    <div  className="grid grid-cols-2 py-2 px-8 ">
     <p className="text-4xl" style={{color:"#F68C1F"}}>STUDENT CLUBS</p>
     <p><a style={{textDecoration:"none",color:"#1F3368",float:"right"}}>See All</a></p>
     </div>

@@ -1,9 +1,7 @@
+.stars img{
+    width:max(12vw,100px);
+}
 .cardWrapper{
-    /* width:clamp(min(350px,100vw),40vw,800px);
-    height:40vh;
-    margin: 0 auto;
-    display: flex;
-    float: left; */
     gap: 5vw;
     margin: 5vh 5vw;
     display: grid;
@@ -13,7 +11,7 @@
 .projectWrapper{
     display: grid;
     grid-template-columns: 1fr 0.8fr 1fr;
-    padding: 3vw;
+    padding: 2vh 3vw;
 
 }
 .projectWrapper p{
@@ -46,16 +44,21 @@
 .profileText p{
     font-size: 0.7rem;
 }
-@media (max-width:800px) {
+@media (max-width:1050px) {
     .cardWrapper, .projectWrapper{
         grid-template-columns: 1fr;
+    }
+    .stars img{
+        width: 25vw;
     }
 }
 
 .stars,.stars h6 {
     position: absolute;
-    right: 20px;
+    right: 2vw;
+    top:min(2rem,45px);
 }
+
 .projectWrapper{
     width: 100%;
 }
