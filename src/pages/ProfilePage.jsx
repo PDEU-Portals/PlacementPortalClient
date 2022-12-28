@@ -6,14 +6,14 @@ import { Skills } from '../components/Profile Page Component/Skills';
 import { Clubs } from '../components/Profile Page Component/Clubs';
 import { SocialMedia } from '../components/Profile Page Component/SocialMedia';
 import { Profile } from '../components/Profile Page Component/Profile';
-import { Navbar } from '../components/Profile Page Component/Navbar';
-import { Footer } from '../components/Profile Page Component/Footer';
+import Header from "../components/Header/Header"
+import Footer from "../components/Footer"
 
 
 export const ProfilePage = () => {
   return (
     <div>
-        <Navbar/>
+      <Header />
       <Profile />
       <AcademicDetails />
       <About />
@@ -21,7 +21,7 @@ export const ProfilePage = () => {
       <Clubs />
       <SocialMedia />
       <Projects />
-      <Footer/>
+      <Footer />
     </div>
   )
 }

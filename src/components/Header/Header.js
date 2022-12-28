@@ -4,13 +4,17 @@ import logo from "../../images/navLogo.png";
 
 import styles from "./Header.module.css";
 
+import { Link } from "react-router-dom";
+
 function Header() {
   return (
     <div className={styles.container}>
       <div className={styles.left}>
       </div>
       <div className={styles.right}>
-        <img src={logo} alt="Resume" />
+        <Link to="/">
+          <img src={logo} alt="Resume" />
+        </Link>
       </div>
     </div>
   );

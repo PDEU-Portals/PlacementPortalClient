@@ -1,13 +1,36 @@
 import React from "react";
+import axios from "axios"
 
 export default function Form() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const verification = { email, password };
-    console.log(verification);
-  };
+  // const handleSubmit = async(e) => {
+  //   e.preventDefault();
+  //   const data = await axios.post("http://localhost:5000/api/v1/login", {email,password})
+  //   console.log(data)
+  // };
+
+  const handleEmail = (e) =>{
+    e.preventDefault()
+    setEmail(e.target.value)
+  }
+  const handlePass = (e) =>{
+    e.preventDefault()
+    setPassword(e.target.value)
+  }
+
+  const handleLogin = async(email,password) => {
+    JSON.stringify(email)
+    JSON.stringify(password)
+    console.log(email, password)
+    // try {
+    //   const {data} = await axios.post("http://localhost:5000/api/v1/login", {email,password})
+    //   console.log(data)
+    // } catch (error) {
+    //   console.log(error)
+    // }
+    
+  }
   return (
     <div className="form bg-[#1F3368] h-[400px]  rounded-2xl ml-20  mr-24 pl-4 opacity-[0.85] text-lg font-normal">
       <center>
@@ -16,16 +39,14 @@ export default function Form() {
         </h3>
       </center>
       <form
-        className="form__items ml-[0.3rem] flex flex-col text-orange-500"
-        onSubmit={handleSubmit}
-      >
+        className="ml-[0.3rem] flex flex-col text-orange-500">
         Email
         <input
           className="form__input w-[380px] h-[50px] rounded-xl mb-2 bg-white focus:outline-none text-xl text-black pl-1"
           type="email"
           required
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={handleEmail}
         />
         Password
         <input
@@ -33,7 +54,7 @@ export default function Form() {
           type="password"
           required
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={handlePass}
         />
         <div className="form__newdata flex justify-between mr-4 w-[380px] text-lg">
           <p>
@@ -56,7 +77,7 @@ export default function Form() {
         </div>
         <button
           className="form__input submitbtn w-[380px] h-[50px] rounded-xl mb-2 focus:outline-none m-0 p-0 bg-orange-500 text-white text-2xl border-none mt-3 hover:text-orange hover:bg-white hover:text-black"
-          type="submit"
+          type="submit" onClick={() => handleLogin(email,password)}
         >
           Submit
         </button>
