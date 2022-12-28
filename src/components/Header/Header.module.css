@@ -1,0 +1,29 @@
+.container {
+    padding: 50px 30px;
+    text-align: center;
+    width: 100%;
+    height: 107.86px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 30px;
+    background-color: #1F3368;
+    min-height: 107.86px;
+  }
+  
+  .heading span {
+    background-clip: text;
+    background-image: linear-gradient(to right, #239ce2, #1369b9);
+    color: transparent;
+  }
+  
+
+  .right img {
+  position: absolute;
+  width: 318px;
+  height: 87.23px;
+  left: 20px;
+  top: 10.32px;
+
+  
+  }

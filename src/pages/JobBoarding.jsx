@@ -2,7 +2,9 @@ import React from 'react'
 
 const JobBoarding = () => {
   return (
-    <div>JobBoarding</div>
+    <div>
+        
+    </div>
   )
 }
 
