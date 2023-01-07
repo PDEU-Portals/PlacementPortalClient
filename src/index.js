@@ -4,6 +4,7 @@ import './index.css';
 import data from "./components/Card/CardData"
 import App from './App';
 import {
+  BrowserRouter,
   createBrowserRouter,
   RouterProvider
 } from "react-router-dom"
@@ -37,7 +38,10 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+  <BrowserRouter>
+    <App />
+
+  </BrowserRouter>
   </React.StrictMode>
 );
 

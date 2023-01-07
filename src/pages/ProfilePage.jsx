@@ -8,20 +8,22 @@ import { SocialMedia } from '../components/Profile Page Component/SocialMedia';
 import { Profile } from '../components/Profile Page Component/Profile';
 import Header from "../components/Header/Header"
 import Footer from "../components/Footer"
-
+import ProjectTable from "../components/Table/PlacementTable"
 
 export const ProfilePage = () => {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <Profile />
-      <AcademicDetails />
+      {/* <AcademicDetails />
       <About />
       <Skills />
       <Clubs />
-      <SocialMedia />
-      <Projects />
-      <Footer />
+      <SocialMedia /> */}
+      
+        <ProjectTable />
+      {/* <Projects /> */}
+      {/* <Footer /> */}
     </div>
   )
 }

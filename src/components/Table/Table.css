@@ -1,0 +1,36 @@
+.projectTableWrapper{
+    width:fit-content;
+    margin:0 auto;
+    background-color:#F2F2F1;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+
+}
+tr{
+    border-bottom: 2px solid rgba(0,0,0,0.15);
+}
+th{
+    background-color: #495983;
+    color: white;
+    font-size: 1.5rem;
+    
+}
+
+table th:first-child{
+    border-radius:10px 0 0 0px;
+  }
+  
+  table th:last-child{
+    border-radius:0 10px 0px 0;
+  }
+th,td{
+    padding: 0.5rem 2rem;
+    text-align: center;
+    
+}
+@media (max-width:500px) {
+    th,td{
+        padding: 0.5rem ;
+        
+    }
+}
