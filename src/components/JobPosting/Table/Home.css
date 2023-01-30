@@ -1,0 +1,32 @@
+.Job-table {
+  border-radius: 1em !important;
+}
+
+
+Table{
+    border-radius: 20px !important;
+    font-size: 1.5em;
+
+    
+}
+
+.Approve-btn{
+      padding: 0.5em 2em;
+      border-radius: 1em;  
+    background-color: #F68C1F;
+    color: white;
+}
+
+.Reject-btn{
+    padding: 0.5em 2em;
+    border-radius: 1em;  
+  background-color: #1F3368;
+  color: white;
+
+}
+
+.Head-Row {
+  background-color: #1F3368;
+  color: white;
+  
+}

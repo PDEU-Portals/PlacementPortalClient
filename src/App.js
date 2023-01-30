@@ -3,6 +3,7 @@ import data from "./components/Card/CardData"
 import HomePage from "./pages/HomePage"
 import { ProfilePage } from "./pages/ProfilePage.jsx";
 import { Route, Routes } from "react-router-dom";
+import JobPosting from "./components/JobPosting/JobPosting.jsx";
 // import { Profile } from "./components/Profile Page Component/Profile.jsx";
 function App() {
     
@@ -13,6 +14,7 @@ function App() {
         <Route path="/dashboard" element={<div>Dashboard</div>} />
         <Route path="/student" element={<ProfilePage />} />
         <Route path="/community" element={<CardPage data={data} />} />
+        <Route path="/jobposting" element={<JobPosting />} />
       </Routes>
     </div>
   );

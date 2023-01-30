@@ -10,6 +10,7 @@ import {
 import HomePage from './pages/HomePage';
 import { ProfilePage } from './pages/ProfilePage';
 import CardPage from './pages/CardPage';
+import JobPosting from './components/JobPosting/JobPosting';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/community",
     element: <CardPage data={data} />
+  },
+  {
+    path: "/jobposting",
+    element: <JobPosting />
   },
   // {
   //   path:"/resumeBuilder",
