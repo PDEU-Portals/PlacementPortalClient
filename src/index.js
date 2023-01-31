@@ -1,43 +1,44 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import React from "react"
+import ReactDOM from "react-dom/client"
+import "./index.css"
 import data from "./components/Card/CardData"
-import App from './App';
-import {
-  createBrowserRouter,
-  RouterProvider
-} from "react-router-dom"
-import HomePage from './pages/HomePage';
-import { ProfilePage } from './pages/ProfilePage';
-import CardPage from './pages/CardPage';
+import App from "./App"
+import {createBrowserRouter, RouterProvider} from "react-router-dom"
+import HomePage from "./pages/HomePage"
+import {ProfilePage} from "./pages/ProfilePage"
+import CardPage from "./pages/CardPage"
+import QuizApp from "./pages/QuizApp"
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />
+    element: <HomePage />,
   },
   {
     path: "/dashboard",
-    element: <div>Dashboard</div>
+    element: <div>Dashboard</div>,
   },
   {
     path: "/student",
-    element: <ProfilePage />
+    element: <ProfilePage />,
   },
   {
     path: "/community",
-    element: <CardPage data={data} />
+    element: <CardPage data={data} />,
   },
   // {
   //   path:"/resumeBuilder",
-  //   element: 
+  //   element:
   // }
+  {
+    path: "/quizApp",
+    element: <QuizApp />,
+  },
 ])
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>
-);
-
+)
