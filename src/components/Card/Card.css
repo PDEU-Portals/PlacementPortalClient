@@ -1,0 +1,64 @@
+.stars img{
+    width:max(12vw,100px);
+}
+.cardWrapper{
+    gap: 5vw;
+    margin: 5vh 5vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+.projectWrapper{
+    display: grid;
+    grid-template-columns: 1fr 0.8fr 1fr;
+    padding: 2vh 3vw;
+
+}
+.projectWrapper p{
+    margin: 10px;
+}
+
+
+.cards{
+    background-color: #F2F2F1;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    padding: min(3vh,20px) min(3vw,20px);
+    position: relative;
+    border-radius: 1rem;
+
+}
+
+.profilePic{
+    width:clamp(70px,25%,100px);
+    aspect-ratio: 7/8;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid black;
+    
+}
+.profileText p,.profileText h6{
+    margin: 0 2vw;
+}
+.profileText p{
+    font-size: 0.7rem;
+}
+@media (max-width:1050px) {
+    .cardWrapper, .projectWrapper{
+        grid-template-columns: 1fr;
+    }
+    .stars img{
+        width: 25vw;
+    }
+}
+
+.stars,.stars h6 {
+    position: absolute;
+    right: 2vw;
+    top:min(3rem,60px,5vw);
+}
+
+.projectWrapper{
+    width: 100%;
+}

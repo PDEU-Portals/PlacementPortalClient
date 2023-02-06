@@ -1,0 +1,42 @@
+[
+    {
+        "Sr_no" : "1",
+        "Date" : "21/1/2023",
+        "Name" : "Aniket",
+        "Skills" : "Web-Development",
+        "Branch" : "CSE",
+        "Resume" : "Done"
+    },
+    {
+        "Sr_no" : "2",
+        "Date" : "25/1/2023",
+        "Name" : "Abhinav",
+        "Skills" : "MLOps development",
+        "Branch" : "CSE",
+        "Resume" : "Done"
+    },
+    {
+        "Sr_no" : "3",
+        "Date" : "1/1/2023",
+        "Name" : "Dev",
+        "Skills" : "Back-End Development",
+        "Branch" : "CSE",
+        "Resume" : "Done"
+    },
+    {
+        "Sr_no" : "4",
+        "Date" : "1/2/2023",
+        "Name" : "Karan",
+        "Skills" : "Machine Learning",
+        "Branch" : "CSE",
+        "Resume" : "Done"
+    },
+    {
+        "Sr_no" : "5",
+        "Date" : "15/1/2023",
+        "Name" : "Istuti",
+        "Skills" : "IOT",
+        "Branch" : "EC",
+        "Resume" : "Done"
+    }
+]

@@ -1,0 +1,59 @@
+.job-title  {
+    color: #F68C1F;
+    font-size: 3em;
+    margin: 1em;
+}
+
+.Post-Jobs{
+    float: right;
+    background-color: #F68C1F;
+    padding: 0.8em 2em;
+    border-radius: 0.5em;
+    color: white;
+    margin-right: 5em;
+    margin-top: -5em
+    
+}
+
+.Manage-Job{
+    gap: 11.7em;
+    margin: 1.2em;
+    padding-left: 2em;
+    display: flex;
+}
+
+.Manage-Job .Posting{
+    font-size: 3em;
+    color: #1F3368;
+
+}
+
+.Manage-Job input{
+    font-size: 20px;
+    background-color: rgb(219, 216, 216);
+    border-radius: 3em;
+    padding-left: 3em;
+    padding-right: 3em;
+    
+}
+
+
+.Manage-Job .jobSearch-title{
+    background-color: rgb(232, 233, 234);
+    border-radius: 3em;
+    padding-left: 3em;
+    padding-right: 3em;
+
+}
+
+
+.Analytics{
+
+        gap: 11.7em;
+        margin: 1.2em;
+        padding-left: 2em;
+        display: flex;
+        font-size: 3em;
+        color: #1F3368;
+
+}

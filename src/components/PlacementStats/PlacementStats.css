@@ -1,0 +1,90 @@
+.Heading p{
+    color: #F68C1F;
+    font-size: 2.3em;
+    font-weight: 500;
+    padding: 1rem;
+}
+.general-info{
+    padding: 4.5em;
+}
+.info-container{
+    background-color: #f2f2f1;
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.info{
+    padding: 0 5em;
+}
+.info-heading{
+    font-size: 2em;
+    font-weight: 500;
+}
+.info-details{
+    color: #F68C1F;
+}
+.info-details{
+    font-size: 2em;
+}
+.graph-section{
+    display: flex;
+}
+.div-color{
+    display: block;
+    padding: 1em;
+    background-color: #F2F2F1;
+    border-radius: 1em;
+    margin-left: 4.5em;
+    /* padding: 0 5em; */
+}
+.div-color h3{
+    font-size: 2.3em;
+}
+.orange-button{
+    background-color: #F68C1F;
+}
+.blue-button{
+    background-color: #1F3368;
+}
+.div-color p{
+    padding: 1em;
+}
+.div-color button{
+    padding: 1em;
+    border-radius: 1em;
+    width: 100%;
+    color: white;
+}
+.top-recruiter p{
+    font-size: 3em;
+    padding: 1em 1.5em;
+    text-decoration: underline;
+}
+.images-1{
+    display: flex;
+    padding: 1.5em;
+    padding-left: 3em;
+}
+.images-1 img{
+    padding: 1.5em;
+}
+.images-2{
+    display: flex;
+    padding: 1.5em;
+    padding-left: 4em;
+}
+.images-2 img{
+    padding: 1.5em;
+}
+.analytics-heading{
+    color: #F68C1F;
+    font-size: 3em;
+    text-decoration: underline;
+    padding: 1em 1.5em;
+}
+.yearly-graphs{
+    display: flex;
+    padding-bottom: 3em;
+    padding-left: 2em;
+}
