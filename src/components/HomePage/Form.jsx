@@ -109,7 +109,7 @@ export default function Form() {
           <p>
             <a
               className="no-underline text-orange text-lg hover:text-white"
-              href="#"
+              href="/students/register"
             >
               Not registered?{" "}
             </a>
