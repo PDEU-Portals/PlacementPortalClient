@@ -26,6 +26,7 @@ import PostJob from './pages/PostJob';
 import TechnicalTestLogin from './pages/TechnicalTestLogin';
 import JobPosting from './components/JobPosting/JobPosting';
 import QuizApp from './pages/QuizApp';
+import Register from './pages/Register';
 
 const router = createBrowserRouter([
   {
@@ -99,6 +100,10 @@ const router = createBrowserRouter([
   {
     path: "/students/quiz_app",
     element: <QuizApp />
+  },
+  {
+    path: "/students/register",
+    element: <Register />
   }
   // {
   //   path:"/resumeBuilder",

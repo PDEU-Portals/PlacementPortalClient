@@ -1,0 +1,10 @@
+button{
+    background-color: #f97316;
+    padding: 1em;
+    margin-top: 1em;
+    border-radius: 0.8em;
+    color: white
+}
+.table-head{
+    display: flex;
+}

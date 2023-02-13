@@ -1,8 +1,41 @@
-import React from 'react'
+import React, {useState} from 'react'
 import image from './images/Rectangle19.png'
 import imagereact from './images/logo192.png'
+import './Css/Profile.css';
 
 export const Profile = () => {
+
+  const [editMode, setEditMode] = useState(false);
+  const [profile, setProfile] = useState({
+    name: "Aniket Patel",
+    email: "Aniket.pce21@sot.pdpu.ac.in",
+    Skills: "Full Stack Web Developer",
+    description : "Hard Working, organized and skilled web develope, graphics designer and UI designer. With nice grip over web devlopment and giving strong attention to details. I have strong passion for coding and building innovative web solutions, and I have honed my skills through my participation in various hackathons and projects. I an eager to explore things and to create cutting-edge web solutions and making a difference in society, I am confident about my skills and experience to create impactfull projects for the social good.",
+  });
+
+  // const handleEditClick = () => {
+  //   setEditMode(true);
+  // };
+
+  const handleEditClick = () =>{
+    console.log('edit button is clicked')
+    setEditMode(true);
+  }
+  const handleSaveClick = () => {
+    setEditMode(false);
+  };
+
+  const handleCancelClick = () => {
+    setEditMode(false);
+  };
+
+  const handleChange = event => {
+    setProfile({
+      ...profile,
+      [event.target.name]: event.target.value
+    });
+  };
+
   return (
     <div className='mt-24'>
       <div className=" bg-gray-200  rounded-3xl mx-4 my-4 flex flex-wrap items-center justify-center">
@@ -20,18 +53,91 @@ export const Profile = () => {
             </span>
           </div>
           <div>
-            <div className="px-7 mb-8 flex ">
+            <div id='first-section' className="px-7 mb-8 flex ">
               <div>
-                <h2 className="text-3xl font-bold text-gray-800 ">Myself Patel</h2>
-                <p className="text-gray-500 mt-2 ">React Developer</p>
-                <p className="mt-2 text-gray-600  mr-8">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.Lorem ipsum dolor sit amet consectetur, adipisicing elit.Lorem ipsum dolor sit amet consectetur, adipisicing elit.Lorem ipsum dolor sit amet consectetur, adipisicing elit.Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Asperiores molestiae vitae odio non commodi itaque quisquam incidunt doloribus fugit nesciunt.</p>
-                  <p className='mt-2 text-gray-600  mr-8'>100+ Followers</p>
+                
+                  {editMode ? (
+                    <>
+                    <div className="edit-mode">
+                      <div className="input-fields">
+                        <h2 className="text-3xl font-bold text-gray-800 ">
+                          <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={profile.name}
+                            onChange={handleChange}
+                            placeholder="Enter your name here"
+                          />
+                          </h2>
+                          
+                          <input type="text" 
+                            id='email'
+                            name='email'
+                            value={profile.email}
+                            onChange = {handleChange}
+                            placeholder = "Enter Your Skills here"
+                          />
+
+                          <p className="text-gray-500 mt-2 ">
+                          <input type="text" 
+                            id='Skills'
+                            name='Skills'
+                            value={profile.Skills}
+                            onChange = {handleChange}
+                            placeholder = "Enter Your Skills here"
+                          />
+                        </p>
+                          <p className="mt-2 text-gray-600  mr-8">
+                            <textarea 
+                            name="description" 
+                            id="description" 
+                            cols="190" 
+                            rows="8"
+                            value={profile.description}
+                            onChange={handleChange}
+                            placeholder = "Please provide Short Description over here "
+                            />
+                          </p>
+                        </div>
+                        <div className="editable-button">
+                          <button onClick={handleSaveClick}>Save</button>
+                          <button onClick={handleCancelClick}>Cancle</button>
+                        </div>
+                    </div>
+                      </>
+                  ):(
+                    <>
+                    <div className="read-only-info">
+                    <div className="infos">
+                           <h2 className="text-3xl font-bold text-gray-800 ">
+                            {profile.name}
+                         </h2>
+                         <p className="text-gray-500 mt-2 ">
+                            {profile.email}
+                         </p>
+                         <h2 className="text-gray-500 mt-2 ">
+                            {profile.Skills}
+                         </h2>
+                         <p className="mt-2 text-gray-600  mr-8">
+                          {profile.description}
+                         </p>
+                      </div>
+                      <div className="edit-button">
+                        <button onClick={handleEditClick}>Edit</button>
+                      </div>
+                    </div>    
+                    </>
+                  )}
+                  {/* <button onClick={handleEditClick}>
+                    Edit
+                  </button> */}
+                  {/* <p className='mt-2 text-gray-600  mr-8'>100+ Followers</p> */}
+                  
               </div>
               <div>
                 
-                <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mt-8">
+                {/* <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mt-8">
                   <button
                     className="text-blue-900 hover:text-blue-700 p-1 sm:p-2 inline-flex items-center ">
                     <img className='w-12 rounded-3xl' src={imagereact} alt="" />
@@ -49,7 +155,7 @@ export const Profile = () => {
                       Dockler
                   </button>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

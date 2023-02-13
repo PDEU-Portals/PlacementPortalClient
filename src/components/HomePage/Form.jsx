@@ -1,7 +1,16 @@
 import React from "react";
 import axios from "axios"
-
+axios.defaults.withCredentials=true;
 export default function Form() {
+  try{
+     axios.get("http://localhost:4000/api/v1/internal/isLoggedIn").then((res)=>{
+      console.log(res.data.isLoggedIn);
+     }).catch((err)=>{
+      console.log(err);
+     })
+  }catch(err){
+    console.log(err);
+  }
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   // const handleSubmit = async(e) => {
@@ -19,16 +28,47 @@ export default function Form() {
     setPassword(e.target.value)
   }
 
-  const handleLogin = async(email,password) => {
+  const handleLogin = async(email,password,e) => {
+    e.preventDefault();
     JSON.stringify(email)
     JSON.stringify(password)
-    console.log(email, password)
-    // try {
-    //   const {data} = await axios.post("http://localhost:5000/api/v1/login", {email,password})
-    //   console.log(data)
-    // } catch (error) {
-    //   console.log(error)
-    // }
+
+    if(email === "" || password === ""){
+      alert("Please fill the required Field");
+  }
+  else if ((email.split("@").length != 2 || email.split(".").length != 5 || email.split(" ").length != 1 || email.split("+").length != 1 || email.split("-").length != 1 || email.split("_").length != 1) &&(email.split("@")[1] !== "sot.pdpu.ac.in")) {
+        alert("Please enter a valid PDEU email");
+    } 
+    else{
+      try {
+           const data = await axios.post("http://localhost:4000/api/v1/login", {email,password});
+           console.log(data);
+          //  <Redirect to="/pages/ProfilePage" />;
+       } catch (error) {
+        if (error.response) {
+          if (error.response.status === 401) {
+            // Handle 401 status code
+            console.log('Unauthorized');
+            console.log(error.response.data.message)
+           
+
+          } 
+          else if(error.response.status === 404){
+            alert(error.response.data.message);
+
+          }
+          else  {
+            // Handle other status codes
+            console.log('Error:', error.response.status);
+          }
+        } else {
+          // Handle network errors
+          console.log('Error: Network Error');
+        }
+         }
+
+    }
+   
     
   }
   return (
@@ -77,7 +117,7 @@ export default function Form() {
         </div>
         <button
           className="form__input submitbtn w-[380px] h-[50px] rounded-xl mb-2 focus:outline-none m-0 p-0 bg-orange-500 text-white text-2xl border-none mt-3 hover:text-orange hover:bg-white hover:text-black"
-          type="submit" onClick={() => handleLogin(email,password)}
+          type="submit" onClick={(e) => handleLogin(email,password,e)}
         >
           Submit
         </button>

@@ -16,6 +16,7 @@ import PostJob from "./pages/PostJob.jsx";
 import TechnicalTestLogin from "./pages/TechnicalTestLogin.jsx";
 import JobPosting from "./components/JobPosting/JobPosting.jsx";
 import QuizApp from "./pages/QuizApp.jsx";
+import Register from "./pages/Register.jsx";
 // import { Profile } from "./components/Profile Page Component/Profile.jsx";
 function App() {
     
@@ -25,6 +26,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/students/dashboard" element={<></>} />
         <Route path="/students/profile" element={<ProfilePage />} />
+        <Route path="/students/register" element={<Register />} />
         <Route path="/students/community" element={<CardPage data={data} />} />
         <Route path="/students/club" element={<Club_intro />} />
         <Route path="/students/placement_stats" element={<Placement_stats />} />
