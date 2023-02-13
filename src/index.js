@@ -27,6 +27,9 @@ import TechnicalTestLogin from './pages/TechnicalTestLogin';
 import JobPosting from './components/JobPosting/JobPosting';
 import QuizApp from './pages/QuizApp';
 import Register from './pages/Register';
+import axios from 'axios';
+
+axios.defaults.withCredentials = true
 
 const router = createBrowserRouter([
   {
