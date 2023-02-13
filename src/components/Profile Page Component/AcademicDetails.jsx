@@ -20,9 +20,10 @@ export const AcademicDetails = () => {
         setEditMode(false)
     }
     const handleChange = event => {
+        console.log(event.target.value)
         setAcademicProfile({
-          ...profile,
-          [event.target.name]: event.target.value
+          ...academicProfile,
+        [event.target.name] : event.target.value
         });
       };
 
@@ -83,7 +84,7 @@ export const AcademicDetails = () => {
                                 <td className="py-4 px-6">
                                 <input type="text"
                                         id='branch'
-                                        name='branch'
+                                        name='Branch'
                                         value={AcademicDetails.Branch}
                                         onChange={handleChange}
                                         placeholder = "Enter your branch here"
