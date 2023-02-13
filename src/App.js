@@ -17,6 +17,8 @@ import TechnicalTestLogin from "./pages/TechnicalTestLogin.jsx";
 import JobPosting from "./components/JobPosting/JobPosting.jsx";
 import QuizApp from "./pages/QuizApp.jsx";
 import Register from "./pages/Register.jsx";
+import Apply_Now from "./components/Apply_Now";
+
 // import { Profile } from "./components/Profile Page Component/Profile.jsx";
 function App() {
     
@@ -40,7 +42,8 @@ function App() {
         <Route path="/students/technical_test_login" element={<TechnicalTestLogin />} />
         <Route path="/recruiter/job_posting" element={<JobPosting />} />
         <Route path="/students/quiz_app" element={<QuizApp />} />
-      </Routes>
+        <Route path="/students/ApplyNow" element={<Apply_Now/>}/>"
+       </Routes>
     </div>
   );
 }

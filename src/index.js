@@ -27,6 +27,7 @@ import TechnicalTestLogin from './pages/TechnicalTestLogin';
 import JobPosting from './components/JobPosting/JobPosting';
 import QuizApp from './pages/QuizApp';
 import Register from './pages/Register';
+import Apply_Now from "./components/Apply_Now";
 import axios from 'axios';
 
 axios.defaults.withCredentials = true
@@ -107,7 +108,12 @@ const router = createBrowserRouter([
   {
     path: "/students/register",
     element: <Register />
+  },
+  {
+    path:"/students/ApplyNow",
+    element:<Apply_Now/>
   }
+
   // {
   //   path:"/resumeBuilder",
   //   element: 
