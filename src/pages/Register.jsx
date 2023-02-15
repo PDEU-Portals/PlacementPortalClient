@@ -1,9 +1,28 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import img from "./BackImg.png"
 import Header from "../components/Header/Header"
 import axios from "axios"
+import {Link, useNavigate, useLocation} from "react-router-dom"
 
 const Register = () => {
+  const navigate = useNavigate()
+  useEffect(() => {
+    try {
+      axios
+        .get("http://localhost:5000/api/v1/internal/isLoggedIn")
+        .then((res) => {
+          if (res.data.isLoggedIn) {
+            navigate("/students/profile")
+          }
+          // console.log(res.data.isLoggedIn)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    } catch (err) {
+      console.log(err)
+    }
+  }, []);
   const [email, setEmail] = React.useState("")
   const [password, setPassword] = React.useState("")
   const [name, setName] = React.useState("")
@@ -20,13 +39,12 @@ const Register = () => {
     console.log(email, password, name)
     try {
       // const {data} = await axios.post("http://localhost:5000/api/v1/login", {email,password})
-      const data = await axios
-        .post("http://localhost:5000/api/v1/Register", {email, password, name})
-        .then(console.log({email, password, name}))
-        .catch((error) => {
-          console.log(error)
-        })
-      alert("Registered Successfully")
+      const data = await axios.post("http://localhost:5000/api/v1/Register", {email, password, name})
+      if(data.status === 200)
+        alert("Registered Successfully");
+      else{
+        alert(data.data.message);
+      }
       console.log(data)
     } catch (error) {
       console.log(error)
