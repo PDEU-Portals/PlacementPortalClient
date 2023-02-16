@@ -18,10 +18,10 @@ export const ProfilePage = () => {
       <AcademicDetails />
       <About />
       <Skills />
-      <Clubs />
+      {/* <Clubs /> */}
       <SocialMedia />
       <Projects />
-      <CreateTable />
+      {/* <CreateTable /> */}
       <Footer />
     </div>
   )

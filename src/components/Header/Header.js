@@ -40,7 +40,9 @@ function Header() {
             <a href="/recruiter/login">Recruiter Admin Login</a>
           </li>
           <li>
-            <a href="/">Link 4</a>
+            <a href="/"
+              
+            >Logout</a>
           </li>
         </ul>
       </div>

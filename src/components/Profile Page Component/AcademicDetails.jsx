@@ -104,7 +104,7 @@ export const AcademicDetails = () => {
                         <h2 className="mx-8 font-bold py-2 px-0">Academic Details</h2> 
                     </div>
                     <div className="edit-button">
-                        <button onClick={handleEditClick}>
+                        <button id='edit-button-details' onClick={handleEditClick}>
                             Edit
                         </button>
                     </div>
