@@ -121,11 +121,11 @@ export const Skills = () => {
       <div className='flex justify-between'>
         <h2 className="mx-8 font-bold py-2 px-0 inline-block">Skill</h2>
         <div className='my-1'>
-          <button className="bg-gray-200 hover:bg-gray-400 font-bold py-2 px-4 rounded mx-4"
+          {/* <button className="bg-gray-200 hover:bg-gray-400 font-bold py-2 px-4 rounded mx-4"
             onClick={addFields}
           >
             +
-          </button>
+          </button> */}
           <button className="bg-gray-200 hover:bg-gray-400 font-bold py-2 px-4 rounded mx-4"
             onClick={handleEditClick}
           >
@@ -138,13 +138,13 @@ export const Skills = () => {
       <div className="mx-8">{skills.skill3}</div> 
                                      {inputFields.map((input,index) => (
             <> 
-                <input type="text"
+                {/* <input type="text"
                   id='skill'
                   name='skill'
                   value={inputFields.skill}
                   onChange={handleChange}
                   placeholder = "Enter your skills here"
-                />    
+                />     */}
             </>
           ))}      
     </div>

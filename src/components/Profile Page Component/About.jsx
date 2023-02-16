@@ -51,13 +51,13 @@ export const About = () => {
               placeholder= "Tell us about yourslef"    
              />
             </p>
-            <p className="mx-8">
+            {/* <p className="mx-8">
               <textarea name="about1" id="about1" cols="180" rows="4" 
                 value={about.about2}
                 onChange={handleChange}
                 placeholder= "Tell us about yourslef"    
               />
-            </p>
+            </p> */}
           </>
         ) : (
           <>
@@ -74,9 +74,9 @@ export const About = () => {
             <p className="mx-8 mb-2">
               {about.about1}
             </p>
-            <p className="mx-8">
+            {/* <p className="mx-8">
               {about.about2}
-            </p>
+            </p> */}
           </>
         )}
     </div>

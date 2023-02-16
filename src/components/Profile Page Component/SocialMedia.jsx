@@ -113,7 +113,7 @@ export const SocialMedia = () => {
                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><img src={imageinsta} className="w-8 h-8 rounded-xl display: inline-block" alt="" /> aniketpatel0412</td>
 
                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><img src={imagelinkedin} className="w-8 h-8 rounded-xl display: inline-block" alt="" /> 
-                              <Link to={socials.Linkedin}> Linkedin</Link>
+                              <p> Aniket Patel</p>
                             </td>
 
                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><img src={imagetwitter} className="w-8 h-8 rounded-xl display: inline-block" alt="" /> aniketp1486</td>
