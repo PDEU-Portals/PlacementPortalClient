@@ -64,7 +64,7 @@ export const SocialMedia = () => {
                             </td>
 
                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><img src={imagelinkedin} className="w-8 h-8 rounded-xl display: inline-block" alt="" /> 
-                              <Link to={socials.Linkedin}> 
+                               
                               <input type="text"
                                 name='linkedin'
                                 id='linkedin'
@@ -72,7 +72,7 @@ export const SocialMedia = () => {
                                 onChange={handleChange}
                                 placeholder = "Enter your Linkedin here"
                               />
-                              </Link>
+                              
                             </td>
 
                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><img src={imagetwitter} className="w-8 h-8 rounded-xl display: inline-block" alt="" /> 

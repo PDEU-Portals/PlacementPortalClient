@@ -145,3 +145,4 @@ export const AcademicDetails = () => {
         </>
     )
 }
+export default AcademicDetails;

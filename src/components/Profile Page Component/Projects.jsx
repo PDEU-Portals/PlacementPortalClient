@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
+
 
 export const Projects = () => {
     const [showModal, setShowModal] = React.useState(false);
+    const [inputFields, setInputFields] = useState([
+        {
+            "project-name" : ""
+        }
+    ])
+    const addField = () =>{
+        let newField ={
+
+        }
+    }
     return (
         <div className="  overflow-x-auto relative shadow-md sm:rounded-lg bg-gray-200 rounded-2xl mx-4 my-4">
             <div className='flex flex-col justify-between'>
@@ -13,7 +24,7 @@ export const Projects = () => {
                             + New Project
                         </button>
                         <button className="bg-gray-200 hover:bg-gray-400 font-bold py-2 px-4 rounded mx-4">
-                            Edit
+                            Save
                         </button>
                     </div>
                 </div>
@@ -39,17 +50,17 @@ export const Projects = () => {
                     <tbody>
                         <tr className="bg-white border-b   hover:bg-gray-50  ">
                             <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap  ">
-                                Project1
+                                website for conference
                             </th>
                             <td className="py-4 px-6">
                                 React
                             </td>
                             <td className="py-4 px-6">
-                                Faculty1
+                                Encode
                             </td>
 
                             <td className="py-4 px-6 text-right">
-                                <a href="#" className="font-medium text-blue-600  hover:underline">Edit</a>
+                                <a href="https://conference.icghgd.com/" className="font-medium text-blue-600  hover:underline">Link</a>
                             </td>
                         </tr>
                         <tr className="bg-white border-b   hover:bg-gray-50  ">
@@ -64,7 +75,7 @@ export const Projects = () => {
                             </td>
 
                             <td className="py-4 px-6 text-right">
-                                <a href="#" className="font-medium text-blue-600  hover:underline">Edit</a>
+                                {/* <a href="#" className="font-medium text-blue-600  hover:underline">Edit</a> */}
                             </td>
                         </tr>
                         <tr className="bg-white border-b   hover:bg-gray-50  ">
@@ -79,7 +90,30 @@ export const Projects = () => {
                             </td>
 
                             <td className="py-4 px-6 text-right">
-                                <a href="#" className="font-medium text-blue-600  hover:underline">Edit</a>
+                                {/* <a href="#" className="font-medium text-blue-600  hover:underline">Edit</a> */}
+                            </td>
+                        </tr>
+                        <tr className="bg-white border-b   hover:bg-gray-50  ">
+                            <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap  ">
+                                <input type="text"
+                                 name = "project-name"
+                                 id = "project-name"
+                                 />
+                            </th>
+                            <td className="py-4 px-6">
+                                <input type="text" 
+                                name = "tech-stack"
+                                id = "tech-stack"
+                                />
+                            </td>
+                            <td className="py-4 px-6"
+                            >
+                                <input type="text" name="faculty" id="faculty" />
+                            </td>
+
+                            <td className="py-4 px-6 text-right">
+                                {/* <a href="#" className="font-medium text-blue-600  hover:underline">Edit</a> */}
+                                <input type="link" name = "link" id ="link" />
                             </td>
                         </tr>
                     </tbody>

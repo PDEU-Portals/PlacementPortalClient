@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react"
 import img from "./BackImg.png"
 import Header from "../components/Header/Header"
 import axios from "axios"
+import './Register.css';
 import {Link, useNavigate, useLocation} from "react-router-dom"
 
 const Register = () => {
@@ -69,15 +70,13 @@ const Register = () => {
   return (
     <>
       <Header />
-      <div className="LoginTechnicalquiz">
-        <p className="new">Register</p>
-        <img src={img} className="ClassroomPicture" />
-
-        <div className="loginbox">
-          <label htmlFor="email">Email Address</label>
+      <div className="register-page">
+        <p className="register-heading">Register</p>
+        <div className="">
+          <label className="for-email" htmlFor="email">Email Address</label>
           <br />
           <input type="text" id="email" onChange={handleEmail} name="email" />
-          <div className="topicinput">
+          <div className="">
             <label htmlFor="password">password</label>
             <br />
             <input
@@ -87,15 +86,16 @@ const Register = () => {
               name="password"
             />
           </div>
-          <div className="submitbutton">
+          
+          <label htmlFor="name">Name</label>
+          <br />
+          <input type="text" id="name" onChange={handleName} name="name" />
+       
+          <div className="Submit-button">
             <button type="button">
               <a onClick={(e) => handleClick("", "", e)}>Submit</a>
             </button>
           </div>
-        </div>
-        <div className="name">
-          <label htmlFor="name">Name</label>
-          <input type="text" id="name" onChange={handleName} name="name" />
         </div>
       </div>
     </>
