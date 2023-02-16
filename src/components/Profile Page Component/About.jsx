@@ -18,7 +18,7 @@ export const About = () => {
     setEditMode(false);
   }
 
-  const handleChange = () => {
+  const handleChange = (event) => {
     setAbout({
       ...About,
       [event.target.name] : event.target.value
