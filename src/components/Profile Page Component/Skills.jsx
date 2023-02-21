@@ -20,12 +20,12 @@ export const Skills = () => {
   const handleCancleClick = () => {
     setEditMode(false); 
   }
-  const handleChange = () => {
+  const handleChange = (event) => {
     setSkills({
       ...skills,
       [event.target.name] : event.target.value
     });
-  }
+  } 
   const [inputFields, setInputFields] = useState([
     {
       skill : "Canva"
