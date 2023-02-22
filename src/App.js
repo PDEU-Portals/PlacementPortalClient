@@ -17,6 +17,10 @@ import TechnicalTestLogin from "./pages/TechnicalTestLogin.jsx";
 import JobPosting from "./components/JobPosting/JobPosting.jsx";
 import QuizApp from "./pages/QuizApp.jsx";
 import Register from "./pages/Register.jsx";
+import Resources from "./pages/Resources.jsx";
+import PlacementRoadmap from "./components/ResourcePageComponents/PlacementRoadmap.jsx";
+import FacingInterview from "./components/ResourcePageComponents/FacingInterview.jsx";
+import Companies from "./components/ResourcePageComponents/Companies.jsx";
 // import { Profile } from "./components/Profile Page Component/Profile.jsx";
 function App() {
     
@@ -40,6 +44,10 @@ function App() {
         <Route path="/students/technical_test_login" element={<TechnicalTestLogin />} />
         <Route path="/recruiter/job_posting" element={<JobPosting />} />
         <Route path="/students/quiz_app" element={<QuizApp />} />
+        <Route path="/students/resource" element={<Resources />} />
+        <Route path="/students/resource/process" element={<PlacementRoadmap />} />
+        <Route path="/students/resource/interview" element={<FacingInterview />} />
+        <Route path="/students/resource/companies" element={<Companies />} />
       </Routes>
     </div>
   );

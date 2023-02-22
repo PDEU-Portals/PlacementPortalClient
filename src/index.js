@@ -25,6 +25,10 @@ import JobPosting from "./components/JobPosting/JobPosting"
 import QuizApp from "./pages/QuizApp"
 import Register from "./pages/Register"
 import axios from "axios"
+import Resources from "./pages/Resources"
+import PlacementRoadmap from "./components/ResourcePageComponents/PlacementRoadmap"
+import FacingInterview from "./components/ResourcePageComponents/FacingInterview"
+import Companies from "./components/ResourcePageComponents/Companies"
 
 axios.defaults.withCredentials = true
 
@@ -105,6 +109,22 @@ const router = createBrowserRouter([
     path: "/students/register",
     element: <Register />,
   },
+  {
+    path: "/students/resource",
+    element: <Resources />,
+  },
+  {
+    path: "/students/resource/process",
+    element: <PlacementRoadmap />,
+  },
+  {
+    path: "/students/resource/interview",
+    element: <FacingInterview />,
+  },
+  {
+    path: "/students/resource/companies",
+    element: <Companies />,
+  }
   // {
   //   path:"/resumeBuilder",
   //   element:
