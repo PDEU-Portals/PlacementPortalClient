@@ -72,6 +72,9 @@
   .more-blogs-section{
     padding: 1em;
   }
+  .bacon-blog-post-inner h1{
+    font-size: 2em;
+  }
   .heading{
     font-size: 2em;
     padding: 1em;

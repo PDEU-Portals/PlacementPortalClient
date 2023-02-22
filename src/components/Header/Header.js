@@ -28,7 +28,7 @@ function Header() {
             <a href="/students/dashboard">Dashboard</a>
           </li>
           <li>
-            <a href="/students/placement_stats">Placement Details</a>
+            <a href="/students/placementstats">Placement Details</a>
           </li>
           <li>
             <a href="/students/all_clubs">Clubs</a>

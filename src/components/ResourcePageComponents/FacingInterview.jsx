@@ -16,9 +16,10 @@ const FacingInterview = () => {
   <div class="bacon-blog-post bacon-shadow">
     <img src={img} alt="" />
     <div class="bacon-blog-post-inner">
-      <h2><a href="http://garybacon.com/post/finding-what-challenges-you/" rel="bookmark" title="Permanent link to Finding What Challenges You" class="title-row">Facing Interview with confidence</a></h2>
-      <p>In an <a href="https://www.youtube.com/watch?v=eaVBDPAy-SI" onclick="_gaq.push(['_trackEvent', 'outbound-article', 'https://www.youtube.com/watch?v=eaVBDPAy-SI', 'interview']);" target="_blank">interview</a>, Neil deGrasse Tyson talks about science
-        boosting the economy. He goes on to say, most companies and politicians don’t have the tolerance for the long term view.</p>
+      {/* <h2><a href="" rel="bookmark" class="title-row">Facing Interview with confidence</a></h2> */}
+      <p>
+        <h1>1.	An impressive resume is more powerful than you think:</h1>
+        It is often dubbed as a candidate’s first impression; thus, it needs to be as precise and interesting as possible. It should cover your projects, certifications achieved and the training programs you attended. </p>
       <p>You don’t motivate a group of kids, saying “Who wants to be a mechanical engineer and help improve flight efficiency by 15% compared to the airplane your father flew?”</p>
       <p>But instead, ask “Who wants to be an engineer and help develop airfoils to help fly in the atmosphere of Mars?” With the latter, you get the best students in the class.</p>
       <blockquote>

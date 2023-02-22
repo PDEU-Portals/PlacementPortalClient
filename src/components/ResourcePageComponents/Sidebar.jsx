@@ -69,7 +69,10 @@ const Sidebar = () => {
 						<span>
                             <p>
                             </p>
-                            Analytics
+							<Link to="/students/resource/analytics">
+							Analytics
+							</Link>
+                            
 
                         </span>
 					</span>

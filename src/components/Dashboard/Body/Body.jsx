@@ -20,7 +20,7 @@ function  Body() {
           <span className={styles.textbox1}>Looking for a job right after your graduation? Dont worry, we have got it all covered. With the job boarding facilities available on our portal, job seekers and employers get to have a convenient way to contact each other online. Thus, the process of searching for a job gets simpler. Here, there are many jobs to choose from, with the spectrum ranging from general to specific industries.
           In todays era, the corporate world is ever changing, with old industries being phased out or bought by new ones or their own competitors. Along with this, new industries are bringing up more opportunities. The portal has reviewed hundreds of jobs to provide you with that one job, which would cater to all of your interests and requirements. So, click on the button below to start your journey, RIGHT NOW!! </span>
           
-          <a href="/students/job_boarding">
+          <a href="/students/jobboarding">
             <button className={styles.button1}>Kick Start Your Career</button>
           </a>  
           

@@ -11,11 +11,11 @@ import {ProfilePage} from "./pages/ProfilePage"
 import Dashboard from "./pages/Dashboard.jsx"
 import CardPage from "./pages/CardPage"
 import Resume from "./pages/BuildYourResume.jsx"
-import Club_intro from "./components/Club_info/Club_intro"
-import Placement_stats from "./components/PlacementStats/PlacementStats"
-import Resume_builder from "./components/ResumeBuilder/Resumebuilder"
-import All_clubs from "./components/All_clubs"
-import Job_Boarding from "./components/Job_Boarding/Job_Boarding"
+import ClubIntro from "./components/ClubInfo/ClubIntro"
+import PlacementStats from "./components/PlacementStats/PlacementStats"
+import ResumeBuilder from "./components/ResumeBuilder/Resumebuilder"
+import AllClubs from "./components/AllCubs"
+import JobBoarding from "./components/JobBoarding/JobBoarding"
 import ApplyPage from "./pages/ApplyPage"
 import RecruiterLogin from "./pages/RecruiterLogin"
 import RecruiterAdminPanel from "./pages/RecruiterAdminPanel"
@@ -60,26 +60,26 @@ const router = createBrowserRouter([
   // },
   {
     path: "/students/club",
-    element: <Club_intro />,  
+    element: <ClubIntro />,
   },
   {
-    path: "/students/placement_stats",
-    element: <Placement_stats />,
+    path: "/students/placementStats",
+    element: <PlacementStats />,
   },
   {
-    path: "/students/resume_bulider",
-    element: <Resume_builder />,
+    path: "/students/resumebulider",
+    element: <ResumeBuilder />,
   },
   {
-    path: "/students/all_clubs",
-    element: <All_clubs />,
+    path: "/students/allclubs",
+    element: <AllClubs />,
   },
   {
-    path: "/students/job_boarding",
-    element: <Job_Boarding />,
+    path: "/students/jobboarding",
+    element: <JobBoarding />,
   },
   {
-    path: "/students/apply_page",
+    path: "/students/applypage",
     element: <ApplyPage />,
   },
   {
@@ -87,23 +87,23 @@ const router = createBrowserRouter([
     element: <RecruiterLogin />,
   },
   {
-    path: "/recruiter/admin_panel",
+    path: "/recruiter/adminpanel",
     element: <RecruiterAdminPanel />,
   },
   {
-    path: "/recruiter/post_job",
+    path: "/recruiter/postjob",
     element: <PostJob />,
   },
   {
-    path: "/students/technical_test_login",
+    path: "/students/technicaltestlogin",
     element: <TechnicalTestLogin />,
   },
   {
-    path: "/recruiter/job_posting",
+    path: "/recruiter/jobposting",
     element: <JobPosting />,
   },
   {
-    path: "/students/quiz_app",
+    path: "/students/quizapp",
     element: <QuizApp />,
   },
   {
