@@ -1,0 +1,61 @@
+.main-resume-container{
+    display: flex;
+}
+
+.ks-page-header {
+    background: #000000;  /* fallback for old browsers */
+    background: radial-gradient(circle at center, rgba(0,0,0, 0.8), rgba(0,0,0, 0.8), rgba(0,0,0, 0.7), rgba(0,0,0, 0.5), rgba(0,0,0, 0.2), rgba(0,0,0, 0)), url('https://images.pexels.com/photos/5673502/pexels-photo-5673502.jpeg?auto=compress&cs=tinysrgb&w=600');
+   background-attachment: scroll;
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-size: cover;
+   
+   display: flex;
+   height: 500px; 
+   height: 100vh;
+  }
+  
+  .ks-page-title {
+   padding: 2em 0; 
+   margin: auto;
+  }
+  
+  @supports (initial-letter: 4) or (-webkit-initial-letter: 4) {
+    .ks-fancy-letter::first-letter {
+     color: #1e1e1e;
+     font-weight: bold;
+     margin-right: 0.5em;
+     -webkit-initial-letter: 4;
+     initial-letter: 4;
+   }
+  }
+
+  @media (min-width: 992px)  {
+   .container {
+       max-width: 1024px;
+   }
+  }
+  
+  
+  .a2a_floating_style.a2a_default_style { 
+    border-radius: 0;
+    bottom:0; 
+    left:50%; 
+    transform:translateX(-50%);
+  }
+  
+  @media screen and (min-width: 992px) {
+    .a2a_floating_style.a2a_default_style { 
+      bottom: auto;
+      left:0px; 
+      top:150px;
+      transform:translateX(0%);
+     }
+    .a2a_floating_style.a2a_default_style a {
+      clear: left;
+      display: block;
+      overflow: hidden;
+      padding: 4px;
+      text-decoration: none;
+   }
+  }

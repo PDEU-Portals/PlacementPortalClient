@@ -21,6 +21,7 @@ import Resources from "./pages/Resources.jsx";
 import PlacementRoadmap from "./components/ResourcePageComponents/PlacementRoadmap.jsx";
 import FacingInterview from "./components/ResourcePageComponents/FacingInterview.jsx";
 import Companies from "./components/ResourcePageComponents/Companies.jsx";
+import ResumeInfo from "./components/ResourcePageComponents/ResumeInfo.jsx";
 // import { Profile } from "./components/Profile Page Component/Profile.jsx";
 function App() {
     
@@ -48,6 +49,7 @@ function App() {
         <Route path="/students/resource/process" element={<PlacementRoadmap />} />
         <Route path="/students/resource/interview" element={<FacingInterview />} />
         <Route path="/students/resource/companies" element={<Companies />} />
+        <Route path="/students/resource/resume_info" element={<ResumeInfo />} />
       </Routes>
     </div>
   );

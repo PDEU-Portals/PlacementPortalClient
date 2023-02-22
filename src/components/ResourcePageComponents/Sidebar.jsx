@@ -39,7 +39,10 @@ const Sidebar = () => {
 						<span>
                             <p>
                             </p>
-                            Build Strong Resume
+							<Link to="/students/resource/resume_info">
+							Build Strong Resume
+							</Link>
+                            
 
                         </span>
 					</span>
@@ -80,7 +83,9 @@ const Sidebar = () => {
 				<button>
 					<span>
 						{/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYzAqKERFeE4h-K3vnOWQSWJmxRTKTApVjEg&usqp=CAU"> */}
-						<span>Profile</span>
+						<span>
+							General Questions
+						</span>
 					</span>
 				</button>
 				<button>

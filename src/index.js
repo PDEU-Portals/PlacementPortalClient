@@ -29,6 +29,7 @@ import Resources from "./pages/Resources"
 import PlacementRoadmap from "./components/ResourcePageComponents/PlacementRoadmap"
 import FacingInterview from "./components/ResourcePageComponents/FacingInterview"
 import Companies from "./components/ResourcePageComponents/Companies"
+import ResumeInfo from "./components/ResourcePageComponents/ResumeInfo"
 
 axios.defaults.withCredentials = true
 
@@ -124,6 +125,10 @@ const router = createBrowserRouter([
   {
     path: "/students/resource/companies",
     element: <Companies />,
+  },
+  {
+    path: "/students/resource/resume_info",
+    element: <ResumeInfo />,
   }
   // {
   //   path:"/resumeBuilder",
