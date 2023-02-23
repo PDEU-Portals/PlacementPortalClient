@@ -1,5 +1,8 @@
 .companies-container{
-    display: flex;
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 1fr 4fr; 
+    overflow: hidden;
 }
 .companies-container {
     text-align: center;
@@ -146,13 +149,14 @@
   }
   
   /* MEDIA QUERIES */
-  @media screen and (max-width: 1285px) {
+  @media screen and (max-width: 1500px) {
     .cards-wrapper {
       grid-template-columns: 1fr 1fr;
     }
   }
   
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1200px) {
+    
     .cards-wrapper {
       grid-template-columns: 1fr;
     }
@@ -165,6 +169,14 @@
     }
   }
   
+  
+  @media screen and (max-width: 700px) {
+    .companies-container{
+      /* display: flex; */
+      display: grid;
+      grid-template-columns: 1fr; 
+  }
+  }
   @media screen and (max-width: 500px) {
     .cards-wrapper {
       padding: 4rem 2rem;
