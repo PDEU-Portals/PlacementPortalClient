@@ -1,0 +1,15 @@
+.event-details-container{
+    display: flex;
+}
+.Event-details{
+    font-size: 2em;
+    font-weight: 700;
+    padding: 2em;
+}
+.list-of-links{
+    padding: 2em;
+    color: blue;
+}
+.list-of-links ul{
+    padding: 1em;
+}

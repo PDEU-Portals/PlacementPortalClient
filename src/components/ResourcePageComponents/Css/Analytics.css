@@ -1,3 +1,15 @@
 .main-analysis-container{
     display: flex;
 }
+.main-content-container h1{
+    font-size: 2em;
+    font-weight: 700;
+    padding: 1.2em;
+    margin-left: 2em;
+}
+.main-content-container {
+    text-align: center;
+}
+.charts-container{
+    display: flex;
+}

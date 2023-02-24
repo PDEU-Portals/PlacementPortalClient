@@ -64,6 +64,21 @@ const Sidebar = () => {
 				</button>
 				<button>
 					<span>
+						{/* <i class="fa-solid fa-location-arrow">
+						</i> */}
+						<span>
+                            <p>
+                            </p>
+							<Link to="/students/resource/eventdetails">
+							Events
+							</Link>
+                            
+
+                        </span>
+					</span>
+				</button>
+				<button>
+					<span>
 						{/* <i class="fa-regular fa-heart">
 						</i> */}
 						<span>

@@ -22,6 +22,7 @@ import PlacementRoadmap from "./components/ResourcePageComponents/PlacementRoadm
 import FacingInterview from "./components/ResourcePageComponents/FacingInterview.jsx"
 import Companies from "./components/ResourcePageComponents/Companies.jsx"
 import Analytics from './components/ResourcePageComponents/Analytics.jsx'
+import EventDetails from "./components/ResourcePageComponents/EventsDetails.jsx"
 // import { Profile } from "./components/Profile Page Component/Profile.jsx";
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
         />
         <Route path="/students/resource/companies" element={<Companies />} />
         <Route path="/students/resource/analytics" element={<Analytics />} />
+        <Route path="/students/resource/eventdetails" element={<EventDetails />} />
       </Routes>
     </div>
   )

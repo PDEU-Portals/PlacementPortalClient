@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../Header/Header";
 import Sidebar from './Sidebar.jsx';
 import './Css/Company.css';
-import img from './Images/interview_pic.jpg';
+// import img from './Images/company_building.jpg';
 
 const Companies = () => {
     return ( 
@@ -29,35 +29,36 @@ const Companies = () => {
 <section class="cards-wrapper">
   <div class="card-grid-space">
     <div className="img-container">
-    <a class="card" href="https://codetheweb.blog/2017/10/06/html-syntax/" >
+
+    <a class="card" href="https://careers.google.com/jobs/results/" >
       <div >
-        <h1>HTML Syntax</h1>
-        <p>The syntax of a language is how it works. How to actually write it. Learn HTML syntax…</p>
+        <h1>Google</h1>
+        <p>Google LLC is an American multinational technology company focusing on online advertising, search engine technology, artificial intelligence, and consumer electronics.</p>
         <div class="tags">
-          <div class="tag">HTML</div>
+          <div class="tag"></div>
         </div>
       </div>
     </a>
     </div>
   </div>
   <div class="card-grid-space">
-    <a class="card" href="https://codetheweb.blog/2017/10/09/basic-types-of-html-tags/" >
+    <a class="card" href="https://careers.microsoft.com/us/en" >
       <div>
-        <h1>Basic types of HTML tags</h1>
-        <p>Learn about some of the most common HTML tags…</p>
+        <h1>Microsoft</h1>
+        <p>Microsoft Corporation is an American multinational technology corporation headquartered in Redmond, Washington, United States.</p>
         <div class="tags">
-          <div class="tag">HTML</div>
+          <div class="tag"></div>
         </div>
       </div>
     </a>
   </div>
   <div class="card-grid-space">
-    <a class="card" href="https://codetheweb.blog/2017/10/14/links-images-about-file-paths/" >
+    <a class="card" href="https://www.ibm.com/careers/in-en/search/">
       <div>
-        <h1>Links, images and about file paths</h1>
-        <p>Learn how to use links and images along with file paths…</p>
+        <h1>IBM</h1>
+        <p>The International Business Machines Corporation, nicknamed Big Blue, is an American multinational technology corporation headquartered in Armonk, New York and present in over 175 countries.</p>
         <div class="tags">
-          <div class="tag">HTML</div>
+          <div class="tag"></div>
         </div>
       </div>
     </a>

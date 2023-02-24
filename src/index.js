@@ -30,6 +30,8 @@ import PlacementRoadmap from "./components/ResourcePageComponents/PlacementRoadm
 import FacingInterview from "./components/ResourcePageComponents/FacingInterview"
 import Companies from "./components/ResourcePageComponents/Companies"
 import ResumeInfo from "./components/ResourcePageComponents/ResumeInfo"
+import Analysis from "./components/ResourcePageComponents/Analytics"
+import EventDetails from "./components/ResourcePageComponents/EventsDetails"
 
 axios.defaults.withCredentials = true
 
@@ -129,6 +131,14 @@ const router = createBrowserRouter([
   {
     path: "/students/resource/resume_info",
     element: <ResumeInfo />,
+  },
+  {
+    path: "/students/resource/analytics",
+    element: <Analysis />,
+  },
+  {
+    path: "/students/resource/eventdetails",
+    element: <EventDetails />,
   }
   // {
   //   path:"/resumeBuilder",
