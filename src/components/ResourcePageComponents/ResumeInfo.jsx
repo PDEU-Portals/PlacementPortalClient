@@ -7,7 +7,7 @@ const ResumeInfo = () => {
     return ( 
         <>
             <Header />
-            <div className="main-resume-container">
+            {/* <div className="main-resume-container">
                 <Sidebar />
                 <div className="resume-content">
                     This is an checking text
@@ -36,7 +36,7 @@ const ResumeInfo = () => {
 
 <script async src="https://static.addtoany.com/menu/page.js"></script>
                 </div>
-            </div>
+            </div> */}
         </>
      );
 }

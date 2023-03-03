@@ -15,7 +15,6 @@ import ClubIntro from "./components/ClubInfo/ClubIntro"
 import PlacementStats from "./components/PlacementStats/PlacementStats"
 import ResumeBuilder from "./components/ResumeBuilder/Resumebuilder"
 import AllClubs from "./components/AllCubs"
-import JobBoarding from "./components/JobBoarding/JobBoarding"
 import ApplyPage from "./pages/ApplyPage"
 import RecruiterLogin from "./pages/RecruiterLogin"
 import RecruiterAdminPanel from "./pages/RecruiterAdminPanel"
@@ -32,6 +31,8 @@ import Companies from "./components/ResourcePageComponents/Companies"
 import ResumeInfo from "./components/ResourcePageComponents/ResumeInfo"
 import Analysis from "./components/ResourcePageComponents/Analytics"
 import EventDetails from "./components/ResourcePageComponents/EventsDetails"
+import Job_Boarding from "./components/JobBoarding/Job_Borading"
+import Form from "./components/JobBoarding/Form"
 
 axios.defaults.withCredentials = true
 
@@ -75,10 +76,6 @@ const router = createBrowserRouter([
   {
     path: "/students/allclubs",
     element: <AllClubs />,
-  },
-  {
-    path: "/students/jobboarding",
-    element: <JobBoarding />,
   },
   {
     path: "/students/applypage",
@@ -139,6 +136,14 @@ const router = createBrowserRouter([
   {
     path: "/students/resource/eventdetails",
     element: <EventDetails />,
+  },
+  {
+    path: "/students/resource/jobboarding",
+    element: <Job_Boarding />,
+  },
+  {
+    path: "/students/resource/applyjob",
+    element: <Form />,
   }
   // {
   //   path:"/resumeBuilder",

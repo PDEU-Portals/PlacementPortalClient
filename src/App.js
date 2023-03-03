@@ -8,7 +8,6 @@ import ClubIntro from "./components/ClubInfo/ClubIntro.jsx"
 import PlacementStats from "./components/PlacementStats/PlacementStats.jsx"
 import Resumebuilder from "./components/ResumeBuilder/Resumebuilder.jsx"
 import AllClubs from "./components/AllCubs.jsx"
-import JobBoarding from "./components/JobBoarding/JobBoarding.jsx"
 import ApplyPage from "./pages/ApplyPage.jsx"
 import RecruiterLogin from "./pages/RecruiterLogin.jsx"
 import RecruiterAdminPanel from "./pages/RecruiterAdminPanel.jsx"
@@ -23,6 +22,8 @@ import FacingInterview from "./components/ResourcePageComponents/FacingInterview
 import Companies from "./components/ResourcePageComponents/Companies.jsx"
 import Analytics from './components/ResourcePageComponents/Analytics.jsx'
 import EventDetails from "./components/ResourcePageComponents/EventsDetails.jsx"
+import Job_boarding from './components/JobBoarding/Job_Borading'
+import Form from "./components/JobBoarding/Form.jsx"
 // import { Profile } from "./components/Profile Page Component/Profile.jsx";
 function App() {
   return (
@@ -37,7 +38,6 @@ function App() {
         <Route path="/students/placementstats" element={<PlacementStats />} />
         <Route path="/students/resumebuilder" element={<Resumebuilder />} />
         <Route path="/students/allclubs" element={<AllClubs />} />
-        <Route path="/students/jobboarding" element={<JobBoarding />} />
         <Route path="/students/applypage" element={<ApplyPage />} />
         <Route path="/recruiter/login" element={<RecruiterLogin />} />
         <Route path="/recruiter/adminpanel" element={<RecruiterAdminPanel />} />
@@ -60,6 +60,8 @@ function App() {
         <Route path="/students/resource/companies" element={<Companies />} />
         <Route path="/students/resource/analytics" element={<Analytics />} />
         <Route path="/students/resource/eventdetails" element={<EventDetails />} />
+        <Route path="/students/resource/jobboarding" element={<Job_boarding />} />
+        <Route path="/students/resource/applyjob" element={<Form />} />
       </Routes>
     </div>
   )
