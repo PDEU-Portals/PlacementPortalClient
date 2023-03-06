@@ -24,7 +24,12 @@ import Analytics from './components/ResourcePageComponents/Analytics.jsx'
 import EventDetails from "./components/ResourcePageComponents/EventsDetails.jsx"
 import Job_boarding from './components/JobBoarding/Job_Borading'
 import Form from "./components/JobBoarding/Form.jsx"
+import CompanyProfile from "./components/JobPosting/CompanyProfile.jsx"
+import ExperiencePage from './pages/ExperiencePage.jsx';
+import JobLists from  './components/JobPosting/JobLists';
 // import { Profile } from "./components/Profile Page Component/Profile.jsx";
+
+
 function App() {
   return (
     <div className="App">
@@ -32,6 +37,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/students/dashboard" element={<></>} />
         <Route path="/students/profile" element={<ProfilePage />} />
+        <Route path="/students/profile/:id" element={<ProfilePage />} />
         <Route path="/students/register" element={<Register />} />
         <Route path="/students/community" element={<CardPage data={data} />} />
         <Route path="/students/club" element={<ClubIntro />} />
@@ -62,6 +68,9 @@ function App() {
         <Route path="/students/resource/eventdetails" element={<EventDetails />} />
         <Route path="/students/resource/jobboarding" element={<Job_boarding />} />
         <Route path="/students/resource/applyjob" element={<Form />} />
+        <Route path="/recruiter/companyprofile" element={<CompanyProfile />} />
+        <Route path="/student/experiencesharing" element={<ExperiencePage />} />
+        <Route path="/recruiter/joblists" element={<JobLists />} />
       </Routes>
     </div>
   )

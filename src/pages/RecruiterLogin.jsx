@@ -21,7 +21,7 @@ const RecruiterLogin = () => {
             <input type="text" id='topic' name='topic'/>
           </div>
           <div className="submitbutton">
-            <button type="button"><a href="/recruiter/job_posting">Login</a></button>
+            <button type="button"><a href="/recruiter/companyprofile">Login</a></button>
           </div>
         </div>
       </div>

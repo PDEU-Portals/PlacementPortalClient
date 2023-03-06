@@ -1,0 +1,103 @@
+/* Container */
+.container {
+    /* max-width: 600px; */
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #F2F2F1;
+    border-radius: 4px;
+  }
+  
+  /* Title */
+  .title {
+    text-align: center;
+    color: #1F3368;
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+  
+  /* Form Group */
+  .form-group {
+    margin-bottom: 30px;
+  }
+  
+  /* Label */
+  .label {
+    display: block;
+    font-size: 20px;
+    color: #1F3368;
+    margin-bottom: 10px;
+  }
+  
+  /* Input */
+  .input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 2px solid #1F3368;
+    background-color: #F2F2F1;
+    color: #1F3368;
+  }
+  
+  /* Textarea */
+  .textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 2px solid #1F3368;
+    background-color: #F2F2F1;
+    color: #1F3368;
+  }
+  
+  /* Button */
+  .button {
+    background-color: #1F3368;
+    color: #F2F2F1;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Shared experiences */
+  .shared-experiences {
+    position: sticky;
+    top: 100px;
+    background-color: #F2F2F1;
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0px 4px 12px rgba(31, 51, 104, 0.1);
+  }
+  
+  /* Shared experiences title */
+  .shared-experiences-title {
+    color: #1F3368;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Shared experience */
+  .shared-experience {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #1F3368;
+  }
+  
+  /* Shared experience title */
+  .shared-experience-title {
+    color: #1F3368;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  /* Shared experience description */
+  .shared-experience-description {
+    font-size: 16px;
+    color: #4C4C4C;
+    line-height: 1.5;
+  }
+  

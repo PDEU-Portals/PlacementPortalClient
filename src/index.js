@@ -33,6 +33,9 @@ import Analysis from "./components/ResourcePageComponents/Analytics"
 import EventDetails from "./components/ResourcePageComponents/EventsDetails"
 import Job_Boarding from "./components/JobBoarding/Job_Borading"
 import Form from "./components/JobBoarding/Form"
+import CompanyProfile from "./components/JobPosting/CompanyProfile"
+import ExperiencePage from "./pages/ExperiencePage"
+import JobLists from "./components/JobPosting/JobLists"
 
 axios.defaults.withCredentials = true
 
@@ -144,6 +147,18 @@ const router = createBrowserRouter([
   {
     path: "/students/resource/applyjob",
     element: <Form />,
+  },
+  {
+    path: "/recruiter/companyprofile",
+    element: <CompanyProfile />,
+  },
+  {
+    path: "/student/experiencesharing",
+    element: <ExperiencePage />,
+  },
+  {
+    path: "/recruiter/joblists",
+    element: <JobLists />,
   }
   // {
   //   path:"/resumeBuilder",

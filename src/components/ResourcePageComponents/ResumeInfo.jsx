@@ -166,6 +166,9 @@ const ResumeInfo = () => {
               </div>
             </div>
           </div>
+          <div className="resume-link">
+            <h1>Check out some resources where you can </h1>
+          </div>
         </div>
       </div>
     </>

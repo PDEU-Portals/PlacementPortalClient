@@ -13,7 +13,7 @@
     display: flex;
 }
 
-.container {
+.roadmap-inner-container {
     width: 80%;
     padding: 50px 0;
     margin: 50px auto;
@@ -21,7 +21,7 @@
     overflow: hidden;
  }
  
- .container:before {
+  .roadmap-inner-container:before {
     content: '';
     position: absolute;
     top: 0;

@@ -12,7 +12,7 @@ const PlacementRoadmap = () => {
         <div className="roadmap-container">
           <h1> Placement Process</h1>
 
-          <div class="container">
+          <div class="roadmap-inner-container">
             <div class="timeline-block timeline-block-right">
               <div class="marker"></div>
               <div class="timeline-content">

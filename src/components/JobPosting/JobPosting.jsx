@@ -22,7 +22,6 @@ const JobPosting = () => {
                     <button className='jobSearch-title'>A to Z</button>
                 </a>
             </div>
-            
             <Table/>
 
             
