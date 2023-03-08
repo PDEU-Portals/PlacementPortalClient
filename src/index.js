@@ -36,6 +36,7 @@ import Form from "./components/JobBoarding/Form"
 import CompanyProfile from "./components/JobPosting/CompanyProfile"
 import ExperiencePage from "./pages/ExperiencePage"
 import JobLists from "./components/JobPosting/JobLists"
+import JobDetails from "./pages/JobDetails"
 
 axios.defaults.withCredentials = true
 
@@ -159,7 +160,11 @@ const router = createBrowserRouter([
   {
     path: "/recruiter/joblists",
     element: <JobLists />,
-  }
+  },
+  {
+    path: "/students/resource/jobboarding/jobdetail/:id",
+    element: <JobDetails />,
+  },
   // {
   //   path:"/resumeBuilder",
   //   element:
