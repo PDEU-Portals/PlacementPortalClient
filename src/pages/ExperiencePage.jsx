@@ -55,19 +55,19 @@ function ExperiencePage() {
 
   // This code will send data given by user into back-end.
   // const handleShare = async (event) => {
-  //   event.preventDefault();
+    // event.preventDefault();
 
-  //   try {
-  //     const { data } = await axios.post("http://localhost:5000/api/v1/experiences", {
-  //       title,
-  //       description
-  //     });
-  //     setExperiences([...experiences, data.experience]);
-  //     setTitle("");
-  //     setDescription("");
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
+    // try {
+    //   const { data } = await axios.post("http://localhost:5000/api/v1/experiences", {
+    //     title,
+    //     description
+    //   });
+    //   setExperiences([...experiences, data.experience]);
+    //   setTitle("");
+    //   setDescription("");
+    // } catch (error) {
+    //   console.log(error);
+    // }
   // };
 
   return (

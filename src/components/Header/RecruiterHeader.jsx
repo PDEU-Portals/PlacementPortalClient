@@ -20,22 +20,16 @@ function  Header() {
       <div className="nav-links">
         <ul className="nav-links-list">
           <li>
-            <a href="/students/homepage">Home</a>
+            <a href="/recruiter/homepage">Home</a>
           </li>
           <li>
-            <a href="/students/dashboard">Dashboard</a>
+            <a href="/recruiter/managejobs">Manage Jobs</a>
           </li>
           <li>
-            <a href="/students/profile">Profile</a>
+            <a href="/recruiter/postjob">Create Job</a>
           </li>
           <li>
-            <a href="/students/resource/process">Resources</a>
-          </li>
-          <li>
-            <a href="/students/jobboarding">Apply Now!</a>
-          </li>
-          <li>
-            <a href="/students/myapplications">My Applications</a>
+            <a href="/recruiter/companyprofile">Profile</a>
           </li>
           <li>
             <a href="/">Logout</a>

@@ -10,7 +10,6 @@ import HomePage from "./pages/HomePage"
 import {ProfilePage} from "./pages/ProfilePage"
 import Dashboard from "./pages/Dashboard.jsx"
 import CardPage from "./pages/CardPage"
-import Resume from "./pages/BuildYourResume.jsx"
 import ClubIntro from "./components/ClubInfo/ClubIntro"
 import PlacementStats from "./components/PlacementStats/PlacementStats"
 import AllClubs from "./components/AllCubs"
@@ -40,6 +39,7 @@ import Student_Login from './pages/Student_Login.jsx';
 import Recruiter_Login from "./pages/Recruiter_Login"
 import Admin_Login from "./pages/Admin_Login"
 import StudentHomePage from "./components/HomePage/StudentHomePage"
+import RecruiterHomePage from "./components/HomePage/RecruiterHomePage"
 
 axios.defaults.withCredentials = true
 
@@ -59,10 +59,6 @@ const router = createBrowserRouter([
   {
     path: "/students/community",
     element: <CardPage data={data} />,
-  },
-  {
-    path: "/studnets/resume",
-    element: <Resume />,
   },
   // {
   //   path: "/students/tables",
@@ -158,7 +154,7 @@ const router = createBrowserRouter([
     element: <ExperiencePage />,
   },
   {
-    path: "/recruiter/joblists",
+    path: "/recruiter/managejobs",
     element: <JobLists />,
   },
   {
@@ -188,6 +184,10 @@ const router = createBrowserRouter([
   {
     path: "/students/homepage",
     element: <StudentHomePage />,
+  },
+  {
+    path: "/recruiter/homepage",
+    element: <RecruiterHomePage />,
   }
   // {
   //   path:"/resumeBuilder",

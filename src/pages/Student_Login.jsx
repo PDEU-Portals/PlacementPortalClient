@@ -42,6 +42,8 @@ export default function Recruiter_Login() {
   };
 
   const handleLogin = async (email, password, e) => {
+
+    console.log('Submit Button Clicked');
     e.preventDefault();
     JSON.stringify(email);
     JSON.stringify(password);
@@ -85,10 +87,12 @@ export default function Recruiter_Login() {
           } else {
             // Handle other status codes
             console.log("Error:", error.response.status);
+            alert('Something Went Wrong! Try again later')
           }
         } else {
           // Handle network errors
           console.log("Error: Network Error");
+          alert('Something Went Wrong! Try again later');
         }
       }
     }

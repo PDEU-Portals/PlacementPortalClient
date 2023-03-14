@@ -162,6 +162,7 @@ export default function Recruiter_Login() {
           >
             Submit
           </button>
+          <Link to='/recruiter/homepage'>Visit Recruiter Portal</Link>
         </form>
       </div>
       </div>

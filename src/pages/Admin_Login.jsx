@@ -149,6 +149,7 @@ export default function Admin_Login() {
           >
             Submit
           </button>
+          <Link to="/admin/" >Visit Admin Portal</Link>
         </form>
       </div>
       </div>

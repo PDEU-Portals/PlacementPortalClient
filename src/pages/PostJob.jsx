@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "../components/Header/Header";
+import RecruiterHeader from "../components/Header/RecruiterHeader";
 
 const PostJob = () => {
     return ( 
         <>  
-            <Header />
+            <RecruiterHeader />
             Post Job Page
         </>
      );

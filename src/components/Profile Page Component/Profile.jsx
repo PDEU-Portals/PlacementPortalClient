@@ -1,13 +1,30 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import image from './images/Rectangle19.png'
 import imagereact from './images/logo192.png'
 import './Css/Profile.css';
+import axios from 'axios';
 
 export const Profile = () => {
 
+  let data;
+  useEffect(() => {
+    try {
+      axios
+        .get("http://localhost:5000/api/v1/getinfo")
+        .then((res) => {
+          data = res.data;
+          console.log(res.data);
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    } catch (err) {
+      console.log(err)
+    }
+  }, []);
   const [editMode, setEditMode] = useState(false);
   const [profile, setProfile] = useState({
-    name: "Aniket Patel",
+    name: data.name ? (data.name) : ('John Doe') ,
     email: "Aniket.pce21@sot.pdpu.ac.in",
     Skills: "Full Stack Web Developer",
     description : "Hard Working, organized and skilled web develope, graphics designer and UI designer. With nice grip over web devlopment and giving strong attention to details. I have strong passion for coding and building innovative web solutions, and I have honed my skills through my participation in various hackathons and projects. I an eager to explore things and to create cutting-edge web solutions and making a difference in society, I am confident about my skills and experience to create impactfull projects for the social good.",
@@ -21,7 +38,7 @@ export const Profile = () => {
     console.log('edit button is clicked')
     setEditMode(true);
   }
-  const handleSaveClick = () => {
+  const handleSaveClick = async (event) => {
     setEditMode(false);
   };
 
@@ -65,6 +82,7 @@ export const Profile = () => {
                             type="text"
                             id="name"
                             name="name"
+                            // value={data.name ? (data.name) : ('John Doe') }
                             value={profile.name}
                             onChange={handleChange}
                             placeholder="Enter your name here"

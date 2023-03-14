@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import "./JobLists.css";
-import Header from '../Header/Header'
+import RecruiterHeader from '../Header/RecruiterHeader.jsx';
 
 
 const JobCard = ({ job, onDelete }) => {
@@ -99,7 +99,7 @@ const jobs = [
 const jobList = () => {
   return (
     <>
-    <Header/>
+    <RecruiterHeader/>
     <div className="app-container">
       <h1 className="title">Job Listings</h1>
       <JobList jobs={jobs} />
