@@ -1,6 +1,6 @@
 import React from 'react'
 import Footer from '../Footer'
-import Header from '../Header/Header'
+import RecruiterHeader from '../Header/RecruiterHeader'
 import './JobPosting.css'
 import Table from './Table/Table'
 
@@ -8,7 +8,7 @@ const JobPosting = () => {
   return (
         
         <>
-            <Header/>
+            <RecruiterHeader/>
             
             <div className="job-title">Goldman Sachs Inc.</div>
             <a href="/recruiter/post_job">

@@ -6,26 +6,26 @@ import axios from 'axios';
 
 export const Profile = () => {
 
-  let data;
+  const [data, setData] = useState({});
   useEffect(() => {
+    const fetchData = async () => {
     try {
-      axios
-        .get("http://localhost:5000/api/v1/getinfo")
-        .then((res) => {
-          data = res.data;
-          console.log(res.data);
-        })
-        .catch((err) => {
-          console.log(err)
-        })
+    const response = await axios.get(
+    "http://localhost:5000/api/v1/getinfo"
+    );
+    setData(response.data);
+    console.log(response.data);
     } catch (err) {
-      console.log(err)
+    console.log(err);
     }
-  }, []);
+    };
+    fetchData();
+    }, []);
+
   const [editMode, setEditMode] = useState(false);
   const [profile, setProfile] = useState({
-    name: data.name ? (data.name) : ('John Doe') ,
-    email: "Aniket.pce21@sot.pdpu.ac.in",
+    name: data.name ? data.name : "John Doe",
+    email: data.email ? data.email : "Aniket.pce21@sot.pdpu.ac.in",
     Skills: "Full Stack Web Developer",
     description : "Hard Working, organized and skilled web develope, graphics designer and UI designer. With nice grip over web devlopment and giving strong attention to details. I have strong passion for coding and building innovative web solutions, and I have honed my skills through my participation in various hackathons and projects. I an eager to explore things and to create cutting-edge web solutions and making a difference in society, I am confident about my skills and experience to create impactfull projects for the social good.",
   });
@@ -42,9 +42,20 @@ export const Profile = () => {
     setEditMode(false);
   };
 
+  // const handleCancelClick = () => {
+  //   setEditMode(false);
+  // };
+
   const handleCancelClick = () => {
     setEditMode(false);
-  };
+    setProfile({
+    name: data.name ? data.name : "John Doe",
+    email: data.email ? data.email : "Aniket.pce21@sot.pdpu.ac.in",
+    skills: "Full Stack Web Developer",
+    description:
+    "Hard Working, organized and skilled web developer, graphics designer and UI designer. With a nice grip over web development and giving strong attention to details. I have strong passion for coding and building innovative web solutions, and I have honed my skills through my participation in various hackathons and projects. I am eager to explore things and to create cutting-edge web solutions and making a difference in society, I am confident about my skills and experience to create impactful projects for the social good.",
+    });
+    };
 
   const handleChange = event => {
     setProfile({

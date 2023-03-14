@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import "./JobLists.css";
+import "./JobLists.css";
 import RecruiterHeader from '../Header/RecruiterHeader.jsx';
 
 
@@ -7,7 +7,7 @@ const JobCard = ({ job, onDelete }) => {
   const { companyName, role, description, skills } = job;
 
   return (
-    <div className="job-card">
+    <div className="job-card-recruiter">
       <h2>{companyName}</h2>
       <h3>{role}</h3>
       <p>{description}</p>
@@ -31,7 +31,7 @@ const JobList = ({ jobs }) => {
   };
 
   return (
-    <div className="job-list">
+    <div className="job-list-recruiter">
       {jobList.map((job, index) => (
         <JobCard key={index} job={job} onDelete={() => handleDelete(index)} />
       ))}
@@ -100,9 +100,9 @@ const jobList = () => {
   return (
     <>
     <RecruiterHeader/>
-    <div className="app-container">
+    <div className="app-container-recruiter">
       <h1 className="title">Job Listings</h1>
-      <JobList jobs={jobs} />
+     <a href="/recruiter/jobinformation"> <JobList jobs={jobs} /> </a>
     </div>
     </>
   );

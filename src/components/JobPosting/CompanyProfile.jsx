@@ -219,7 +219,7 @@
 
 
 import React, { useState } from 'react';
-import Header from '../Header/Header';
+import RecruiterHeader from '../Header/RecruiterHeader';
 import './profilePage.css';
 
 function ProfilePage() {
@@ -316,7 +316,7 @@ function ProfilePage() {
 
   return (
     <>
-      <Header />
+      <RecruiterHeader />
       <div className="profile-page">
         <form onSubmit={handleSubmit}>
           <div className="form-group">

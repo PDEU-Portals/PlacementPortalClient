@@ -1,4 +1,4 @@
-.app-container {
+.app-container-recruiter {
     margin: 20px auto;
     max-width: 1000px;
     padding: 0 20px;
@@ -11,13 +11,13 @@
     text-align: center;
   }
   
-  .job-list {
+  .job-list-recruiter {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
   
-  .job-card {
+  .job-card-recruiter {
     background-color: #f2f2f1;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -26,36 +26,36 @@
     width: calc(33.33% - 10px);
   }
   
-  .job-card h2 {
+  .job-card-recruiter h2 {
     color: #1f3368;
     font-size: 24px;
     margin-top: 0;
   }
   
-  .job-card h3 {
+  .job-card-recruiter h3 {
     color: #f68c1f;
     font-size: 18px;
     margin-top: 10px;
   }
   
-  .job-card p {
+  .job-card-recruiter p {
     font-size: 16px;
     line-height: 1.5;
     margin-top: 10px;
   }
   
-  .job-card ul {
+  .job-card-recruiter ul {
   list-style: none;
 margin: 0;
 padding: 0;
 }
 
-.job-card li {
+.job-card-recruiter li {
 font-size: 14px;
 margin-bottom: 5px;
 }
 
-.job-card button {
+.job-card-recruiter button {
 background-color: #f68c1f;
 border: none;
 border-radius: 5px;
@@ -67,7 +67,7 @@ margin-top: 10px;
 transition: opacity 0.2s ease-in-out;
 }
 
-.job-card button:hover {
+.job-card-recruiter button:hover {
 background-color: #1f3368;
 }
 

@@ -9,7 +9,6 @@ import PlacementStats from "./components/PlacementStats/PlacementStats.jsx"
 import AllClubs from "./components/AllCubs.jsx"
 import RecruiterLogin from "./pages/RecruiterLogin.jsx"
 import RecruiterAdminPanel from "./pages/RecruiterAdminPanel.jsx"
-import PostJob from "./pages/PostJob.jsx"
 import TechnicalTestLogin from "./pages/TechnicalTestLogin.jsx"
 import JobPosting from "./components/JobPosting/JobPosting.jsx"
 import QuizApp from "./pages/QuizApp.jsx"
@@ -45,7 +44,6 @@ function App() {
         <Route path="/students/allclubs" element={<AllClubs />} />
         <Route path="/recruiter/login" element={<RecruiterLogin />} />
         <Route path="/recruiter/adminpanel" element={<RecruiterAdminPanel />} />
-        <Route path="/recruiter/postjob" element={<PostJob />} />
         <Route
           path="/students/technicaltestlogin"
           element={<TechnicalTestLogin />}
