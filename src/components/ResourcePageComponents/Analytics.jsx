@@ -1,5 +1,5 @@
 import './Css/Analytics.css'
-import Header from "../Header/Header";
+import StudentHeader from "../Header/StudentHeader";
 import Sidebar from './Sidebar.jsx';
 import { Pie, PieChart, Sector } from 'recharts';
 import React,{ useCallback,useState } from "react";
@@ -98,7 +98,7 @@ const Analysis = () => {
     );
     return ( 
         <>  
-            <Header />
+            <StudentHeader />
             <div className="main-analysis-container">
                 <Sidebar />
                 <div className="main-content-container">

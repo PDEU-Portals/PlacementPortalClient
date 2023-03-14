@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../Header/Header";
+import StudentHeader from "../Header/StudentHeader";
 import Sidebar from "./Sidebar.jsx";
 import "./Css/Company.css";
 // import img from './Images/company_building.jpg';
@@ -7,7 +7,7 @@ import "./Css/Company.css";
 const Companies = () => {
   return (
     <>
-      <Header />
+      <StudentHeader />
       <div className="companies-container">
         <Sidebar />
         <div className="companies-container-div">

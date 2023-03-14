@@ -1,5 +1,5 @@
-import React from "react"
-import Header from "../components/Header/Header"
+import React, { Link } from "react"
+import StudentHeader from "../components/Header/StudentHeader"
 import jobdetails from "../data/jobdetails"
 import {useParams} from "react-router"
 
@@ -10,7 +10,7 @@ export default function JobDetails() {
 
   return (
     <>
-      <Header />
+      <StudentHeader />
       <div className="sm:px-6 lg:px-24">
         <div className="mt-10 sm:flex sm:items-center md:gap-4 lg:mt-20 lg:gap-12 xl:w-4/5">
           <div className="sm:w-full">
@@ -76,9 +76,11 @@ export default function JobDetails() {
         </div>
 
         <div className="my-8 lg:mt-14 flex justify-center sm:justify-start">
-          <button className="bg-[#E08327] text-[#1F3368] font-semibold px-8 rounded-md py-2 text-xl">
-            Apply Now
-          </button>
+          <a href='/students/resource/applyjob'> 
+            <button className="bg-[#E08327] text-[#1F3368] font-semibold px-8 rounded-md py-2 text-xl">
+              Apply Now
+            </button>
+          </a>
         </div>
       </div>
     </>

@@ -25,27 +25,16 @@ function Header() {
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="/students/dashboard">Dashboard</a>
+            <a href="/general/placementstats">Placement Details</a>
           </li>
           <li>
-            <a href="/students/placementstats">Placement Details</a>
+            <a href="/general/allclubs">Clubs</a>
           </li>
           <li>
-            <a href="/students/allclubs">Clubs</a>
+            <a href="/general/howitworks">How to use?</a>
           </li>
           <li>
-            <a href="/students/profile">Profile</a>
-          </li>
-          <li>
-            <a href="/recruiter/login">Recruiter Admin Login</a>
-          </li>
-          <li>
-            <a href="/students/resource/process">Resources</a>
-          </li>
-          <li>
-            <a href="/"
-              
-            >Logout</a>
+            <a href="/general/team">About us</a>
           </li>
         </ul>
       </div>

@@ -1,12 +1,11 @@
 import React from "react";
-import Header from "../components/Header/Header";
 import Sidebar from "../components/ResourcePageComponents/Sidebar";
-
+import StudentHeader from '../components/Header/StudentHeader.jsx';
 
 const Resources = () => {
     return ( 
         <>
-            <Header />
+            <StudentHeader/>
             <Sidebar />
         </>
      );

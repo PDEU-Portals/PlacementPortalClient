@@ -1,4 +1,4 @@
-import Header from "../Header/Header";
+import StudentHeader from "../Header/StudentHeader";
 import {
   MDBCard,
   MDBCardBody,
@@ -14,7 +14,7 @@ const Job_Boarding = () => {
 
   return (
     <>
-      <Header />
+      <StudentHeader />
       <div className="text-5xl text-orange-400 m-11  ">
         Opportunity Boarding <br />
         Page

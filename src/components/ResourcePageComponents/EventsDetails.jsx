@@ -1,14 +1,14 @@
 import React from "react";
 import Sidebar  from './Sidebar';
 import './Css/EventDetails.css'
-import Header from "../Header/Header";
+import StudentHeader from "../Header/StudentHeader";
 
 const EventDetails = () => {
 
 
     return ( 
         <>
-        <Header />
+        <StudentHeader />
         <div className="event-details-container">
         <Sidebar />
             <div className="Event-details">

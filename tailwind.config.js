@@ -27,6 +27,9 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    screens:{
+      'sm':{ 'min':'0px','max':'815px'}
+    },
     extend: {},
   },
   plugins: [],

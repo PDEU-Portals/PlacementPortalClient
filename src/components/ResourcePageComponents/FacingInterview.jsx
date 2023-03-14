@@ -1,6 +1,6 @@
 import React from "react";
 import "./Css/FacingInterview.css";
-import Header from "../Header/Header";
+import StudentHeader from "../Header/StudentHeader";
 import Sidebar from "./Sidebar";
 import { Link } from "react-router-dom";
 import img from "./Images/interview-pic.jpg";
@@ -8,7 +8,7 @@ import img from "./Images/interview-pic.jpg";
 const FacingInterview = () => {
   return (
     <>
-      <Header />
+      <StudentHeader />
       <div className="facing-interview-main">
         <Sidebar />
         <div className="facing-interview-container">

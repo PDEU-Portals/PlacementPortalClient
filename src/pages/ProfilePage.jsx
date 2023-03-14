@@ -3,17 +3,15 @@ import { AcademicDetails } from '../components/Profile Page Component/AcademicDe
 import { Projects } from '../components/Profile Page Component/Projects';
 import { About } from '../components/Profile Page Component/About';
 import { Skills } from '../components/Profile Page Component/Skills';
-import { Clubs } from '../components/Profile Page Component/Clubs';
 import { SocialMedia } from '../components/Profile Page Component/SocialMedia';
 import { Profile } from '../components/Profile Page Component/Profile';
-import Header from "../components/Header/Header"
 import Footer from "../components/Footer"
-import CreateTable from '../components/Table/PlacementTable';
+import StudentHeader from '../components/Header/StudentHeader.jsx';
 
 export const ProfilePage = () => {
   return (
     <div>
-      <Header />
+      <StudentHeader />
       <Profile />
       <AcademicDetails />
       <About />

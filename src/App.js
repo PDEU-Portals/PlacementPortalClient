@@ -6,9 +6,7 @@ import Dashboard from "./pages/Dashboard.jsx"
 import {Route, Routes} from "react-router-dom"
 import ClubIntro from "./components/ClubInfo/ClubIntro.jsx"
 import PlacementStats from "./components/PlacementStats/PlacementStats.jsx"
-import Resumebuilder from "./components/ResumeBuilder/Resumebuilder.jsx"
 import AllClubs from "./components/AllCubs.jsx"
-import ApplyPage from "./pages/ApplyPage.jsx"
 import RecruiterLogin from "./pages/RecruiterLogin.jsx"
 import RecruiterAdminPanel from "./pages/RecruiterAdminPanel.jsx"
 import PostJob from "./pages/PostJob.jsx"
@@ -27,6 +25,7 @@ import Form from "./components/JobBoarding/Form.jsx"
 import CompanyProfile from "./components/JobPosting/CompanyProfile.jsx"
 import ExperiencePage from './pages/ExperiencePage.jsx';
 import JobLists from  './components/JobPosting/JobLists';
+import Body from "./components/ResumeBuilder/Body/Body.js"
 // import { Profile } from "./components/Profile Page Component/Profile.jsx";
 
 
@@ -42,9 +41,8 @@ function App() {
         <Route path="/students/community" element={<CardPage data={data} />} />
         <Route path="/students/club" element={<ClubIntro />} />
         <Route path="/students/placementstats" element={<PlacementStats />} />
-        <Route path="/students/resumebuilder" element={<Resumebuilder />} />
+        <Route path="/students/resumebuilder" element={<Body />} />
         <Route path="/students/allclubs" element={<AllClubs />} />
-        <Route path="/students/applypage" element={<ApplyPage />} />
         <Route path="/recruiter/login" element={<RecruiterLogin />} />
         <Route path="/recruiter/adminpanel" element={<RecruiterAdminPanel />} />
         <Route path="/recruiter/postjob" element={<PostJob />} />

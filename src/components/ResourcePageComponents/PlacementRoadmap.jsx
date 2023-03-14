@@ -1,12 +1,12 @@
 import React from "react";
-import Header from "../Header/Header";
+import StudentHeader from "../Header/StudentHeader";
 import "./Css/PlacementRoadmap.css";
 import Sidebar from "./Sidebar";
 
 const PlacementRoadmap = () => {
   return (
     <>
-      <Header />
+      <StudentHeader />
       <div className="main-cotainer">
         <Sidebar />
         <div className="roadmap-container">

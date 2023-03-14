@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../Header/Header";
+import StudentHeader from "../Header/StudentHeader";
 import Sidebar from "./Sidebar";
 import "./Css/Resume.css";
 import ReactPlayer from "react-player";
@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const ResumeInfo = () => {
   return (
     <>
-      <Header />
+      <StudentHeader />
       <div className="main-resume-container">
         <Sidebar />
         <div>

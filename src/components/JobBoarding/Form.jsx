@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Header from "../Header/Header";
+import StudentHeader from "../Header/StudentHeader";
 import './Form.css';
 
 // function Form() {
@@ -266,7 +266,7 @@ const Form = () => {
 
   return (
     <>
-    <Header />
+    <StudentHeader />
     <form onSubmit={handleSubmit} className="application-form">
   <div className="form-field">
     <label htmlFor="email">Email:</label>

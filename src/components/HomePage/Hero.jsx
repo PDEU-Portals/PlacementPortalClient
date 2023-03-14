@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "./Form";
+
 export default function Hero() {
   return (
     <div className="flex justify-center pt-20 h-[60rem] bg-[url('./images/Homepage_bg.png')]  bg-no-repeat bg-cover font-Poppins">
@@ -10,7 +10,6 @@ export default function Hero() {
           <span className="text-blue-900 text-[6rem]">PDEU</span>
         </h2>{" "}
       </div>
-      <Form />
     </div>
   );
 }

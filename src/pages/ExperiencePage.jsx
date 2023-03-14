@@ -1,11 +1,13 @@
-import { useState } from "react";
-import Header from "../components/Header/Header";
+import { useState, useEffect } from "react";
+import StudentHeader from "../components/Header/StudentHeader";
 import './ExperiencePage.css';
+import axios from "axios";
 
 function ExperiencePage() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [experiences, setExperiences] = useState([]);
+  // const [userData, setUserData] = useState({});
 
   // Assume that user data is retrieved from backend and stored in this object
   const userData = {
@@ -13,16 +15,64 @@ function ExperiencePage() {
     email: "john@example.com"
   };
 
+
+  // This code to fetch user's data from backend
+  // useEffect(() => {
+  //   async function fetchUserData() {
+  //     try {
+  //       const response = await axios.get("/api/v1/user");
+  //       setUserData(response.data);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   }
+  //   fetchUserData();
+  // }, []);
+
   const handleShare = () => {
+    
+    console.log('Button is clicked')
     const newExperience = { title, description };
     setExperiences([...experiences, newExperience]);
     setTitle("");
     setDescription("");
   };
 
+  // This code will fetch all experiences stored in Database
+  // useEffect(() => {
+  //   const fetchExperiences = async () => {
+  //     try {
+  //       const { data } = await axios.get("http://localhost:5000/api/v1/experiences");
+  //       setExperiences(data.experiences);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+
+  //   fetchExperiences();
+  // }, []);
+
+
+  // This code will send data given by user into back-end.
+  // const handleShare = async (event) => {
+  //   event.preventDefault();
+
+  //   try {
+  //     const { data } = await axios.post("http://localhost:5000/api/v1/experiences", {
+  //       title,
+  //       description
+  //     });
+  //     setExperiences([...experiences, data.experience]);
+  //     setTitle("");
+  //     setDescription("");
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
   return (
     <>
-    <Header />
+    <StudentHeader />
     <div className="container">
   <div className="form">
     <h1 className="title">Share your experience</h1>
@@ -35,6 +85,7 @@ function ExperiencePage() {
         onChange={(e) => setTitle(e.target.value)}
         className="input"
         placeholder="Enter a catchy title"
+        required 
       />
     </div>
     <div className="form-group">
@@ -45,6 +96,7 @@ function ExperiencePage() {
         onChange={(e) => setDescription(e.target.value)}
         className="textarea"
         placeholder="Write about your experience"
+        required
       ></textarea>
     </div>
     <div className="form-group">

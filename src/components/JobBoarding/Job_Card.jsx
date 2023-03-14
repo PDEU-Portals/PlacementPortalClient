@@ -104,7 +104,7 @@ const Job_Card = () => {
                 </div>
                 <div className="">
                   <button className=" ml-5 bg-slate-300 w-auto p-5  mr-5 rounded-3xl ">
-                    <a href="/students/resource/applyjob">
+                    <a href="/students/jobboarding/jobdetail/1">
                     Apply Now
                     </a>
                   </button>

@@ -1,6 +1,7 @@
 import React, {useEffect} from "react"
 import axios from "axios"
 import {Link, useNavigate, useLocation} from "react-router-dom"
+import Header from "../Header/Header"
 // axios.defaults.withCredentials = true
 export default function Form() {
   const navigate = useNavigate()
@@ -93,6 +94,8 @@ export default function Form() {
     }
   }
   return (
+    <>
+    <Header />
     <div className="form bg-[#1F3368] h-[400px]  rounded-2xl ml-20  mr-24 pl-4 opacity-[0.85] text-lg font-normal">
       <center>
         <h3 className="text-white m-0 pt-4 pb-[10px] pr-5 text-[2rem] mt-6 ">
@@ -132,6 +135,7 @@ export default function Form() {
             </p>
           </Link>
         </div>
+        <Link to="/">
         <button
           className="form__input submitbtn w-[380px] h-[50px] rounded-xl mb-2 focus:outline-none m-0 p-0 bg-orange-500 text-white text-2xl border-none mt-3 hover:text-orange hover:bg-white hover:text-black"
           type="submit"
@@ -139,7 +143,9 @@ export default function Form() {
         >
           Submit
         </button>
+        </Link>
       </form>
     </div>
+    </>
   )
 }
