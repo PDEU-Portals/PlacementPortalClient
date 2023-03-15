@@ -129,7 +129,7 @@ export const Profile = () => {
                             />
                           </p>
                         </div>
-                        <div className="editable-button ">
+                        <div className="editable-button">
                           <button onClick={handleSaveClick}>Save</button>
                           <button onClick={handleCancelClick}>Cancle</button>
                         </div>

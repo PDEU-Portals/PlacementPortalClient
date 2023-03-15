@@ -3,14 +3,14 @@ import React from "react";
 export default function Portal_info() {
   return (
     <div className="Portal_info h-[660px] pl-8 pr-8">
-      <h2 className="mt-0 text-orange mr-8 text-[2rem] pt-12 mb-0 border-b-[3px] border-current  font-Poppins font-medium ">
+      <h2 className="mt-0 text-[#F68C1F] mr-8 text-[2rem] pt-12 mb-0 border-b-[3px] border-current  font-Poppins font-medium ">
         Portal Information
       </h2>
       <p className="text-base font-medium pt-4">
       When in a university, a student has to build his or her resume right from scratch. The course a student gets admitted in takes care of the fundamental knowledge required to develop that particular skill. Basically, this is taken care of by the academics taught at the institution. But, in today’s world, that alone is not enough. In the current market, many internships are available for students to enroll in, which helps them to strengthen their own profile. On the other hand, a student might even want to participate in conducting various research projects under expert guidance. This is where this “Placement Portal” comes in handy. It is a platform which can help a student in the best possible way by providing them with the correct guidance they seek. In a more generalized sense, this platform enables its users to create a strong resume for themselves through its various features discussed below.
       </p>
       <p className="text-base font-medium pt-4">
-        <h5 className="pb-4 text-xl">
+        <h5 className="pb-4 text-xl font-bold">
       PORTAL FEATURES :-
       </h5>
       <ol className="list-decimal">

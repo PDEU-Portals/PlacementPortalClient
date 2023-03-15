@@ -3,7 +3,7 @@ import React from "react";
 export default function Infopage() {
   return (
     <div className="Infopage h-[60rem] pl-8 pr-8 bg-[url('./images/infopage.png')] bg-no-repeat bg-bottom bg-[length:full_431px] font-Poppins">
-      <h2 className="mt-0 text-orange mr-8 text-[2rem] pt-12 mb-0 border-b-[3px] border-current font-medium">
+      <h2 className="mt-0 text-[#F68C1F] mr-8 text-[2rem] pt-12 mb-0 border-b-[3px] border-current font-medium">
         Information about Pdeu
       </h2>
       <p className="text-base font-medium pt-4 ">
