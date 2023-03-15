@@ -129,7 +129,7 @@ export const Profile = () => {
                             />
                           </p>
                         </div>
-                        <div className="editable-button">
+                        <div className="editable-button ">
                           <button onClick={handleSaveClick}>Save</button>
                           <button onClick={handleCancelClick}>Cancle</button>
                         </div>
@@ -181,7 +181,7 @@ export const Profile = () => {
                   <button
                     className="text-blue-900 hover:text-blue-700 p-1 sm:p-2  inline-flex items-center ">
                       <img className='w-12 rounded-3xl' src={imagereact} alt="" />
-                      Dockler
+                      Docker
                   </button>
                   </div>
                 </div> */}
