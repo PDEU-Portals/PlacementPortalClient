@@ -66,7 +66,7 @@ export const Profile = () => {
 
   return (
     <div className='mt-24'>
-      <div className=" bg-gray-200  rounded-3xl mx-4 my-4 flex flex-wrap items-center justify-center">
+      <div className=" bg-gray-200 pb-4 pt-4 rounded-3xl mx-4 my-4 flex flex-wrap items-center justify-center">
         <div className="container  bg-white rounded shadow-lg transform duration-200 easy-in-out m-12">
           <div className="h-2/4 sm:h-64 overflow-hidden">
             <img className="w-full rounded-t"
@@ -131,7 +131,7 @@ export const Profile = () => {
                         </div>
                         <div className="editable-button">
                           <button onClick={handleSaveClick}>Save</button>
-                          <button onClick={handleCancelClick}>Cancle</button>
+                          <button onClick={handleCancelClick}>Cancel</button>
                         </div>
                     </div>
                       </>
@@ -153,7 +153,7 @@ export const Profile = () => {
                          </p>
                       </div>
                       <div className="edit-button">
-                        <button onClick={handleEditClick}>Edit</button>
+                        <button onClick={handleEditClick} className="w-[5rem]">Edit</button>
                       </div>
                     </div>    
                     </>
