@@ -141,7 +141,7 @@ const router = createBrowserRouter([
     element: <Form />,
   },
   {
-    path: "/recruiter/companyprofile",
+    path: "/recruiter/companyprofile/:id",
     element: <CompanyProfile />,
   },
   {

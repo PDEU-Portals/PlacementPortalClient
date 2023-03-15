@@ -64,7 +64,7 @@ function App() {
         <Route path="/students/resource/eventdetails" element={<EventDetails />} />
         <Route path="/students/resource/jobboarding" element={<Job_boarding />} />
         <Route path="/students/resource/applyjob" element={<Form />} />
-        <Route path="/recruiter/companyprofile" element={<CompanyProfile />} />
+        <Route path="/recruiter/companyprofile/:id" element={<CompanyProfile />} />
         <Route path="/student/experiencesharing" element={<ExperiencePage />} />
         <Route path="/recruiter/joblists" element={<JobLists />} />
       </Routes>

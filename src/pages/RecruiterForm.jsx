@@ -29,7 +29,7 @@ function RecruiterForm() {
       eligibilityCriteria
     };
     // Send POST request to backend API with data
-    fetch('/api/recruiter-form', {
+    fetch('http://localhost:5000/api/v1/recruiter/createJob', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)

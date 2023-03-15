@@ -53,20 +53,22 @@ export default function Recruiter_Login() {
 
     if (email === "" || password === "") {
       alert("Please fill the required Field");
-    } else if (
-      (email.split("@").length != 2 ||
-        email.split(".").length != 5 ||
-        email.split(" ").length != 1 ||
-        email.split("+").length != 1 ||
-        email.split("-").length != 1 ||
-        email.split("_").length != 1) &&
-      email.split("@")[1] !== "sot.pdpu.ac.in"
-    ) {
-      alert("Please enter a valid PDEU email");
-    } else {
+    } 
+    // else if (
+    //   (email.split("@").length != 2 ||
+    //     email.split(".").length != 5 ||
+    //     email.split(" ").length != 1 ||
+    //     email.split("+").length != 1 ||
+    //     email.split("-").length != 1 ||
+    //     email.split("_").length != 1) &&
+    //   email.split("@")[1] !== "sot.pdpu.ac.in"
+    // ) {
+    //   alert("Please enter a valid PDEU email");
+    // } 
+    else {
       try {
         const data = await axios.post(
-          "http://localhost:5000/api/v1/login",
+          "http://localhost:5000/api/v1/recruiter/login",
           {
             email,
             password,
@@ -77,7 +79,8 @@ export default function Recruiter_Login() {
         );
         console.log(data);
         if (data.status === 200) {
-          navigate("/students/profile");
+          localStorage.setItem('id', data.data.recruiter._id)
+          navigate(`/recruiter/companyprofile/${data.data.recruiter._id}`);
         }
       } catch (error) {
         if (error.response) {
@@ -131,14 +134,14 @@ export default function Recruiter_Login() {
             value={password}
             onChange={handlePass}
           />
-          Company Name
+          {/* Company Name
           <input
             className="form__input w-[380px] h-[50px] rounded-xl mb-2 bg-white focus:outline-none text-xl text-black pl-1"
             type="text"
             required
             value={companyName}
             onChange={handleCompanyName}
-          />
+          /> */}
           <div className="form__newdata flex justify-between mr-4 w-[380px] text-lg">
             <p>
               <a

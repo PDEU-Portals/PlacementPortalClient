@@ -29,7 +29,7 @@ function  Header() {
             <a href="/recruiter/postjob">Create Job</a>
           </li>
           <li>
-            <a href="/recruiter/companyprofile">Profile</a>
+            <a href={`/recruiter/companyprofile/${localStorage.getItem('id')}`}>Profile</a>
           </li>
           <li>
             <a href="/">Logout</a>
