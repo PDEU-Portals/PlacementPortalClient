@@ -53,22 +53,20 @@ export default function Recruiter_Login() {
 
     if (email === "" || password === "") {
       alert("Please fill the required Field");
-    } 
-    // else if (
-    //   (email.split("@").length != 2 ||
-    //     email.split(".").length != 5 ||
-    //     email.split(" ").length != 1 ||
-    //     email.split("+").length != 1 ||
-    //     email.split("-").length != 1 ||
-    //     email.split("_").length != 1) &&
-    //   email.split("@")[1] !== "sot.pdpu.ac.in"
-    // ) {
-    //   alert("Please enter a valid PDEU email");
-    // } 
-    else {
+    } else if (
+      (email.split("@").length != 2 ||
+        email.split(".").length != 5 ||
+        email.split(" ").length != 1 ||
+        email.split("+").length != 1 ||
+        email.split("-").length != 1 ||
+        email.split("_").length != 1) &&
+      email.split("@")[1] !== "sot.pdpu.ac.in"
+    ) {
+      alert("Please enter a valid PDEU email");
+    } else {
       try {
         const data = await axios.post(
-          "http://localhost:5000/api/v1/recruiter/login",
+          "http://localhost:5000/api/v1/login",
           {
             email,
             password,
@@ -79,8 +77,7 @@ export default function Recruiter_Login() {
         );
         console.log(data);
         if (data.status === 200) {
-          localStorage.setItem('id', data.data.recruiter._id)
-          navigate(`/recruiter/companyprofile/${data.data.recruiter._id}`);
+          navigate("/students/profile");
         }
       } catch (error) {
         if (error.response) {
@@ -109,18 +106,19 @@ export default function Recruiter_Login() {
     <>
     
     <Header />
+    
     <div className="login-img">
-      <img className="absolute opacity-[0.8]" src="https://pdpu.ac.in/infra/3.jpg" alt="" />
-      <div className="form float-right bg-[#1F3368] h-[500px]  rounded-2xl  m-52  mt-40 pl-4 opacity-[0.9] text-lg font-normal relative">
-        <center>
-          <h3 className="text-white m-0 pt-4 pb-[10px] pr-5 text-[2rem] mt-6 ">
+      <img className="opacity-[0.8]  h-[85.5%] absolute" src="https://pdpu.ac.in/infra/3.jpg" alt="" />
+      <div className="form w-[28%] float-right bg-[#1F3368] h-[100%]  rounded-2xl  m-20 mr-44 pl-4 opacity-[0.9] text-lg font-normal relative">
+        
+          <h3 className="text-white m-0 text-center pt-4  pb-[10px] pr-5 text-[2rem] mt-4 ">
             Recruiter Login
-          </h3>
-        </center>
-        <form className="ml-[0.3rem] flex flex-col text-orange-500">
+          </h3> 
+        
+        <form className="ml-[0.3rem] flex flex-col text-orange-500 ">
           Email
           <input
-            className="form__input w-[380px] h-[50px] rounded-xl mb-2 bg-white focus:outline-none text-xl text-black pl-1"
+            className="form__input w-[95%] h-auto rounded-xl mb-2 bg-white focus:outline-none text-xl text-black pl-1"
             type="email"
             required
             value={email}
@@ -128,21 +126,21 @@ export default function Recruiter_Login() {
           />
           Password
           <input
-            className="form__input w-[380px] h-[50px] rounded-xl mb-2 bg-white focus:outline-none text-xl  text-black pl-1"
+            className="form__input w-[95%] h-auto rounded-xl mb-2 bg-white focus:outline-none text-xl  text-black pl-1"
             type="password"
             required
             value={password}
             onChange={handlePass}
           />
-          {/* Company Name
+          Company Name
           <input
-            className="form__input w-[380px] h-[50px] rounded-xl mb-2 bg-white focus:outline-none text-xl text-black pl-1"
+            className="form__input w-[95%] h-auto rounded-xl mb-2 bg-white focus:outline-none text-xl text-black pl-1"
             type="text"
             required
             value={companyName}
             onChange={handleCompanyName}
-          /> */}
-          <div className="form__newdata flex justify-between mr-4 w-[380px] text-lg">
+          />
+          <div className="form__newdata flex justify-between mr-4 w-[95%]  text-lg">
             <p>
               <a
                 className="no-underline text-orange text-lg hover:text-white"
@@ -159,16 +157,16 @@ export default function Recruiter_Login() {
             </Link>
           </div>
           <button
-            className="form__input submitbtn w-[380px] h-[50px] rounded-xl mb-2 focus:outline-none m-0 p-0 bg-orange-500 text-white text-2xl border-none mt-3 hover:text-orange hover:bg-white hover:text-black"
+            className="form__input submitbtn w-[95%] h-[50px] rounded-xl mb-2 focus:outline-none m-0 p-0 bg-orange-500 text-white text-2xl border-none mt-3 hover:text-orange hover:bg-white hover:text-orange-500"
             type="submit"
             onClick={(e) => handleLogin(email, password, e)}
           >
             Submit
           </button>
-          <Link to='/recruiter/homepage'>Visit Recruiter Portal</Link>
+          <Link to='/recruiter/homepage' className="pb-8 hover:text-white">Visit Recruiter Portal</Link>
         </form>
       </div>
       </div>
-    </>
-  );
+    </>
+  );
 }
