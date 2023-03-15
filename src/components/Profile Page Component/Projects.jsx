@@ -281,7 +281,7 @@ export const Projects = () => {
                 <div>
             <table>
         <thead>
-          <tr>
+          <tr >
             <th>Project name</th>
             <th>Tech Stack Used</th>
             <th>Faculty Member</th>
@@ -289,7 +289,7 @@ export const Projects = () => {
             <th>Action</th>
           </tr>
         </thead>
-        <tbody className='table-body'>
+        <tbody className='table-body '>
           {rows.map((row, index) => (
             <tr key={index}>
               <td>{row.projectName}</td>

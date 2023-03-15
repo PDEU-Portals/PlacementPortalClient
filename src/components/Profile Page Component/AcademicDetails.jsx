@@ -33,16 +33,16 @@ export const AcademicDetails = () => {
                 {  editMode ? (
                     <>
                         <>
-                     <div className="table-head">
+                     <div className="table-head flex justify-between p-4 font-bold ">
                     <div className="heading">
-                        <h2 className="mx-8 font-bold py-2 px-0">Academic Details</h2> 
+                        <h2 className=" font-bold py-2 px-0">Academic Details</h2> 
                     </div>
                     <div className="buttons">
-                        <button onClick={handleSaveClick}>
+                        <button onClick={handleSaveClick} className="mr-16">
                             Save
                         </button>
-                        <button onClick={handleCancleClick}>
-                            Cancle 
+                        <button onClick={handleCancleClick} className="pr-2">
+                            Cancel 
                         </button>
                     </div>
                 </div>
@@ -99,12 +99,12 @@ export const AcademicDetails = () => {
                      
                 ) : (
                     <>
-                    <div className="table-head">
+                    <div className="table-head flex justify-between">
                     <div className="heading">
-                        <h2 className="mx-8 font-bold py-2 px-0">Academic Details</h2> 
+                        <h2 className="mx-2 font-bold px-0">Academic Details</h2> 
                     </div>
                     <div className="edit-button">
-                        <button id='edit-button-details' onClick={handleEditClick}>
+                        <button id='edit-button-details' className='p-4 pr-8 font-bold' onClick={handleEditClick}>
                             Edit
                         </button>
                     </div>

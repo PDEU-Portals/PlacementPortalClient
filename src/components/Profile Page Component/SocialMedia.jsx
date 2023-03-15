@@ -34,15 +34,15 @@ export const SocialMedia = () => {
       <div className="bg-gray-200 rounded-3xl mx-4 my-4">
         {editMode ? (
           <>
-                <div className="social-media-header">
+                <div className="social-media-header flex justify-between p-4 font-bold">
                 <div className="heading">
-                  <h2 className="mx-8 font-bold py-2 px-0">Social Media</h2>
+                  <h2 className="font-bold ">Social Media</h2>
                 </div>
                 <div className="social-media-button">
-                <button onClick={handleSaveClick}>
+                <button onClick={handleSaveClick} className="mr-16 ">
                   Save
                 </button>
-                <button onClick={handleCancleClick}>
+                <button onClick={handleCancleClick} className="pr-2">
                   Cancel
                 </button>
               </div>
@@ -53,7 +53,7 @@ export const SocialMedia = () => {
                       <div className="overflow-x-auto">
                         <table className="min-w-full">
                           <tbody>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><img src={imageinsta} className="w-8 h-8 rounded-xl display: inline-block" alt="" /> 
+                            <td className="px-20 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><img src={imageinsta} className="w-8 h-8 rounded-xl display: inline-block" alt="" /> 
                               <input type="text"
                               name='instagram'
                               id='instagram'
@@ -63,7 +63,7 @@ export const SocialMedia = () => {
                               />
                             </td>
 
-                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><img src={imagelinkedin} className="w-8 h-8 rounded-xl display: inline-block" alt="" /> 
+                            <td className="px-20 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><img src={imagelinkedin} className="w-8 h-8 rounded-xl display: inline-block" alt="" /> 
                                
                               <input type="text"
                                 name='linkedin'
@@ -94,12 +94,12 @@ export const SocialMedia = () => {
           </>
         ) : (
           <>  
-              <div className="social-media-header">
+              <div className="social-media-header flex justify-between">
                 <div className="heading">
-                  <h2 className="mx-8 font-bold py-2 px-0">Social Media</h2>
+                  <h2 className="font-bold">Social Media</h2>
                 </div>
                 <div className="social-media-button">
-                <button onClick={handleEditClick}>
+                <button onClick={handleEditClick} className="p-4 pr-8 font-bold">
                   Edit
                 </button>
               </div>
@@ -110,9 +110,9 @@ export const SocialMedia = () => {
                       <div className="overflow-x-auto">
                         <table className="min-w-full">
                           <tbody>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><img src={imageinsta} className="w-8 h-8 rounded-xl display: inline-block" alt="" /> aniketpatel0412</td>
+                            <td className="px-20 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><img src={imageinsta} className="w-8 h-8 rounded-xl display: inline-block" alt="" /> aniketpatel0412</td>
 
-                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><img src={imagelinkedin} className="w-8 h-8 rounded-xl display: inline-block" alt="" /> 
+                            <td className="px-20 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><img src={imagelinkedin} className="w-8 h-8 rounded-xl display: inline-block" alt="" /> 
                               <p> Aniket Patel</p>
                             </td>
 
