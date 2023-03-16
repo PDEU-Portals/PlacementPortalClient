@@ -306,7 +306,7 @@ const Form = () => {
   </div>
   <div className="form-field">
   <label htmlFor="resume">Resume:</label>
-  <input type="file" id="resume" onChange={(e) => setResume(e.target.files[0])} onClick={(e) => openFileInNewTab(e.target.files[0])} className="form-input" required />
+   <input type="file" id="resume" onChange={(e) => setResume(e.target.files[0])} onClick={(e) => openFileInNewTab(e.target.files[0])} className="form-input" required />
 </div>
   <div className="form-field">
     <label htmlFor="role">What Role you applying for:</label>

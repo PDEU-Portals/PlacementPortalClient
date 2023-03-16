@@ -38,6 +38,11 @@ const Register = () => {
     JSON.stringify(password)
     JSON.stringify(name)
     console.log(email, password, name)
+    
+    //
+    // Check name not empty while splitting on white spaces
+    //
+    
     try {
       // const {data} = await axios.post("http://localhost:5000/api/v1/login", {email,password})
       const data = await axios.post("http://localhost:5000/api/v1/Register", {email, password, name})

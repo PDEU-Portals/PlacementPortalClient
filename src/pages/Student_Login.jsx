@@ -42,6 +42,8 @@ export default function Recruiter_Login() {
   };
 
   const handleLogin = async (email, password, e) => {
+
+    console.log('Submit Button Clicked');
     e.preventDefault();
     JSON.stringify(email);
     JSON.stringify(password);
@@ -85,10 +87,12 @@ export default function Recruiter_Login() {
           } else {
             // Handle other status codes
             console.log("Error:", error.response.status);
+            alert('Something Went Wrong! Try again later')
           }
         } else {
           // Handle network errors
           console.log("Error: Network Error");
+          alert('Something Went Wrong! Try again later');
         }
       }
     }
@@ -101,17 +105,17 @@ export default function Recruiter_Login() {
     <>
     <Header />
     <div className="login-img">
-      <img className="absolute opacity-[0.8]" src="https://pdpu.ac.in/infra/3.jpg" alt="" />
-      <div className="form float-right bg-[#1F3368] h-[400px]  rounded-2xl  m-52 mt-40 pl-4 opacity-[0.9] text-lg font-normal relative">
+      <img className="absolute h-[85.5%] opacity-[0.8]" src="https://pdpu.ac.in/infra/3.jpg" alt="" />
+      <div className="form float-right bg-[#1F3368] w-[28%] h-[100%]  rounded-2xl  m-20 mr-44 pl-4 opacity-[0.9] text-lg font-normal relative">
         <center>
-          <h3 className="text-white m-0 pt-4 pb-[10px] pr-5 text-[2rem] mt-6 ">
+          <h3 className="text-white m-0 pt-4 pb-[10px] pr-5 text-[2rem] mt-4 ">
             Student Login
           </h3>
         </center>
         <form className="ml-[0.3rem] flex flex-col text-orange-500">
           Email
           <input
-            className="form__input w-[380px] h-[50px] rounded-xl mb-2 bg-white focus:outline-none text-xl text-black pl-1"
+            className="form__input w-[95%] h-auto rounded-xl mb-2 bg-white focus:outline-none text-xl text-black pl-1"
             type="email"
             required
             value={email}
@@ -119,13 +123,13 @@ export default function Recruiter_Login() {
           />
           Password
           <input
-            className="form__input w-[380px] h-[50px] rounded-xl mb-2 bg-white focus:outline-none text-xl  text-black pl-1"
+            className="form__input w-[95%] h-auto rounded-xl mb-2 bg-white focus:outline-none text-xl  text-black pl-1"
             type="password"
             required
             value={password}
             onChange={handlePass}
           />
-          <div className="form__newdata flex justify-between mr-4 w-[380px] text-lg">
+          <div className="form__newdata flex justify-between mr-4 w-[95%] text-lg">
             <p>
               <a
                 className="no-underline text-orange text-lg hover:text-white"
@@ -144,17 +148,17 @@ export default function Recruiter_Login() {
 
           
           <button
-            className="form__input submitbtn w-[380px] h-[50px] rounded-xl mb-2 focus:outline-none m-0 p-0 bg-orange-500 text-white text-2xl border-none mt-3 hover:text-orange hover:bg-white hover:text-black"
+            className="form__input submitbtn w-[95%] h-[50px] rounded-xl mb-2 focus:outline-none m-0 p-0 bg-orange-500 text-white text-2xl border-none mt-3 hover:text-orange hover:bg-white hover:text-orange-500"
             type="submit"
             onClick={(e) => handleLogin(email, password, e)}
           >
              Submit
           </button>
-          <Link to="/students/homepage"> Visit Student portal
+          <Link to="/students/homepage" className="pb-8 hover:text-white"> Visit Student portal
           </Link>
         </form>
       </div>
       </div>
-    </>
-  );
+    </>
+  );
 }

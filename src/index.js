@@ -3,20 +3,17 @@ import ReactDOM from "react-dom/client"
 import "./index.css"
 import data from "./components/Card/CardData"
 import App from "./App"
-import PlacementTable from "./components/Table/PlacementTable"
 import HowItWorks from './components/HowItWorks.jsx';
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import HomePage from "./pages/HomePage"
 import {ProfilePage} from "./pages/ProfilePage"
 import Dashboard from "./pages/Dashboard.jsx"
 import CardPage from "./pages/CardPage"
-import Resume from "./pages/BuildYourResume.jsx"
 import ClubIntro from "./components/ClubInfo/ClubIntro"
 import PlacementStats from "./components/PlacementStats/PlacementStats"
 import AllClubs from "./components/AllCubs"
 import RecruiterLogin from "./pages/RecruiterLogin"
 import RecruiterAdminPanel from "./pages/RecruiterAdminPanel"
-import PostJob from "./pages/PostJob"
 import TechnicalTestLogin from "./pages/TechnicalTestLogin"
 import JobPosting from "./components/JobPosting/JobPosting"
 import QuizApp from "./pages/QuizApp"
@@ -40,6 +37,8 @@ import Student_Login from './pages/Student_Login.jsx';
 import Recruiter_Login from "./pages/Recruiter_Login"
 import Admin_Login from "./pages/Admin_Login"
 import StudentHomePage from "./components/HomePage/StudentHomePage"
+import RecruiterHomePage from "./components/HomePage/RecruiterHomePage"
+import RecruiterForm from "./pages/RecruiterForm"
 
 axios.defaults.withCredentials = true
 
@@ -59,10 +58,6 @@ const router = createBrowserRouter([
   {
     path: "/students/community",
     element: <CardPage data={data} />,
-  },
-  {
-    path: "/studnets/resume",
-    element: <Resume />,
   },
   // {
   //   path: "/students/tables",
@@ -93,15 +88,11 @@ const router = createBrowserRouter([
     element: <RecruiterAdminPanel />,
   },
   {
-    path: "/recruiter/postjob",
-    element: <PostJob />,
-  },
-  {
     path: "/students/technicaltestlogin",
     element: <TechnicalTestLogin />,
   },
   {
-    path: "/recruiter/jobposting",
+    path: "/recruiter/jobinformation/:id",
     element: <JobPosting />,
   },
   {
@@ -111,12 +102,12 @@ const router = createBrowserRouter([
   {
     path: "/students/register",
     element: <Register />,
-  }
+  },
   // {
   //   path: "/students/resource",
   //   element: <Resources />,
   // }
-  ,
+  
   {
     path: "/students/resource/process",
     element: <PlacementRoadmap />,
@@ -150,7 +141,7 @@ const router = createBrowserRouter([
     element: <Form />,
   },
   {
-    path: "/recruiter/companyprofile",
+    path: "/recruiter/companyprofile/:id",
     element: <CompanyProfile />,
   },
   {
@@ -158,7 +149,7 @@ const router = createBrowserRouter([
     element: <ExperiencePage />,
   },
   {
-    path: "/recruiter/joblists",
+    path: "/recruiter/managejobs",
     element: <JobLists />,
   },
   {
@@ -188,6 +179,14 @@ const router = createBrowserRouter([
   {
     path: "/students/homepage",
     element: <StudentHomePage />,
+  },
+  {
+    path: "/recruiter/homepage",
+    element: <RecruiterHomePage />,
+  },
+  {
+    path: "/recruiter/postjob",
+    element: <RecruiterForm />,
   }
   // {
   //   path:"/resumeBuilder",

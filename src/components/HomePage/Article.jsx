@@ -62,7 +62,7 @@ export default function Article() {
               <li className="blue_button_item blue_button p-[8px] inline-block bg-blue-900 rounded mr-3 pl-3 border-solid border-[1px] border-blue-900 hover:bg-white hover:text-blue-800">
                 <a
                   href="#home"
-                  className="no-underline text-white text-lg hover:text-blue pr-2 pl-1"
+                  className="no-underline text-white text-lg hover:text-blue-900 pr-2 pl-1"
                 >
                   Home
                 </a>

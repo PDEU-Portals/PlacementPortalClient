@@ -25,7 +25,7 @@ export const About = () => {
     });
   }
   return (
-    <div className="bg-gray-200 rounded-3xl mx-4 my-4 ">
+    <div className="bg-gray-200 rounded-3xl mx-4 my-4 pb-4 ">
 
         {editMode ? (
           <>
@@ -40,7 +40,7 @@ export const About = () => {
                 <button className="bg-gray-200 hover:bg-gray-400 font-bold py-2 px-4 rounded mx-4"
                   onClick={handleEditCancle}
                 >
-                  Cancle
+                  Cancel
                 </button>
               </div>
             </div>

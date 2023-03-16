@@ -219,7 +219,8 @@
 
 
 import React, { useState } from 'react';
-import Header from '../Header/Header';
+import axios from 'axios';
+import RecruiterHeader from '../Header/RecruiterHeader';
 import './profilePage.css';
 
 function ProfilePage() {
@@ -290,7 +291,7 @@ function ProfilePage() {
     setIsEditMode(true);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async(event) => {
     event.preventDefault();
 
     const companyData = {
@@ -299,11 +300,19 @@ function ProfilePage() {
       companyWebsite,
       companyLinkedin,
       companyTwitter,
-      skills,
+      // skills,
       additionalInfo,
     };
 
     console.log(companyData);
+    const id = localStorage.getItem('id')
+
+    const data = await axios.post("http://localhost:5000/api/v1/recruiter/addDetails",{
+      companyData,
+      id
+    })
+
+    console.log(data)
 
     setCompanyName(event.target.elements.companyName.value);
     setCompanyDescription(event.target.elements.companyDescription.value);
@@ -316,7 +325,7 @@ function ProfilePage() {
 
   return (
     <>
-      <Header />
+      <RecruiterHeader />
       <div className="profile-page">
         <form onSubmit={handleSubmit}>
           <div className="form-group">
