@@ -92,7 +92,7 @@ const router = createBrowserRouter([
     element: <TechnicalTestLogin />,
   },
   {
-    path: "/recruiter/jobinformation",
+    path: "/recruiter/jobinformation/:id",
     element: <JobPosting />,
   },
   {
