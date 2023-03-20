@@ -5,46 +5,49 @@
     justify-content: center;
   }
   
-  .card {
+  .Work-Card {
     display: inline-block;
-    margin-left: 60px;
+    /* margin-left: 60px; */
     position: relative;
     width: 270px;
-    height: 370px;
+    height: 340px;
     overflow: hidden;
     border: 0px solid ;
     justify-content: center;
     top: 25px;
-    padding-left: 20px;
+    /* padding-left: 20px; */
+    /* padding: 20px; */
+    /* margin: 20px; */
+    margin-bottom: 5em;
   }
   
-  .card-image img {
+  .Work-Card-image img {
     width: 100%;
     height: auto;
   }
   
-  .card-content {
+  .Work-Card-content {
     position: absolute;
     bottom: 0;
     left: 0;
     padding: 20px;
     width: 100%;
-    background-color: rgba(0, 45, 112, 0.8);
-    color: #fff;
+    background-color: rgba(0, 45, 112, 0.9);
+    color: white;
     transform: translateY(100%);
     transition: transform 0.3s ease-in-out;
     justify-content: flex-end;
   }
-  .card-content a{
+  .Work-Card-content a{
     text-decoration: none;
     color: orange;
   }
   
-  .card:hover .card-content {
+  .Work-Card:hover .Work-Card-content {
     transform: translateY(0);
   }
   
-  .card-content h2 {
+  .Work-Card-content h2 {
     margin-top: 0;
   }
   
@@ -53,6 +56,6 @@
     margin-top: 20px;
   }
   
-  .card:hover .more-content {
+  .Work-Card:hover .more-content {
     display: block;
   }
