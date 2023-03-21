@@ -1,10 +1,15 @@
-import React, {useState, useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
+
 import image from './images/Rectangle19.png'
 import imagereact from './images/logo192.png'
 import './Css/Profile.css';
 import axios from 'axios';
 
 export const Profile = () => {
+
+
+  const [formdata, setformdata] = useState({initialformdata});
+  const [profile, setProfile] = useState({
 
   const [data, setData] = useState({});
   useEffect(() => {
@@ -24,21 +29,53 @@ export const Profile = () => {
 
   const [editMode, setEditMode] = useState(false);
   const [profile, setProfile] = useState({
-    name: data.name ? data.name : "John Doe",
-    email: data.email ? data.email : "Aniket.pce21@sot.pdpu.ac.in",
-    Skills: "Full Stack Web Developer",
-    description : "Hard Working, organized and skilled web develope, graphics designer and UI designer. With nice grip over web devlopment and giving strong attention to details. I have strong passion for coding and building innovative web solutions, and I have honed my skills through my participation in various hackathons and projects. I an eager to explore things and to create cutting-edge web solutions and making a difference in society, I am confident about my skills and experience to create impactfull projects for the social good.",
+    name: data.name
+    email: data.email,
+    Skills: data.skills,
+    description : data.description
   });
 
   // const handleEditClick = () => {
   //   setEditMode(true);
   // };
 
+
+  //This Use Effect is used for fetching the User Info
+useEffect(()=>{
+  axios.get('http://localhost:5000/api/v1/getinfo')
+  .then((res)=>{
+    setProfile(res.data);
+  })
+  .catch((err)=>{
+    res.send({err: err.message});
+  });
+}, []);
+
+
   const handleEditClick = () =>{
     console.log('edit button is clicked')
     setEditMode(true);
+
   }
+
+
+  //This useEffect is Used for updating the User Profile
+
+  //****************NEEDS ATTENTION*****************
+  useEffect(()=>{
+    axios.post('http://localhost:5000/api/v1/updateProfile')
+    .then((res)=>{
+      event.preventDefault();
+      handleEditClick();
+    })
+  })
+//**************************************************
+
+
+  const handleSaveClick = () => {
+
   const handleSaveClick = async (event) => {
+
     setEditMode(false);
   };
 
