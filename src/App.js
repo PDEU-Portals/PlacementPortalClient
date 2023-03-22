@@ -26,7 +26,7 @@ import ExperiencePage from './pages/ExperiencePage.jsx';
 import JobLists from  './components/JobPosting/JobLists';
 import Body from "./components/ResumeBuilder/Body/Body.js"
 // import { Profile } from "./components/Profile Page Component/Profile.jsx";
-
+import Error_404 from "./components/Error_404/Error"
 
 function App() {
   return (
@@ -67,6 +67,7 @@ function App() {
         <Route path="/recruiter/companyprofile/:id" element={<CompanyProfile />} />
         <Route path="/student/experiencesharing" element={<ExperiencePage />} />
         <Route path="/recruiter/joblists" element={<JobLists />} />
+        <Route path="*" element={<Error_404 />} />
       </Routes>
     </div>
   )

@@ -8,40 +8,38 @@ import axios from 'axios';
 export const Profile = () => {
 
 
-  const [formdata, setformdata] = useState({initialformdata});
-  const [profile, setProfile] = useState({
-
+  // const [formdata, setformdata] = useState(initialformdata);
   const [data, setData] = useState({});
+  const [editMode, setEditMode] = useState(false);
+  const [profile, setProfile] = useState({});
+  
   useEffect(() => {
     const fetchData = async () => {
-    try {
-    const response = await axios.get(
-    "http://localhost:5000/api/v1/getinfo"
-    );
-    setData(response.data);
-    console.log(response.data);
-    } catch (err) {
-    console.log(err);
-    }
+      try {
+        const response = await axios.get("http://localhost:5000/api/v1/getinfo");
+        setData(response.data);
+        console.log(response.data);
+        setProfile({
+          name: response.data.name,
+          email: response.data.email,
+          Skills: response.data.skills,
+          description: response.data.description
+        });
+      } catch (err) {
+        console.log(err);
+      }
     };
     fetchData();
-    }, []);
-
-  const [editMode, setEditMode] = useState(false);
-  const [profile, setProfile] = useState({
-    name: data.name
-    email: data.email,
-    Skills: data.skills,
-    description : data.description
-  });
-
+  }, []);
+  
+  
   // const handleEditClick = () => {
   //   setEditMode(true);
   // };
 
 
   //This Use Effect is used for fetching the User Info
-useEffect(()=>{
+useEffect((req, res)=>{
   axios.get('http://localhost:5000/api/v1/getinfo')
   .then((res)=>{
     setProfile(res.data);
@@ -62,13 +60,13 @@ useEffect(()=>{
   //This useEffect is Used for updating the User Profile
 
   //****************NEEDS ATTENTION*****************
-  useEffect(()=>{
-    axios.post('http://localhost:5000/api/v1/updateProfile')
-    .then((res)=>{
-      event.preventDefault();
-      handleEditClick();
-    })
-  })
+  // useEffect(()=>{
+  //   axios.post('http://localhost:5000/api/v1/updateProfile')
+  //   .then((res)=>{
+  //     event.preventDefault();
+  //     handleEditClick();
+  //   })
+  // })
 //**************************************************
 
 
@@ -230,6 +228,5 @@ useEffect(()=>{
 
     </div>
   )
+              }
 }
-
-export default Profile;
