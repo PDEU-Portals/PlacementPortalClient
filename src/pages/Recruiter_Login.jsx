@@ -54,17 +54,17 @@ export default function Recruiter_Login() {
     if (email === "" || password === "") {
       alert("Please fill the required Field");
     } 
-    else if (
-      (email.split("@").length != 2 ||
-        email.split(".").length != 5 ||
-        email.split(" ").length != 1 ||
-        email.split("+").length != 1 ||
-        email.split("-").length != 1 ||
-        email.split("_").length != 1) &&
-      email.split("@")[1] !== "sot.pdpu.ac.in"
-    ) {
-      alert("Please enter a valid PDEU email");
-    }
+    // else if (
+    //   (email.split("@").length != 2 ||
+    //     email.split(".").length != 5 ||
+    //     email.split(" ").length != 1 ||
+    //     email.split("+").length != 1 ||
+    //     email.split("-").length != 1 ||
+    //     email.split("_").length != 1) &&
+    //   email.split("@")[1] !== "sot.pdpu.ac.in"
+    // ) {
+    //   alert("Please enter a valid PDEU email");
+    // }
     else {
       try {
         const data = await axios.post(

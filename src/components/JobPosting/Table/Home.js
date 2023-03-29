@@ -8,9 +8,13 @@ import data from './dummyData.json';
 import { useState } from 'react';
 
 
-function Home() {
+function Home({tableData}) {
 
     const [Employees,setEmployees] = useState(data);
+
+    if(tableData){
+        setEmployees(tableData)
+    }
 
     let history = useNavigate();
 

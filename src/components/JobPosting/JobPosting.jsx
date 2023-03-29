@@ -16,18 +16,18 @@ const JobPosting = () => {
     React.useEffect(() => {
         const getJob = async() => {
             const response = await axios.get(`http://localhost:5000/api/v1/recruiter/getJob/${id}`,{
-                params:{
-                    id
-                }
+                // params:{
+                //     id
+                // }
             })
             // console.log(response)
             setJob(response.data)
-            // console.log(job)
+            // console.log(job.applications)
         }
         getJob()
-    })
+    },[])
 
-    console.log(job)
+    console.log(job.applicants)
 
 
 
@@ -48,7 +48,7 @@ const JobPosting = () => {
                     <button className='jobSearch-title'>A to Z</button>
                 </a>
             </div>
-            <Table/>
+            <Table data={job.applicants}/>
             <Footer/>
         </>
     )

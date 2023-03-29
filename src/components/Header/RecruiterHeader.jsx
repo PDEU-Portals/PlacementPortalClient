@@ -2,9 +2,19 @@ import React, { useState} from "react";
 import logo from "../../images/navLogo.png";
 import styles from "./Header.module.css";
 import './Header.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function  Header() {
+
+  const navigate = useNavigate()
+
+  const handleLogout = async() => {
+    const res = await axios.get(`http://localhost:3000/api/v1/recruiter/logout`)
+    if(res.status == 200){
+      navigate("/")
+    }
+  }
 
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -32,7 +42,7 @@ function  Header() {
             <a href={`/recruiter/companyprofile/${localStorage.getItem('id')}`}>Profile</a>
           </li>
           <li>
-            <a href="/">Logout</a>
+            <a target="#" onClick={handleLogout}>Logout</a>
           </li>
         </ul>
       </div>

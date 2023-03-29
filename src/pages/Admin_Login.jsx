@@ -47,19 +47,20 @@ export default function Admin_Login() {
     JSON.stringify(email);
     JSON.stringify(password);
 
-    if (email === "" || password === "") {
-      alert("Please fill the required Field");
-    } else if (
-      (email.split("@").length != 2 ||
-        email.split(".").length != 5 ||
-        email.split(" ").length != 1 ||
-        email.split("+").length != 1 ||
-        email.split("-").length != 1 ||
-        email.split("_").length != 1) &&
-      email.split("@")[1] !== "sot.pdpu.ac.in"
-    ) {
-      alert("Please enter a valid PDEU email");
-    } else {
+    // if (email === "" || password === "") {
+    //   alert("Please fill the required Field");
+    // } else if (
+    //   (email.split("@").length != 2 ||
+    //     email.split(".").length != 5 ||
+    //     email.split(" ").length != 1 ||
+    //     email.split("+").length != 1 ||
+    //     email.split("-").length != 1 ||
+    //     email.split("_").length != 1) &&
+    //   email.split("@")[1] !== "sot.pdpu.ac.in"
+    // ) {
+    //   alert("Please enter a valid PDEU email");
+    // } 
+    // else {
       try {
         const data = await axios.post(
           "http://localhost:5000/api/v1/login",
@@ -92,7 +93,7 @@ export default function Admin_Login() {
           console.log("Error: Network Error");
         }
       }
-    }
+    // }
   };
 
   const handleLoginClick = () => {

@@ -3,10 +3,10 @@ import Home from './Home'
 // import 'bootstrap/dist/css/bootstrap.min.css';
                     
 
-const Table = () => {
+const Table = ({data}) => {
   return (
     <>
-        <Home/>
+        <Home tableData = {data}/>
     </>
   )
 }
