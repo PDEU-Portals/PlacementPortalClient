@@ -39,6 +39,7 @@ import Admin_Login from "./pages/Admin_Login"
 import StudentHomePage from "./components/HomePage/StudentHomePage"
 import RecruiterHomePage from "./components/HomePage/RecruiterHomePage"
 import RecruiterForm from "./pages/RecruiterForm"
+import AdminTable from "./components/AdminTable/AdminTable"
 import Error_404 from "./components/Error_404/Error"
 
 axios.defaults.withCredentials = true
@@ -190,14 +191,14 @@ const router = createBrowserRouter([
     element: <RecruiterForm />,
   },
   {
+    path:"/admin",
+    element: <AdminTable/>
+  },
+  {
     path:"*", 
     element: <Error_404 />,
 
   }
-  // {
-  //   path:"/resumeBuilder",
-  //   element:
-  // }
 ])
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
