@@ -74,6 +74,10 @@ useEffect((req, res)=>{
 
   const handleSaveClick = async (event) => {
 
+    event.preventDefault()
+
+    console.log(profile)
+
     setEditMode(false);
   };
 

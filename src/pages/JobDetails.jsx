@@ -2,9 +2,19 @@ import React, { Link } from "react"
 import StudentHeader from "../components/Header/StudentHeader"
 import jobdetails from "../data/jobdetails"
 import {useParams} from "react-router"
+import axios from "axios"
 
 export default function JobDetails() {
   const {id} = useParams()
+
+  React.useEffect(()=>{
+    const fetchJob = async() => {
+      const response = await axios.get(`http://localhost:5000/api/v1/recruiter/getJob/${id}`)
+
+      console.log(response.data)
+    }
+    fetchJob()
+  },[])
 
   const job = jobdetails.find((job) => job.id === Number(id))
 

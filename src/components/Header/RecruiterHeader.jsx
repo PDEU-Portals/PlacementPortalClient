@@ -10,7 +10,7 @@ function  Header() {
   const navigate = useNavigate()
 
   const handleLogout = async() => {
-    const res = await axios.get(`http://localhost:3000/api/v1/recruiter/logout`)
+    const res = await axios.get(`http://localhost:5000/api/v1/recruiter/logout`)
     if(res.status == 200){
       navigate("/")
     }

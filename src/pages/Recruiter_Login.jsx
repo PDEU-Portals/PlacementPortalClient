@@ -11,9 +11,9 @@ export default function Recruiter_Login() {
       axios
         .get("http://localhost:5000/api/v1/internal/isLoggedIn")
         .then((res) => {
-          if (res.data.isLoggedIn) {
-            navigate("/students/profile");
-          }
+          // if (res.data.isLoggedIn) {
+          //   navigate("/students/profile");
+          // }
           // console.log(res.data.isLoggedIn)
         })
         .catch((err) => {

@@ -35,7 +35,10 @@ function RecruiterForm() {
     // Send POST request to backend API with data
     fetch('http://localhost:5000/api/v1/recruiter/createJob', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Authentication': `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(data)
     })
     .then(response => response.json())

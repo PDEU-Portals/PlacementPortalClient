@@ -1,6 +1,11 @@
-import React, { Link } from "react";
+import axios from "axios";
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Job_Card = () => {
+
+  // const [jobs,setJobs] = React.useState([])
+
   const job_description = [
     {
       skill: "Front-end Engineer",
@@ -66,6 +71,19 @@ const Job_Card = () => {
     },
   ];
 
+  React.useEffect(() =>{
+    const fetchJobs = async() => {
+      const data = await axios.get(`http://localhost:5000/api/v1/getJobs`,{
+        headers:{
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      })
+      console.log(data.data)
+      setJob(data.data)
+    }
+    fetchJobs()
+  },[])
+
   const [query, setQuery] = React.useState("");
   const [job, setJob] = React.useState(job_description);
   return (
@@ -88,32 +106,33 @@ const Job_Card = () => {
           })
           .sort((postA, postB) => (postA.deadline < postB.deadline ? -1 : 1))
           .map((job_description) => (
-            <div className="job-card relative  h-auto bg-slate-200 m-10 rounded-3xl">
+            <div className="job-card relative  h-auto bg-slate-200 m-10 rounded-3xl" id={job_description._id}>
               <h1 className="skill text-3xl pl-6 pt-5 ">
-                {job_description.skill}
+                {job_description.skills}
               </h1>
               <h3 className="company text-2xl text-orange-400 pl-6 ">
-                {job_description.company}
+                {job_description.jobType}
               </h3>
               <h4 className="job-desc text-xl pl-6 pt-3">
-                {job_description.description}
+                {job_description.title}
               </h4>
               <div className=" flex">
                 <div className=" text-sm m-0 w-8/12 pl-6 pt-2  pb-0 pr-10">
-                  {job_description.content}
+                  {job_description.description}
                 </div>
                 <div className="">
+                {/* /students/jobboarding/jobdetail/1 */}
+                <Link to={`/students/jobboarding/jobdetail/${job_description._id}`}>
                   <button className=" ml-5 bg-slate-300 w-auto p-5  mr-5 rounded-3xl ">
-                    <a href="/students/jobboarding/jobdetail/1">
                     Apply Now
-                    </a>
                   </button>
+                </Link>
                 </div>
               </div>
               <div className="pl-6 mt-5 mb-5 font-light">
                 {" "}
-                No. of Applicants : {job_description.applicants} &nbsp;&nbsp;
-                Deadline : {job_description.deadline}
+                Openings : {job_description.openings} &nbsp;&nbsp;
+                Deadline : {job_description.applicationDeadline}
               </div>
             </div>
           ))}
