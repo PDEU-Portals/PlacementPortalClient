@@ -1,0 +1,208 @@
+/* Style the profile container */
+.profile {
+  width: 100%;
+  margin: 0 20px;
+  background-color: #fff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Style the profile title */
+.profile__title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+/* Style the profile content */
+.profile__content, .profile__edit-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Style the profile name */
+.profile__name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Style the profile short description */
+.profile__short-description {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* Style the profile website */
+.profile__website {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* Style the profile photo */
+.profile__photo {
+  width: 200px;
+  height: 200px;
+  margin: 20px 0;
+  border-radius: 50%;
+}
+
+/* Style the profile description */
+.profile__description {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* Style the profile edit button */
+.profile__edit-button {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  margin-top: auto;
+  align-self: flex-end;
+}
+
+/* Style the profile edit form */
+.profile__edit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Style the profile edit label */
+.profile__edit-label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Style the profile edit input */
+.profile__edit-input {
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+/* Style the profile edit textarea */
+.profile__edit-textarea {
+  font-size: 1rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 150px;
+}
+
+/* Style the profile save button */
+.profile__save-button, .profile__cancel-button {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  margin-top: auto;
+  align-self: flex-end;
+  margin-right: 10;
+}
+.button-container{
+  display: flex;
+}
+
+
+
+/* CSS for given form */
+.profile__edit-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 400px;
+}
+
+.profile__edit-label {
+  color: #696969;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.profile__edit-input {
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #333;
+  font-size: 16px;
+  padding: 8px 12px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.profile__edit-textarea {
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #333;
+  font-size: 16px;
+  padding: 8px 12px;
+  margin-bottom: 16px;
+  min-height: 150px;
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+}
+
+.profile__save-button {
+  background-color: #42b0ff;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 24px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.profile__save-button:hover {
+  background-color: #2d8ce2;
+}
+
+.profile__cancel-button {
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #696969;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 16px;
+  padding: 12px 24px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.profile__cancel-button:hover {
+  background-color: #d9d9d9;
+}

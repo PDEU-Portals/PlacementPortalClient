@@ -1,0 +1,89 @@
+/* Social Media */
+.social-media {
+    margin-bottom: 20px;
+  }
+  .social-media h2 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .social-media label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .social-media-input {
+    display: block;
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 16px;
+    border: 2px solid #dcdcdc;
+    border-radius: 5px;
+  }
+  .social-media-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .social-media-button {
+    padding: 8px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #008489;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .social-media-button:hover {
+    background-color: #006f72;
+  }
+  
+  /* Skills */
+  .skills h2 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .skills ul {
+    margin-bottom: 20px;
+    list-style: none;
+  }
+  .skills li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .skill-button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #008489;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .skill-button:hover {
+    background-color: #006f72;
+  }
+  .skill-inputs {
+    display: flex;
+    align-items: center;
+  }
+  .skill-input {
+    flex-grow: 1;
+    margin-right: 10px;
+    padding: 8px 10px;
+    font-size: 16px;
+    border: 2px solid #dcdcdc;
+    border-radius: 5px;
+  }
+  
