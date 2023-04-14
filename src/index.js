@@ -54,7 +54,7 @@ const router = createBrowserRouter([
     element: <Dashboard />,
   },
   {
-    path: "/students/profile",
+    path: "/students/profile/:id",
     element: <ProfilePage />,
   },
   {
