@@ -1,10 +1,12 @@
 import axios from "axios";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Job_Card = () => {
 
   // const [jobs,setJobs] = React.useState([])
+
+  const navigate = useNavigate()
 
   const job_description = [
     {
@@ -73,9 +75,9 @@ const Job_Card = () => {
 
   React.useEffect(() =>{
     const fetchJobs = async() => {
-      const data = await axios.get(`http://localhost:5000/api/v1/getJobs`,{
+      const data = await axios.get(`http://localhost:5000/api/v1/recruiter/getJobs`,{
         headers:{
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
+          'Authorization': `Bearer ${localStorage.getItem('studentToken')}`
         }
       })
       console.log(data.data)
@@ -86,6 +88,19 @@ const Job_Card = () => {
 
   const [query, setQuery] = React.useState("");
   const [job, setJob] = React.useState(job_description);
+
+  // const applicationDeadline = new Date(job_description.applicationDeadline)
+  // console.log(applicationDeadline.getFullYear().toString())
+  // console.log(Date.now().toLocaleString())
+
+  const handleClick = (id) => {
+    navigate(`/students/jobboarding/jobdetail/${id}`, {
+      state:{
+        id
+      }
+    })
+  }
+
   return (
     <>
       <input
@@ -123,7 +138,7 @@ const Job_Card = () => {
                 <div className="">
                 {/* /students/jobboarding/jobdetail/1 */}
                 <Link to={`/students/jobboarding/jobdetail/${job_description._id}`}>
-                  <button className=" ml-5 bg-slate-300 w-auto p-5  mr-5 rounded-3xl ">
+                  <button className=" ml-5 bg-slate-300 w-auto p-5  mr-5 rounded-3xl" onClick={() => handleClick(job_description._id)}>
                     Apply Now
                   </button>
                 </Link>
@@ -132,7 +147,8 @@ const Job_Card = () => {
               <div className="pl-6 mt-5 mb-5 font-light">
                 {" "}
                 Openings : {job_description.openings} &nbsp;&nbsp;
-                Deadline : {job_description.applicationDeadline}
+                {/* Deadline : {`${new Date(job_description.applicationDeadline).getDay().toString().padStart(2,'0')}-${(new Date(job_description.applicationDeadline).getMonth()+1).toString().padStart(2,'0')}-${new Date(job_description.applicationDeadline).getFullYear().toString()}`} */}
+                Deadline: {`${new Date(job_description.applicationDeadline).getDate()}-${(new Date(job_description.applicationDeadline).getMonth()+1)}-${new Date(job_description.applicationDeadline).getFullYear()}`}
               </div>
             </div>
           ))}

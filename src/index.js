@@ -139,7 +139,7 @@ const router = createBrowserRouter([
     element: <Job_Boarding />,
   },
   {
-    path: "/students/resource/applyjob",
+    path: "/students/resource/applyjob/:id",
     element: <Form />,
   },
   {
@@ -155,7 +155,7 @@ const router = createBrowserRouter([
     element: <JobLists />,
   },
   {
-    path: "/students/jobboarding/jobdetail/:id",
+    path: "/students/jobboarding/jobdetail/:jobId",
     element: <JobDetails />,
   },
   // {

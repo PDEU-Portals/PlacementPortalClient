@@ -4,6 +4,7 @@ import Home from './Home'
                     
 
 const Table = ({data}) => {
+  console.log(data)
   return (
     <>
         <Home tableData = {data}/>

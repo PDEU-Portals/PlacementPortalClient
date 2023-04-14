@@ -27,7 +27,7 @@ const JobPosting = () => {
         getJob()
     },[])
 
-    console.log(job.applicants)
+    // console.log(job.applicants)
 
 
 

@@ -15,7 +15,7 @@ const Main = () => {
     return (
         <>
           <StudentHeader />
-             <div className=""><img className='h-96 w-full' src={firstimage} alt="" /></div>
+             <div className=""><img className='h-96 w-full object-cover' src={firstimage} alt="" /></div>
 
              <div className="bg-[#1F3368] pb-4">
             <h1 className="mx-8 font-bold py-2 px-0 text-[#F68C1F] text-left text-2xl">JOB LANDING PAGE</h1>

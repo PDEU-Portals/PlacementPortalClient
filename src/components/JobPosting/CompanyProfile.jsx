@@ -222,8 +222,14 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import RecruiterHeader from '../Header/RecruiterHeader';
 import './profilePage.css';
+import { useParams } from 'react-router-dom';
 
 function ProfilePage() {
+
+  const {id} = useParams()
+
+  const [details,setDetails] = useState(null)
+
   const [companyName, setCompanyName] = useState('');
   const [companyDescription, setCompanyDescription] = useState('');
   const [companyWebsite, setCompanyWebsite] = useState('');
@@ -233,6 +239,26 @@ function ProfilePage() {
   const [skills, setSkills] = useState([]);
   const [additionalInfo, setAdditionalInfo] = useState('');
   const [isEditMode, setIsEditMode] = useState(false);
+
+
+  React.useEffect(() =>{
+    const fetchDetails = async()=>{
+      const response = await axios.get(`http://localhost:5000/api/v1/recruiter/getDetails/${id}`)
+      console.log(response.data)
+      setDetails(response.data)
+      if(response.data){
+        console.log("success")
+        setCompanyName(response.data.companyName)
+        setCompanyDescription(response.data.companyDescription)
+        setCompanyWebsite(response.data.companyWebsite)
+        setCompanyTwitter(response.data.companyTwitter)
+        setCompanyLinkedin(response.data.companyLinkedin)
+        // setAdditionalInfo(response.data.additionalInfo)
+      }
+    }
+    fetchDetails()
+  },[])
+
 
   const handleCompanyNameChange = (event) => {
     setCompanyName(event.target.value);
@@ -308,7 +334,11 @@ function ProfilePage() {
     const id = localStorage.getItem('id')
 
     const data = await axios.post("http://localhost:5000/api/v1/recruiter/addDetails",{
-      companyData,
+      companyName,
+      companyDescription,
+      companyWebsite,
+      companyLinkedin,
+      companyTwitter,
       id
     })
 
@@ -319,7 +349,7 @@ function ProfilePage() {
     setCompanyWebsite(event.target.elements.companyWebsite.value);
     setCompanyLinkedin(event.target.elements.companyLinkedin.value);
     setCompanyTwitter(event.target.elements.companyTwitter.value);
-    setAdditionalInfo(event.target.elements.additionalInfo.value);
+    // setAdditionalInfo(event.target.elements.additionalInfo.value);
     setIsEditMode(false);
   };
 
@@ -387,7 +417,7 @@ function ProfilePage() {
                  />
                </div>
              
-               <div className="form-group">
+               {/* <div className="form-group">
                  <label htmlFor="skills">Skills</label>
                  <div className="skills-container">
                    {skills.map((skill, index) => (
@@ -430,7 +460,7 @@ function ProfilePage() {
                    placeholder="Enter additional info"
                    disabled={!isEditMode}
                  />
-               </div>
+               </div> */}
              
                {isEditMode ? (
                  <div className="button-container">
