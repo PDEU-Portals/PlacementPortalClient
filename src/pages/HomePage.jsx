@@ -78,7 +78,7 @@ export default function Hero() {
               Consectetur sodales morbi dignissim sed diam pharetra vitae ipsum
               odio.
             </p>
-            <Link to='/admin' ><button className="Read-btn">Login</button></Link>
+            <Link to='/admin/adminlogin' ><button className="Read-btn">Login</button></Link>
 
           </div>
         </div>

@@ -22,16 +22,16 @@ function Header() {
       <div className="nav-links">
         <ul className="nav-links-list">
           <li>
-            <a href="/">Home</a>
+            <a href="/admin/adminhome">Home</a>
           </li>
           <li>
-            <a href="/admin">Manage Students</a>
+            <a href="/admin/admintable">Manage Students</a>
           </li>
           <li>
-            <a href="/general/allclubs">Manage Recruiters</a>
+            <a href="/admin/managerecruiters">Manage Recruiters</a>
           </li>
           <li>
-            <a href="/">Recruiter Req</a>
+            {/* <a href="/recruiterrequest">Recruiter Req</a> */}
           </li>
           <li>
             <a href="/">Logout</a>

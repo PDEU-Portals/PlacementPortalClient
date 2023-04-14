@@ -5,6 +5,7 @@ import ProfileHeader from "../components/ProfilePageComponent/ProfileHeader.jsx"
 import "../components/ProfilePageComponent/Css/ProfilePage.css";
 import ProfileSkills from "../components/ProfilePageComponent/ProfileSkills";
 import ProfileWorkExperience from "../components/ProfilePageComponent/ProfileWorkExperience";
+import FilesUpload from "../components/ProfilePageComponent/FilesUpload";
 
 export const ProfilePage = () => {
   return (
@@ -13,6 +14,7 @@ export const ProfilePage = () => {
       <ProfileHeader />
       <ProfileSkills />
       <ProfileWorkExperience />
+      <FilesUpload />
       <Footer />
     </div>
   );

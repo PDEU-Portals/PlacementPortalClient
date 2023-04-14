@@ -61,64 +61,62 @@ const JobList = () => {
 
 
 
-
-
-// const jobs = [
-//   {
-//     companyName: "ABC Company",
-//     role: "Software Engineer",
-//     description: "We're looking for a talented software engineer to join our team and work on cutting-edge projects.",
-//     skills: ["JavaScript", "React", "Node.js", "AWS"],
-//   },
-//   {
-//     companyName: "XYZ Company",
-//     role: "Product Manager",
-//     description: "We're seeking a product manager to lead our team and drive the development of innovative products.",
-//     skills: ["Product Management", "Agile", "UX Design"],
-//   },
-//   {
-//     companyName: "123 Company",
-//     role: "Data Analyst",
-//     description: "We're looking for a skilled data analyst to join our team and help us analyze and interpret large datasets.",
-//     skills: ["SQL", "Python", "Data Visualization", "Statistical Analysis"],
-//   },
-//   {
-//     companyName: "ABC Company",
-//     role: "Software Engineer",
-//     description: "We're looking for a talented software engineer to join our team and work on cutting-edge projects.",
-//     skills: ["JavaScript", "React", "Node.js", "AWS"],
-//   },
-//   {
-//     companyName: "XYZ Company",
-//     role: "Product Manager",
-//     description: "We're seeking a product manager to lead our team and drive the development of innovative products.",
-//     skills: ["Product Management", "Agile", "UX Design"],
-//   },
-//   {
-//     companyName: "123 Company",
-//     role: "Data Analyst",
-//     description: "We're looking for a skilled data analyst to join our team and help us analyze and interpret large datasets.",
-//     skills: ["SQL", "Python", "Data Visualization", "Statistical Analysis"],
-//   },
-//   {
-//     companyName: "ABC Company",
-//     role: "Software Engineer",
-//     description: "We're looking for a talented software engineer to join our team and work on cutting-edge projects.",
-//     skills: ["JavaScript", "React", "Node.js", "AWS"],
-//   },
-//   {
-//     companyName: "XYZ Company",
-//     role: "Product Manager",
-//     description: "We're seeking a product manager to lead our team and drive the development of innovative products.",
-//     skills: ["Product Management", "Agile", "UX Design"],
-//   },
-//   {
-//     companyName: "123 Company",
-//     role: "Data Analyst",
-//     description: "We're looking for a skilled data analyst to join our team and help us analyze and interpret large datasets.",
-//     skills: ["SQL", "Python", "Data Visualization", "Statistical Analysis"],
-//   },
-// ];
+const jobs = [
+  {
+    companyName: "ABC Company",
+    role: "Software Engineer",
+    description: "We're looking for a talented software engineer to join our team and work on cutting-edge projects.",
+    skills: ["JavaScript", "React", "Node.js", "AWS"],
+  },
+  {
+    companyName: "XYZ Company",
+    role: "Product Manager",
+    description: "We're seeking a product manager to lead our team and drive the development of innovative products.",
+    skills: ["Product Management", "Agile", "UX Design"],
+  },
+  {
+    companyName: "123 Company",
+    role: "Data Analyst",
+    description: "We're looking for a skilled data analyst to join our team and help us analyze and interpret large datasets.",
+    skills: ["SQL", "Python", "Data Visualization", "Statistical Analysis"],
+  },
+  {
+    companyName: "ABC Company",
+    role: "Software Engineer",
+    description: "We're looking for a talented software engineer to join our team and work on cutting-edge projects.",
+    skills: ["JavaScript", "React", "Node.js", "AWS"],
+  },
+  {
+    companyName: "XYZ Company",
+    role: "Product Manager",
+    description: "We're seeking a product manager to lead our team and drive the development of innovative products.",
+    skills: ["Product Management", "Agile", "UX Design"],
+  },
+  {
+    companyName: "123 Company",
+    role: "Data Analyst",
+    description: "We're looking for a skilled data analyst to join our team and help us analyze and interpret large datasets.",
+    skills: ["SQL", "Python", "Data Visualization", "Statistical Analysis"],
+  },
+  {
+    companyName: "ABC Company",
+    role: "Software Engineer",
+    description: "We're looking for a talented software engineer to join our team and work on cutting-edge projects.",
+    skills: ["JavaScript", "React", "Node.js", "AWS"],
+  },
+  {
+    companyName: "XYZ Company",
+    role: "Product Manager",
+    description: "We're seeking a product manager to lead our team and drive the development of innovative products.",
+    skills: ["Product Management", "Agile", "UX Design"],
+  },
+  {
+    companyName: "123 Company",
+    role: "Data Analyst",
+    description: "We're looking for a skilled data analyst to join our team and help us analyze and interpret large datasets.",
+    skills: ["SQL", "Python", "Data Visualization", "Statistical Analysis"],
+  },
+];
 
 const jobList = () => {
   return (
@@ -126,7 +124,7 @@ const jobList = () => {
     <RecruiterHeader/>
     <div className="app-container-recruiter">
       <h1 className="title">Job Listings</h1>
-     <JobList/>
+     <JobList />
     </div>
     </>
   );

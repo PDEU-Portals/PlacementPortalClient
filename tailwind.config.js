@@ -7,9 +7,9 @@
 //   theme: {
 //     extend: {
 //       colors: {
-//         blue: "#1F3368",
-//         orange: "#F68C1F",
-//         white: "#F2F2F1",
+        // blue: "#1F3368",
+        // orange: "#F68C1F",
+        // white: "#F2F2F1",
 //       },
 //       fontFamily: {
 //         Roboto: ["Roboto", "sans-serif"],

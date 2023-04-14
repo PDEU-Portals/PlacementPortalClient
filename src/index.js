@@ -13,7 +13,7 @@ import ClubIntro from "./components/ClubInfo/ClubIntro"
 import PlacementStats from "./components/PlacementStats/PlacementStats"
 import AllClubs from "./components/AllCubs"
 import RecruiterLogin from "./pages/RecruiterLogin"
-import RecruiterAdminPanel from "./pages/RecruiterAdminPanel"
+// import RecruiterAdminPanel from "./pages/RecruiterAdminPanel"
 import TechnicalTestLogin from "./pages/TechnicalTestLogin"
 import JobPosting from "./components/JobPosting/JobPosting"
 import QuizApp from "./pages/QuizApp"
@@ -41,6 +41,8 @@ import RecruiterHomePage from "./components/HomePage/RecruiterHomePage"
 import RecruiterForm from "./pages/RecruiterForm"
 import AdminTable from "./components/AdminTable/AdminTable"
 import Error_404 from "./components/Error_404/Error"
+import AdminHomePage from './components/HomePage/AdminHomePage';
+import ManageRecruiter from "./components/AdminTable/ManageRecruiter"
 
 axios.defaults.withCredentials = true
 
@@ -85,10 +87,10 @@ const router = createBrowserRouter([
     path: "/recruiter/login",
     element: <RecruiterLogin />,
   },
-  {
-    path: "/recruiter/adminpanel",
-    element: <RecruiterAdminPanel />,
-  },
+  // {
+  //   path: "/recruiter/adminpanel",
+  //   element: <RecruiterAdminPanel />,
+  // },
   {
     path: "/students/technicaltestlogin",
     element: <TechnicalTestLogin />,
@@ -191,13 +193,25 @@ const router = createBrowserRouter([
     element: <RecruiterForm />,
   },
   {
-    path:"/admin",
+    path:"/admin/admintable",
     element: <AdminTable/>
   },
   {
     path:"*", 
     element: <Error_404 />,
 
+  },
+  {
+    path:"/admin/adminlogin",
+    element: <Admin_Login />
+  },
+  {
+    path:"/admin/adminhome",
+    element: <AdminHomePage />
+  },
+  {
+    path:"/admin/managerecruiters",
+    element: <ManageRecruiter  />
   }
 ])
 

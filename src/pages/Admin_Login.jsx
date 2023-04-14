@@ -150,7 +150,7 @@ export default function Admin_Login() {
           >
             Submit
           </button>
-          <Link to="/admin/" className="pb-8 hover:text-white">Visit Admin Portal</Link>
+          <Link to="/admin/adminhome" className="pb-8 hover:text-white">Visit Admin Portal</Link>
         </form>
       </div>
       </div>

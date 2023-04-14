@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import StudentHeader from "../Header/StudentHeader";
-import './Form.css';
+import "./Form.css";
 
 // function Form() {
 //   const [formData, setFormData] = useState({
@@ -59,7 +59,7 @@ import './Form.css';
 //                   className=" text-blue font-medium mb-2 text-xl "
 //                   htmlFor="headline"
 //                 >
-//                   Job Title 
+//                   Job Title
 //                 </label>
 //                 <input
 //                   className="bg-white w-full  appearance-none border-2 border-gray-200 rounded-lg  py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-orange"
@@ -201,24 +201,23 @@ import './Form.css';
 // export default Form;
 
 const Form = () => {
-
   const [formDataArray, setFormDataArray] = useState([]);
 
-  const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
-  const [skill1, setSkill1] = useState('');
-  const [skill2, setSkill2] = useState('');
-  const [skill3, setSkill3] = useState('');
-  const [skill4, setSkill4] = useState('');
-  const [skill5, setSkill5] = useState('');
-  const [availability, setAvailability] = useState('');
-  const [studentName, setStudentName] = useState('');
-  const [linkedinLink, setLinkedinLink] = useState('');
-  const [branch, setBranch] = useState('');
-  const [githubLink, setGithubLink] = useState('');
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [skill1, setSkill1] = useState("");
+  const [skill2, setSkill2] = useState("");
+  const [skill3, setSkill3] = useState("");
+  const [skill4, setSkill4] = useState("");
+  const [skill5, setSkill5] = useState("");
+  const [availability, setAvailability] = useState("");
+  const [studentName, setStudentName] = useState("");
+  const [linkedinLink, setLinkedinLink] = useState("");
+  const [branch, setBranch] = useState("");
+  const [githubLink, setGithubLink] = useState("");
   const [resume, setResume] = useState(null);
-  const [role, setRole] = useState('');
-  const [answer, setAnswer] = useState('');
+  const [role, setRole] = useState("");
+  const [answer, setAnswer] = useState("");
 
   function openFileInNewTab(file) {
     const fileURL = URL.createObjectURL(file);
@@ -243,19 +242,18 @@ const Form = () => {
     setFormDataArray([...formDataArray, data]); // add the new data to the array
     console.log(formDataArray); // log the updated array to the console
 
-
-    // Not sure but this is for resume 
+    // Not sure but this is for resume
     const formData = new FormData();
-    formData.append('resume', resume);
+    formData.append("resume", resume);
     console.log(formData);
 
     // This will send data to back end
-    fetch('/submit', {
-      method: 'POST',
+    fetch("/submit", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(data,formData),
+      body: JSON.stringify(data, formData),
     })
       .then((response) => response.text())
       .then(() => {
@@ -266,65 +264,160 @@ const Form = () => {
 
   return (
     <>
-    <StudentHeader />
-    <form onSubmit={handleSubmit} className="application-form">
-  <div className="form-field">
-    <label htmlFor="email">Email:</label>
-    <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} className="form-input" required />
-  </div>
-  <div className="form-field">
-    <label htmlFor="name">Name:</label>
-    <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} className="form-input" required />
-  </div>
-  <div className="form-field">
-    <label htmlFor="skill1">Your top 5 skills :</label>
-    <input type="text" id="skill1" value={skill1} onChange={(e) => setSkill1(e.target.value)} className="form-input" required />
-    <input type="text" id="skill2" value={skill2} onChange={(e) => setSkill2(e.target.value)} className="form-input" required />
-    <input type="text" id="skill3" value={skill3} onChange={(e) => setSkill3(e.target.value)} className="form-input" required />
-    <input type="text" id="skill4" value={skill4} onChange={(e) => setSkill4(e.target.value)} className="form-input" required />
-    <input type="text" id="skill5" value={skill5} onChange={(e) => setSkill5(e.target.value)} className="form-input" required />
-  </div>
-  <div className="form-field">
-    <label htmlFor="availability">Availability:</label>
-    <select id="availability" value={availability} onChange={(e) => setAvailability(e.target.value)} className="form-input" required>
-      <option value="">Select an option</option>
-      <option value="remote">Remote</option>
-      <option value="in-person">In Person</option>
-    </select>
-  </div>
-  <div className="form-field">
-    <label htmlFor="linkedin-link">Your LinkedIn Link:</label>
-    <input type="text" id="linkedin-link" value={linkedinLink} onChange={(e) => setLinkedinLink(e.target.value)} className="form-input" required />
-  </div>
-  <div className="form-field">
-    <label htmlFor="github-link">Your Github Link:</label>
-    <input type="text" id="github-link" value={githubLink} onChange={(e) => setGithubLink(e.target.value)} className="form-input" required />
-  </div>
-  <div className="form-field">
-    <label htmlFor="Branch">Your Branch:</label>
-    <input type="text" id="Branch" value={branch} onChange={(e) => setBranch(e.target.value)} className="form-input" required />
-  </div>
-  <div className="form-field">
-  <label htmlFor="resume">Resume:</label>
-   <input type="file" id="resume" onChange={(e) => setResume(e.target.files[0])} onClick={(e) => openFileInNewTab(e.target.files[0])} className="form-input" required />
-</div>
-  <div className="form-field">
-    <label htmlFor="role">What Role you applying for:</label>
-    <input type="text" id="role" value={role} onChange={(e) => setRole(e.target.value)} className="form-input" required />
-  </div>
-  <div className="form-field">
-    <label htmlFor="answer">Answer this question:</label>
-    <p>What motivated you to apply for this internship ? 
-  </p>
-<code>
-</code>
-<textarea id="answer" value={answer} onChange={(e) => setAnswer(e.target.value)} className="form-input" required></textarea>
-
-  </div>
-  <button type="submit" className="submit-button">Submit Application</button>
-</form>
-</>
-);
+      <StudentHeader />
+      <form onSubmit={handleSubmit} className="application-form">
+        <div className="form-field">
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="form-input"
+            required
+          />
+        </div>
+        <div className="form-field">
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="form-input"
+            required
+          />
+        </div>
+        <div className="form-field">
+          <label htmlFor="skill1">Your top 5 skills :</label>
+          <input
+            type="text"
+            id="skill1"
+            value={skill1}
+            onChange={(e) => setSkill1(e.target.value)}
+            className="form-input"
+            required
+          />
+          <input
+            type="text"
+            id="skill2"
+            value={skill2}
+            onChange={(e) => setSkill2(e.target.value)}
+            className="form-input"
+            required
+          />
+          <input
+            type="text"
+            id="skill3"
+            value={skill3}
+            onChange={(e) => setSkill3(e.target.value)}
+            className="form-input"
+            required
+          />
+          <input
+            type="text"
+            id="skill4"
+            value={skill4}
+            onChange={(e) => setSkill4(e.target.value)}
+            className="form-input"
+            required
+          />
+          <input
+            type="text"
+            id="skill5"
+            value={skill5}
+            onChange={(e) => setSkill5(e.target.value)}
+            className="form-input"
+            required
+          />
+        </div>
+        <div className="form-field">
+          <label htmlFor="availability">Availability:</label>
+          <select
+            id="availability"
+            value={availability}
+            onChange={(e) => setAvailability(e.target.value)}
+            className="form-input"
+            required
+          >
+            <option value="">Select an option</option>
+            <option value="remote">Remote</option>
+            <option value="in-person">In Person</option>
+          </select>
+        </div>
+        <div className="form-field">
+          <label htmlFor="linkedin-link">Your LinkedIn Link:</label>
+          <input
+            type="text"
+            id="linkedin-link"
+            value={linkedinLink}
+            onChange={(e) => setLinkedinLink(e.target.value)}
+            className="form-input"
+            required
+          />
+        </div>
+        <div className="form-field">
+          <label htmlFor="github-link">Your Github Link:</label>
+          <input
+            type="text"
+            id="github-link"
+            value={githubLink}
+            onChange={(e) => setGithubLink(e.target.value)}
+            className="form-input"
+            required
+          />
+        </div>
+        <div className="form-field">
+          <label htmlFor="Branch">Your Branch:</label>
+          <input
+            type="text"
+            id="Branch"
+            value={branch}
+            onChange={(e) => setBranch(e.target.value)}
+            className="form-input"
+            required
+          />
+        </div>
+        <div className="form-field">
+          <label htmlFor="resume">Resume:</label>
+          <input
+            type="file"
+            id="resume"
+            onChange={(e) => setResume(e.target.files[0])}
+            onClick={(e) => openFileInNewTab(e.target.files[0])}
+            className="form-input"
+            required
+          />
+        </div>
+        <div className="form-field">
+          <label htmlFor="role">What Role you applying for:</label>
+          <input
+            type="text"
+            id="role"
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+            className="form-input"
+            required
+          />
+        </div>
+        <div className="form-field">
+          <label htmlFor="answer">Answer this question:</label>
+          <p>What motivated you to apply for this internship ?</p>
+          <code></code>
+          <textarea
+            id="answer"
+            value={answer}
+            onChange={(e) => setAnswer(e.target.value)}
+            className="form-input"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" className="submit-button">
+          Submit Application
+        </button>
+      </form>
+    </>
+  );
 };
 
 export default Form;

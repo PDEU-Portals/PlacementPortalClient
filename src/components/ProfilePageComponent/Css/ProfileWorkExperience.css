@@ -1,0 +1,116 @@
+.profile-page {
+    background-color: #f2f2f1;
+    color: #1f3368;
+    font-family: Arial, sans-serif;
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .profile-page{
+    text-align: left;
+  }
+  
+  .profile-page__heading {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 100;
+  }
+  
+  .profile-page__add-btn {
+    background-color: #f68c1f;
+    color: #f2f2f1;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .profile-page__add-btn:hover {
+    background-color: #e6781e;
+  }
+  
+  .profile-page__form {
+    background-color: #f2f2f1;
+    color: #1f3368;
+    border: 2px solid #1f3368;
+    border-radius: 4px;
+    padding: 20px;
+    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .profile-page__form-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .profile-page__form-input,
+  .profile-page__form-textarea,
+  .profile-page__form-checkbox {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 1px solid #1f3368;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  
+  .profile-page__form-checkbox {
+    width: auto;
+    margin-left: 10px;
+  }
+  
+  .profile-page__form-submit-btn,
+  .profile-page__form-cancel-btn {
+    background-color: #f68c1f;
+    color: #f2f2f1;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+  }
+  
+  .profile-page__form-submit-btn:hover,
+  .profile-page__form-cancel-btn:hover {
+    background-color: #e6781e;
+  }
+  
+  .profile-page__work-experience {
+    background-color: #f2f2f1;
+    color: #1f3368;
+    border: 2px solid #1f3368;
+    border-radius: 4px;
+    padding: 20px;
+    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .profile-page__work-experience-company {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  
+  .profile-page__work-experience-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .profile-page__work-experience-date {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .profile-page__work-experience-description {
+    font-size: 1.2rem;
+  }
+  

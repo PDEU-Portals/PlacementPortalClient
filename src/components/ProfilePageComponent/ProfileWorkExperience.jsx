@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import "./Css/ProfileWorkExperience.css";
+import axios from 'axios';
 
 function ProfileWorkExperience() {
   const [showForm, setShowForm] = useState(false);
@@ -18,9 +20,9 @@ function ProfileWorkExperience() {
     setCurrentlyWorking(e.target.checked);
   const handleDescriptionChange = (e) => setDescription(e.target.value);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const newWorkExperience = {
       company,
       title,
@@ -28,65 +30,125 @@ function ProfileWorkExperience() {
       endDate: currentlyWorking ? "Present" : endDate,
       description,
     };
-
-    setWorkExperiences([...workExperiences, newWorkExperience]);
-    setShowForm(false);
+  
+    try {
+      const response = await axios.post('https://dummyapi.com/work-experience', newWorkExperience);
+      setWorkExperiences([...workExperiences, response.data]);
+      setShowForm(false);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handleCancel = () => setShowForm(false);
 
   const handleAddWorkExperience = () => setShowForm(true);
+  useEffect(() => {
+    const fetchWorkExperiences = async () => {
+      try {
+        const response = await axios.get('https://dummyapi.com/work-experience');
+        setWorkExperiences(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchWorkExperiences();
+  }, []);
 
   return (
-    <div>
-      <h1>Profile Page</h1>
-      <button onClick={handleAddWorkExperience}>Add Work Experience</button>
+    <div className="profile-page">
+      <h1 className="profile-page__heading">Work Experience</h1>
+      <button
+        className="profile-page__add-btn"
+        onClick={handleAddWorkExperience}
+      >
+        Add Work Experience
+      </button>
       {showForm && (
-        <form onSubmit={handleSubmit}>
-          <label>
+        <form className="profile-page__form" onSubmit={handleSubmit}>
+          <label className="profile-page__form-label">
             Company:
-            <input type="text" value={company} onChange={handleCompanyChange} />
+            <input
+              className="profile-page__form-input"
+              type="text"
+              value={company}
+              onChange={handleCompanyChange}
+            />
           </label>
-          <label>
+          <label className="profile-page__form-label">
             Title/Role:
-            <input type="text" value={title} onChange={handleTitleChange} />
+            <input
+              className="profile-page__form-input"
+              type="text"
+              value={title}
+              onChange={handleTitleChange}
+            />
           </label>
-          <label>
+          <label className="profile-page__form-label">
             Start Date:
-            <input type="date" value={startDate} onChange={handleStartDateChange} />
+            <input
+              className="profile-page__form-input"
+              type="date"
+              value={startDate}
+              onChange={handleStartDateChange}
+            />
           </label>
-          <label>
+          <label className="profile-page__form-label">
             End Date:
             {currentlyWorking ? (
               <span>Present</span>
             ) : (
-              <input type="date" value={endDate} onChange={handleEndDateChange} />
+              <input
+                className="profile-page__form-input"
+                type="date"
+                value={endDate}
+                onChange={handleEndDateChange}
+              />
             )}
           </label>
-          <label>
+          <label className="profile-page__form-label">
             Currently working there:
             <input
+              className="profile-page__form-checkbox"
               type="checkbox"
               checked={currentlyWorking}
               onChange={handleCurrentlyWorkingChange}
             />
           </label>
-          <label>
+          <label className="profile-page__form-label">
             Description:
-            <textarea value={description} onChange={handleDescriptionChange} />
+            <textarea
+              className="profile-page__form-textarea"
+              value={description}
+              onChange={handleDescriptionChange}
+            />
           </label>
-          <button type="submit">Save</button>
-          <button type="button" onClick={handleCancel}>
+          <button className="profile-page__form-submit-btn" type="submit">
+            Save
+          </button>
+          <button
+            className="profile-page__form-cancel-btn"
+            type="button"
+            onClick={handleCancel}
+          >
             Cancel
           </button>
         </form>
       )}
       {workExperiences.map((workExperience, index) => (
-        <div key={index}>
-          <p>{workExperience.company}</p>
-          <p>{workExperience.title}</p>
-          <p>{workExperience.startDate} - {workExperience.endDate}</p>
-          <p>{workExperience.description}</p>
+        <div key={index} className="profile-page__work-experience">
+          <p className="profile-page__work-experience-company">
+            {workExperience.company}
+          </p>
+          <p className="profile-page__work-experience-title">
+            {workExperience.title}
+          </p>
+          <p className="profile-page__work-experience-date">
+            {workExperience.startDate} - {workExperience.endDate}
+          </p>
+          <p className="profile-page__work-experience-description">
+            {workExperience.description}
+          </p>
         </div>
       ))}
     </div>
