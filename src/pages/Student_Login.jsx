@@ -74,7 +74,9 @@ export default function Recruiter_Login() {
         );
         console.log(data);
         if (data.status === 200) {
-          navigate("/students/profile");
+          localStorage.setItem('studentId', data.data.user._id)
+          localStorage.setItem('studentToken',data.data.token)
+          navigate(`/students/profile/${localStorage.getItem('studentId')}`);
         }
       } catch (error) {
         if (error.response) {

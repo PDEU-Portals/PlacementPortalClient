@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-import "./Css/ProfileWorkExperience.css";
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import axios  from "axios";
 
 function ProfileWorkExperience() {
   const [showForm, setShowForm] = useState(false);
@@ -19,6 +18,14 @@ function ProfileWorkExperience() {
   const handleCurrentlyWorkingChange = (e) =>
     setCurrentlyWorking(e.target.checked);
   const handleDescriptionChange = (e) => setDescription(e.target.value);
+
+  // useEffect(() => {
+  //   first
+  //   return () => {
+  //     second
+  //   }
+  // }, [])
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();

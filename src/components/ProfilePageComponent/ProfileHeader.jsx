@@ -19,12 +19,13 @@ function ProfilePage() {
   useEffect(() => {
     // Load initial data from API endpoint
     axios
-      .get("https://dummyapi.com/profile")
+      .get(`http://localhost:5000/api/v1/getInfo`)
       .then((response) => {
+        console.log(response.data.resume[0].secure_url)
         setName(response.data.name);
-        setShortDescription(response.data.shortDescription);
+        // setShortDescription(response.data.shortDescription);
         setWebsite(response.data.website);
-        setPhoto(dummyphoto);
+        // setPhoto(dummyphoto);
         setDescription(response.data.description);
         setInitialDataLoaded(true);
       })

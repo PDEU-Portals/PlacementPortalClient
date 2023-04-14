@@ -3,6 +3,7 @@ import "./JobLists.css";
 import RecruiterHeader from '../Header/RecruiterHeader.jsx';
 import { fetchJobs } from "../../utils/fetchJobs";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 
 const JobCard = ({ job, onDelete }) => {
@@ -42,7 +43,7 @@ const JobList = () => {
     jobs()
   },[])
 
-  const handleDelete = (index) => {
+  const handleDelete = async(index) => {
     const newList = [...jobList];
     newList.splice(index, 1);
     setJobList(newList);
@@ -53,7 +54,7 @@ const JobList = () => {
   return (
     <div className="job-list-recruiter">
       {jobList.map((job, index) => (
-        <JobCard key={index} job={job} onDelete={() => handleDelete(index)} />
+        <JobCard key={index} job={job} />
       ))}
     </div>
   );

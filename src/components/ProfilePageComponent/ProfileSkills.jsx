@@ -3,11 +3,11 @@ import axios from "axios";
 import './Css/ProfileSkills.css';
 
 const ProfileSkills = () => {
-  const [socialMedia, setSocialMedia] = useState({
+  const [socialMedia, setSocialMedia] = useState([{
     github: "",
     linkedin: "",
     twitter: "",
-  });
+  }]);
   const [initialSocialMedia, setInitialSocialMedia] = useState({
     github: "",
     linkedin: "",
@@ -40,13 +40,20 @@ const ProfileSkills = () => {
   };
 
   const handleSave = async () => {
-    // try {
-    //   await axios.post("api/socialMedia", socialMedia);
-    //   setIsEditing(false);
-    //   setInitialSocialMedia(socialMedia);
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    console.log(socialMedia)
+    try {
+      const response = await axios.post(`http://localhost:3000/api/v1/updateProfile`, socialMedia,
+      {
+        headers:{
+          "Authorization": `Bearer ${localStorage.getItem('token')}`
+        }
+      });
+      console.log(response)
+      setIsEditing(false);
+      setInitialSocialMedia(socialMedia);
+    } catch (error) {
+      console.log(error);
+    }
     setIsEditing(false);
   };
 

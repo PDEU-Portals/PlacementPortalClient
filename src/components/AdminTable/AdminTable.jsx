@@ -11,6 +11,7 @@ import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import Header from "../Header/AdminHeader";
 import { Typography } from "@mui/material";
+import axios from "axios";
 
 function createData(rno, name, cv, marksheet, sem, details) {
   return { rno, name, cv, marksheet, sem, details };
@@ -25,52 +26,68 @@ const rows = [
 ];
 
 export default function AdminTable() {
-  return (
-    <>
-    <Header/>
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell align="center"><Typography fontWeight={600} fontSize="24px" color="black" >Roll Number</Typography></TableCell>
-              <TableCell align="center"><Typography fontWeight={600} fontSize="24px"   color="black" >Name</Typography></TableCell>
-              <TableCell align="center"><Typography fontWeight={600} fontSize="24px"  color="black">CV (Resume)</Typography></TableCell>
-              <TableCell align="center"><Typography fontWeight={600} fontSize="24px"  color="black">12th Marksheet</Typography></TableCell>
-              <TableCell align="center"><Typography fontWeight={600} fontSize="24px"  color="black">Sem 1</Typography></TableCell>
-              <TableCell align="center"><Typography fontWeight={600} fontSize="24px"  color="black">Details</Typography></TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody  >
-            {rows.map((row) => (
-              <TableRow
-                key={row.name}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-              >
-                <TableCell component="th" scope="row" align="center">
-                  {row.rno}
-                </TableCell>
-                <TableCell align="center">{row.name}</TableCell>
-                <TableCell align="center">
-                  <Stack direction="row"  alignItems="right" justifyContent="center">
-                    <a href="/Resume.pdf" target="_blank">
-                      {row.cv}
-                    </a>
-                  </Stack>
-                </TableCell>
-                <TableCell align="center">{row.marksheet}</TableCell>
-                <TableCell align="center">{row.sem}</TableCell>
-                <TableCell align="right">
-                  <Stack spacing={2} direction="row" alignItems="right" justifyContent="center">
-                    <Link to="/students/profile">
-                      <Button variant="contained">{row.details}</Button>
-                    </Link>
-                  </Stack>
-                </TableCell>
+
+  const [rows,setRows] = React.useState(null)
+
+  React.useEffect(() => {
+    const fetchData = async() => {
+      const response = await axios.get(`http://localhost:5000/api/v1/admin/getUsers`)
+      // console.log(response.data.map(res => res.resume[]))
+      setRows(response.data)
+    }
+    fetchData()
+  },[])
+
+  if(rows){
+
+    return (
+      <>
+      <Header />
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell align="center"><Typography fontWeight={600} fontSize="24px" color="black" >Roll Number</Typography></TableCell>
+                <TableCell align="center"><Typography fontWeight={600} fontSize="24px"   color="black" >Name</Typography></TableCell>
+                <TableCell align="center"><Typography fontWeight={600} fontSize="24px"  color="black">CV (Resume)</Typography></TableCell>
+                <TableCell align="center"><Typography fontWeight={600} fontSize="24px"  color="black">12th Marksheet</Typography></TableCell>
+                <TableCell align="center"><Typography fontWeight={600} fontSize="24px"  color="black">Sem 1</Typography></TableCell>
+                <TableCell align="center"><Typography fontWeight={600} fontSize="24px"  color="black">Details</Typography></TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </>
-  );
+            </TableHead>
+            <TableBody  >
+              {rows.map((row) => (
+                <TableRow
+                  key={row._id}
+                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                >
+                  <TableCell component="th" scope="row" align="center">
+                    {row.rollNo}
+                  </TableCell>
+                  <TableCell align="center">{row.name}</TableCell>
+                  <TableCell align="center">
+                    <Stack direction="row"  alignItems="right" justifyContent="center">
+                      {/* {console.log(row.resume[0].secure_url)} */}
+                      <a href={row.resume[0]} target="_blank">
+                        Resume
+                      </a>
+                    </Stack>
+                  </TableCell>
+                  <TableCell align="center">{row.marksheet}</TableCell>
+                  <TableCell align="center">{row.sem}</TableCell>
+                  <TableCell align="right">
+                    <Stack spacing={2} direction="row" alignItems="right" justifyContent="center">
+                      <Link to={`/students/profile/${row._id}`}>
+                        <Button variant="contained">Details</Button>
+                      </Link>
+                    </Stack>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </>
+    );
+  }
 }

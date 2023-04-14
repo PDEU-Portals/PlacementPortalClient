@@ -8,7 +8,7 @@ function RecruiterForm() {
   const [skills, setSkills] = useState([]);
   const [openings, setOpenings] = useState(0)
   const [additionalInfo, setAdditionalInfo] = useState('');
-  const [applicationDeadline, setDeadline] = useState('');
+  const [applicationDeadline, setDeadline] = useState(Date.now());
   const [salaryRange, setSalaryRange] = useState('');
   const [jobType, setJobType] = useState('');
   const [eligibilityCriteria, setEligibilityCriteria] = useState('');
@@ -32,6 +32,7 @@ function RecruiterForm() {
         skills,
         id: localStorage.getItem('id'),
     };
+    console.log(applicationDeadline)
     // Send POST request to backend API with data
     fetch('http://localhost:5000/api/v1/recruiter/createJob', {
       method: 'POST',

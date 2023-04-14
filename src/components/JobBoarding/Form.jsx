@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import StudentHeader from "../Header/StudentHeader";
 import "./Form.css";
+import './Form.css';
+import { useLocation, useParams } from "react-router-dom";
 
 // function Form() {
 //   const [formData, setFormData] = useState({
@@ -201,6 +203,11 @@ import "./Form.css";
 // export default Form;
 
 const Form = () => {
+
+  const{id} = useParams()
+  console.log(id)
+  
+
   const [formDataArray, setFormDataArray] = useState([]);
 
   const [email, setEmail] = useState("");
