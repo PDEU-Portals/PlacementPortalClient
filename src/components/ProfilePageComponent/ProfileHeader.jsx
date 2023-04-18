@@ -141,7 +141,12 @@ function ProfilePage() {
           />
             </p>
             <p className="profile__email">
-              Email: {email}
+              Email: <input
+            className="profile__edit-input"
+            type="text"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
             </p>
             <p className="profile__description"> 
             <textarea
