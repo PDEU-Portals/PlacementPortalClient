@@ -1,5 +1,4 @@
-/* Style the profile container */
-.profile {
+/* .profle {
   width: 100%;
   margin: 0 20px;
   background-color: #fff;
@@ -8,7 +7,6 @@
   overflow: hidden;
 }
 
-/* Style the profile title */
 .profile__title {
   font-size: 2rem;
   font-weight: 700;
@@ -17,7 +15,6 @@
   background-color: #f0f0f0;
 }
 
-/* Style the profile content */
 .profile__content, .profile__edit-label {
   display: flex;
   flex-direction: column;
@@ -25,26 +22,22 @@
   padding: 20px;
 }
 
-/* Style the profile name */
 .profile__name {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
-/* Style the profile short description */
 .profile__short-description {
   font-size: 1rem;
   margin-bottom: 10px;
 }
 
-/* Style the profile website */
 .profile__website {
   font-size: 1rem;
   margin-bottom: 10px;
 }
 
-/* Style the profile photo */
 .profile__photo {
   width: 200px;
   height: 200px;
@@ -52,13 +45,11 @@
   border-radius: 50%;
 }
 
-/* Style the profile description */
 .profile__description {
   font-size: 1rem;
   margin-bottom: 20px;
 }
 
-/* Style the profile edit button */
 .profile__edit-button {
   font-size: 1rem;
   font-weight: 600;
@@ -71,7 +62,6 @@
   align-self: flex-end;
 }
 
-/* Style the profile edit form */
 .profile__edit-form {
   display: flex;
   flex-direction: column;
@@ -79,14 +69,12 @@
   padding: 20px;
 }
 
-/* Style the profile edit label */
 .profile__edit-label {
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
-/* Style the profile edit input */
 .profile__edit-input {
   font-size: 1rem;
   padding: 10px;
@@ -96,7 +84,7 @@
   width: 100%;
 }
 
-/* Style the profile edit textarea */
+
 .profile__edit-textarea {
   font-size: 1rem;
   padding: 10px;
@@ -107,7 +95,6 @@
   height: 150px;
 }
 
-/* Style the profile save button */
 .profile__save-button, .profile__cancel-button {
   font-size: 1rem;
   font-weight: 600;
@@ -124,9 +111,6 @@
   display: flex;
 }
 
-
-
-/* CSS for given form */
 .profile__edit-form {
   display: flex;
   flex-direction: column;
@@ -205,4 +189,68 @@
 
 .profile__cancel-button:hover {
   background-color: #d9d9d9;
+} */
+
+.profile__content{
+  display: flex;
+  background-color: #f7f7f7;
+  /* width: 100%; */
+  /* height: 65vh; */
+  /* margin-left: 3em;
+  margin-top: 4.5em; */
+  margin: 3em;
+  padding: 2.5em;
+  border: 2px solid black;
+  border-radius: 1.2em;
+}
+.img_container{
+  align-items: center;
+}
+.profile__content h1{
+  font-weight: 700;
+  font-size: 1.6em;
+  margin-left: 1em;
+  color: rgb(131, 131, 131);
+}
+.profile__content img{
+  width: 200px;
+  height: 200px;
+  margin: 20px 0;
+  border-radius: 50%;
+  padding: 1em;
+  padding-left: -1em;
+}
+
+.header-content {
+  width: 75%;
+  margin-left: 3em;
+}
+
+.profile__name{
+  font-size: 2.5em;
+  font-weight: 700;
+}
+.profile__short-description{
+  font-size: 1.3em;
+  font-weight: 400;
+}
+.profile__website {
+  margin-top: 3em;
+  font-size: 1.2em;
+  font-weight: 200;
+}
+.profile__email{
+  font-size: 1.2em;
+  font-weight: 200;
+}
+.profile__description{
+  font-size: 1.1em;
+  font-weight: 200;
+}
+.header-content button{
+  margin-top: 1em;
+  padding: 1em 1em;
+  border-radius: 1em;
+  background-color: #008489;
+  color: white;
 }

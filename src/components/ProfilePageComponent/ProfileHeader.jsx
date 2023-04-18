@@ -6,7 +6,10 @@ import axios from "axios";
 function ProfilePage() {
   // Set initial state for user profile information
   const [name, setName] = useState("John Doe");
-  const [shortDescription, setShortDescription] = useState("Web Developer | Explorer | problem solver");
+  const [shortDescription, setShortDescription] = useState(
+    "Web Developer | Explorer | problem solver"
+  );
+  const [email, setEmail] = useState("John.dce21@sot.pdpu.ac.in")
   const [website, setWebsite] = useState("https://www.example.com");
   const [photo, setPhoto] = useState(dummyphoto);
   const [description, setDescription] = useState(
@@ -21,7 +24,7 @@ function ProfilePage() {
     axios
       .get(`http://localhost:5000/api/v1/getInfo`)
       .then((response) => {
-        console.log(response.data.resume[0].secure_url)
+        console.log(response.data.resume[0].secure_url);
         setName(response.data.name);
         // setShortDescription(response.data.shortDescription);
         setWebsite(response.data.website);
@@ -72,67 +75,81 @@ function ProfilePage() {
 
   return (
     <div className="profile">
-      <h1 className="profile__title">Profile</h1>
+      {/* <h1 className="profile__title">Profile</h1> */}
       {!isEditing && (
         <div className="profile__content">
-          <p className="profile__name">Name: {name}</p>
-          <p className="profile__short-description">
-            Short Description: {shortDescription}
-          </p>
-          <p className="profile__website">
-            Website: <a href={website}>{website}</a>
-          </p>
-          <img className="profile__photo" src={photo} alt="Profile" />
-          <p className="profile__description">Description: {description}</p>
-          <button
-            className="profile__edit-button"
-            onClick={() => setIsEditing(true)}
-          >
-            Edit
-          </button>
+          <div className="img_container">
+            <h1>PDEU Student</h1>
+            <img className="profile__photo" src="https://source.unsplash.com/150x150/?portrait?3" alt="Profile" />
+          </div>
+          <div className="header-content">
+            <p className="profile__name"> {name}</p>
+            <p className="profile__short-description">
+               {shortDescription}
+            </p>
+            <p className="profile__website">
+              Website: <a href={website}>{website}</a>
+            </p>
+            <p className="profile__email">
+              Email: {email}
+            </p>
+            <p className="profile__description"> {description}</p>
+            <button
+              className="profile__edit-button"
+              onClick={() => setIsEditing(true)}
+            >
+              Edit
+            </button>
+          </div>
         </div>
       )}
       {isEditing && (
-        <form className="profile__edit-form" onSubmit={handleSubmit}>
-          <label className="profile__edit-label">Name:</label>
-          <input
+        <>
+         <div className="profile__content">
+          <div className="img_container">
+            <h1>PDEU Student</h1>
+            <img className="profile__photo" src="https://source.unsplash.com/150x150/?portrait?3" alt="Profile" />
+            <input
+            className="profile__edit-input"
+            type="file"
+            onChange={(event) => setPhoto(event.target.files[0])}
+          />
+          </div>
+          <div className="header-content">
+          <form className="profile__edit-form" onSubmit={handleSubmit}>
+            <p className="profile__name"> 
+            <input
             className="profile__edit-input"
             type="text"
             value={name}
             onChange={(event) => setName(event.target.value)}
-          />
-          <br />
-          <label className="profile__edit-label">Short Description:</label>
-          <input
+          /></p>
+            <p className="profile__short-description">
+            <input
             className="profile__edit-input"
             type="text"
             value={shortDescription}
             onChange={(event) => setShortDescription(event.target.value)}
           />
-          <br />
-          <label className="profile__edit-label">Website:</label>
-          <input
+            </p>
+            <p className="profile__website">
+              Website:  <input
             className="profile__edit-input"
             type="text"
             value={website}
             onChange={(event) => setWebsite(event.target.value)}
           />
-          <br />
-          <label className="profile__edit-label">Photo:</label>
-          <input
-            className="profile__edit-input"
-            type="file"
-            onChange={(event) => setPhoto(event.target.files[0])}
-          />
-          <br />
-          <label className="profile__edit-label">Description:</label>
-          <textarea
+            </p>
+            <p className="profile__email">
+              Email: {email}
+            </p>
+            <p className="profile__description"> 
+            <textarea
             className="profile__edit-textarea"
             value={description}
             onChange={(event) => setDescription(event.target.value)}
-          />
-          <br />
-          <div className="button-container">
+          /></p>
+           <div className="button-container">
             <button className="profile__save-button" type="submit">
               Save
             </button>
@@ -144,7 +161,10 @@ function ProfilePage() {
               Cancel
             </button>
           </div>
-        </form>
+            </form>
+          </div>
+        </div>
+        </>
       )}
     </div>
   );
