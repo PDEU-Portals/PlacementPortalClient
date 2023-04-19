@@ -6,12 +6,14 @@ import "../components/ProfilePageComponent/Css/ProfilePage.css";
 import ProfileSkills from "../components/ProfilePageComponent/ProfileSkills";
 import ProfileWorkExperience from "../components/ProfilePageComponent/ProfileWorkExperience";
 import FilesUpload from "../components/ProfilePageComponent/FilesUpload";
+import AcademicDetails from "../components/ProfilePageComponent/AcademicDetails";
 
 export const ProfilePage = () => {
   return (
     <div className="final-profile-page">
       <StudentHeader />
       <ProfileHeader />
+      <AcademicDetails />
       <ProfileSkills />
       <ProfileWorkExperience />
       <FilesUpload />

@@ -1,89 +1,126 @@
-/* Social Media */
+.reach-out-page{
+  margin: 3em;
+    padding: 2.5em;
+  border: 2px solid rgb(116, 116, 116);
+  border-radius: 1em;
+}
+
+.reach-out-page h2{
+  font-size: 2.2em;
+  font-weight: 500;
+}
+
+/* Styling for the Reach Out section */
 .social-media {
-    margin-bottom: 20px;
-  }
-  .social-media h2 {
-    margin-bottom: 10px;
-    font-size: 22px;
-    font-weight: 600;
-  }
-  .social-media label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 18px;
-    font-weight: 600;
-  }
-  .social-media-input {
-    display: block;
-    margin-bottom: 15px;
-    width: 100%;
-    padding: 8px 10px;
-    font-size: 16px;
-    border: 2px solid #dcdcdc;
-    border-radius: 5px;
-  }
-  .social-media-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  .social-media-button {
-    padding: 8px 20px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    background-color: #008489;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  .social-media-button:hover {
-    background-color: #006f72;
-  }
-  
-  /* Skills */
-  .skills h2 {
-    margin-bottom: 10px;
-    font-size: 22px;
-    font-weight: 600;
-  }
-  .skills ul {
-    margin-bottom: 20px;
-    list-style: none;
-  }
-  .skills li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    font-size: 18px;
-    font-weight: 600;
-  }
-  .skill-button {
-    margin-left: 10px;
-    padding: 5px 10px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    background-color: #008489;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  .skill-button:hover {
-    background-color: #006f72;
-  }
-  .skill-inputs {
-    display: flex;
-    align-items: center;
-  }
-  .skill-input {
-    flex-grow: 1;
-    margin-right: 10px;
-    padding: 8px 10px;
-    font-size: 16px;
-    border: 2px solid #dcdcdc;
-    border-radius: 5px;
-  }
-  
+  margin-bottom: 2em;
+}
+
+.social-media h2 {
+  margin-bottom: 1em;
+}
+
+.social-media p {
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  font-size: 1.3em;
+}
+
+.social-media label {
+  display: block;
+  margin-bottom: 0.5em;
+  padding: 1em;
+}
+
+.social-media-input {
+  display: flex;
+  /* width: 100%n; */
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border: 1px solid rgb(116, 116, 116);
+  border-radius: 0.5em;
+  font-size: 1em;
+}
+
+.social-media-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1em;
+}
+
+.social-media-button {
+  padding: 0.5em 1em;
+  margin-left: 1em;
+  background-color: rgb(116, 116, 116);
+  color: white;
+  border: none;
+  border-radius: 0.5em;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+/* Styling for the Skills section */
+.skills h2 {
+  margin-bottom: 1em;
+}
+
+.skills ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.input-section{
+  width: 45%;
+}
+
+.skills-list{
+  display: flex;
+}
+
+.skill-inputs input{
+  width: 35%;
+}
+
+.skills li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.skill-button {
+  margin-left: 1em;
+  background-color: rgb(116, 116, 116);
+  color: white;
+  border: none;
+  border-radius: 0.5em;
+  font-size: 0.8em;
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+}
+
+.skill-inputs {
+  display: flex;
+  margin-top: 1em;
+}
+
+.skill-input {
+  flex-grow: 1;
+  padding: 0.5em;
+  margin-right: 1em;
+  border: 1px solid rgb(116, 116, 116);
+  border-radius: 0.5em;
+  font-size: 1em;
+}
+
+.skill-button.add {
+  background-color: rgb(87, 180, 87);
+}
+
+.skill-button.add:hover {
+  background-color: rgb(50, 150, 50);
+}
+
+.skill-button.add:disabled {
+  background-color: rgb(150, 150, 150);
+  cursor: not-allowed;
+}

@@ -1,0 +1,26 @@
+.table-head{
+    display: flex;
+}
+.edit-button{
+    margin-top: 2.5em;
+}
+.edit-button button{
+    background-color: #008489;
+    color: white;
+    padding: 1em;
+    border-radius: 0.8em;
+}
+.buttons{
+    margin-top: 1em;
+}
+.buttons button{
+    background-color: #008489;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 0.8em;
+    color: white;
+}
+#main-acadamic-container{
+    margin: 3em;
+    padding-bottom: 4em;
+}
