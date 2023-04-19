@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Css/AcademicDetails.css";
 
 export const AcademicDetails = () => {
@@ -9,21 +9,50 @@ export const AcademicDetails = () => {
     Branch: "Computer Science and Engineering",
   });
 
+  useEffect(() => {
+    fetch("https://dummyapi.com/academic-details")
+      .then((response) => response.json())
+      .then((data) => setAcademicProfile(data))
+      .catch((error) => console.log(error));
+  }, []);
+
   const handleEditClick = () => {
     setEditMode(true);
   };
   const handleCancleClick = () => {
     setEditMode(false);
   };
+
   const handleSaveClick = () => {
     setEditMode(false);
+    fetch("https://dummyapi.com/academic-details", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(academicProfile),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
   };
-  const handleChange = (event) => {
+
+ const handleChange = (event) => {
     console.log(event.target.value);
     setAcademicProfile({
       ...academicProfile,
       [event.target.name]: event.target.value,
     });
+    fetch("https://dummyapi.com/academic-details", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(academicProfile),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
   };
 
   return (
