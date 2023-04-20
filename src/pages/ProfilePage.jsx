@@ -6,11 +6,21 @@ import "../components/ProfilePageComponent/Css/ProfilePage.css";
 import ProfileSkills from "../components/ProfilePageComponent/ProfileSkills";
 import ProfileWorkExperience from "../components/ProfilePageComponent/ProfileWorkExperience";
 import FilesUpload from "../components/ProfilePageComponent/FilesUpload";
-import AcademicDetails from "../components/ProfilePageComponent/AcademicDetails";
-import About from "../components/ProfilePageComponent/About.jsx";
-import { SocialMedia } from "../components/ProfilePageComponent/SocialMedia";
+import axios from "axios";
 
 export const ProfilePage = () => {
+
+  const [profile,setProfile] = React.useState(null)
+
+  React.useEffect(() => {
+    const fetchProfile = async() => {
+      const response = await axios.get(`http://localhost:5000/api/v1/getInfo/${localStorage.getItem('studentId')}`)
+      console.log(response)
+      setProfile(response.data)
+    }
+    fetchProfile()
+  },[])
+
   return (
     <div className="final-profile-page">
       <StudentHeader />

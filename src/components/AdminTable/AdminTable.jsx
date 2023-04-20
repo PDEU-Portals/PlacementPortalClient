@@ -67,7 +67,7 @@ export default function AdminTable() {
                   <TableCell align="center">{row.name}</TableCell>
                   <TableCell align="center">
                     <Stack direction="row"  alignItems="right" justifyContent="center">
-                      {/* {console.log(row.resume[0].secure_url)} */}
+                      {/* {console.log(row.resume[0])} */}
                       <a href={row.resume[0]} target="_blank">
                         Resume
                       </a>

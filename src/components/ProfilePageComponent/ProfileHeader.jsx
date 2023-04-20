@@ -19,21 +19,21 @@ function ProfilePage() {
   const [isEditing, setIsEditing] = useState(false);
   const [initialDataLoaded, setInitialDataLoaded] = useState(false);
 
-  useEffect(() => {
-    // Load initial data from API endpoint
-    axios
-      .get(`http://localhost:5000/api/v1/getInfo`)
-      .then((response) => {
-        console.log(response.data.resume[0].secure_url);
-        setName(response.data.name);
-        // setShortDescription(response.data.shortDescription);
-        setWebsite(response.data.website);
-        // setPhoto(dummyphoto);
-        setDescription(response.data.description);
-        setInitialDataLoaded(true);
-      })
-      .catch((error) => console.log(error));
-  }, []);
+  // useEffect(() => {
+  //   // Load initial data from API endpoint
+  //   axios
+  //     .get(`http://localhost:5000/api/v1/getInfo`)
+  //     .then((response) => {
+  //       console.log(response.data.resume[0].secure_url)
+  //       setName(response.data.name);
+  //       // setShortDescription(response.data.shortDescription);
+  //       setWebsite(response.data.website);
+  //       // setPhoto(dummyphoto);
+  //       setDescription(response.data.description);
+  //       setInitialDataLoaded(true);
+  //     })
+  //     .catch((error) => console.log(error));
+  // }, []);
 
   // Handle form submit to update user profile information
   const handleSubmit = (event) => {

@@ -11,9 +11,9 @@ export default function Recruiter_Login() {
       axios
         .get("http://localhost:5000/api/v1/internal/isLoggedIn")
         .then((res) => {
-          if (res.data.isLoggedIn) {
-            navigate("/students/profile");
-          }
+          // if (res.data.isLoggedIn) {
+          //   navigate("/students/profile");
+          // }
           // console.log(res.data.isLoggedIn)
         })
         .catch((err) => {
@@ -79,6 +79,7 @@ export default function Recruiter_Login() {
           navigate(`/students/profile/${localStorage.getItem('studentId')}`);
         }
       } catch (error) {
+        console.log(error)
         if (error.response) {
           if (error.response.status === 401) {
             // Handle 401 status code
@@ -94,7 +95,7 @@ export default function Recruiter_Login() {
         } else {
           // Handle network errors
           console.log("Error: Network Error");
-          alert('Something Went Wrong! Try again later');
+          // alert('Something Went Wrong! Try again later');
         }
       }
     }
