@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios  from "axios";
+import './Css/ProfileWorkExperience.css';
 
 function ProfileWorkExperience() {
   const [showForm, setShowForm] = useState(false);
@@ -38,6 +39,15 @@ function ProfileWorkExperience() {
       description,
     };
   
+      // Add the new work experience to the existing list
+      const updatedWorkExperiences = [...workExperiences, newWorkExperience];
+      setWorkExperiences(updatedWorkExperiences);
+  
+      // Save the updated list to localStorage
+      localStorage.setItem("workExperiences", JSON.stringify(updatedWorkExperiences));
+  
+      setShowForm(false);
+
     try {
       const response = await axios.post('https://dummyapi.com/work-experience', newWorkExperience);
       setWorkExperiences([...workExperiences, response.data]);
@@ -50,6 +60,7 @@ function ProfileWorkExperience() {
   const handleCancel = () => setShowForm(false);
 
   const handleAddWorkExperience = () => setShowForm(true);
+
   useEffect(() => {
     const fetchWorkExperiences = async () => {
       try {
@@ -63,7 +74,7 @@ function ProfileWorkExperience() {
   }, []);
 
   return (
-    <div className="profile-page">
+    <div className="experience-section">
       <h1 className="profile-page__heading">Work Experience</h1>
       <button
         className="profile-page__add-btn"
@@ -73,14 +84,15 @@ function ProfileWorkExperience() {
       </button>
       {showForm && (
         <form className="profile-page__form" onSubmit={handleSubmit}>
+          <section className="form-input-section">
           <label className="profile-page__form-label">
             Company:
-            <input
-              className="profile-page__form-input"
-              type="text"
-              value={company}
-              onChange={handleCompanyChange}
-            />
+              <input
+                className="profile-page__form-input"
+                type="text"
+                value={company}
+                onChange={handleCompanyChange}
+              />
           </label>
           <label className="profile-page__form-label">
             Title/Role:
@@ -91,6 +103,8 @@ function ProfileWorkExperience() {
               onChange={handleTitleChange}
             />
           </label>
+          </section>
+          <br />  
           <label className="profile-page__form-label">
             Start Date:
             <input
@@ -100,6 +114,7 @@ function ProfileWorkExperience() {
               onChange={handleStartDateChange}
             />
           </label>
+          <br />
           <label className="profile-page__form-label">
             End Date:
             {currentlyWorking ? (
@@ -122,13 +137,17 @@ function ProfileWorkExperience() {
               onChange={handleCurrentlyWorkingChange}
             />
           </label>
+          <br />
           <label className="profile-page__form-label">
+          <section className="profile-page_form-input_decription">
+
             Description:
             <textarea
               className="profile-page__form-textarea"
               value={description}
               onChange={handleDescriptionChange}
             />
+            </section>
           </label>
           <button className="profile-page__form-submit-btn" type="submit">
             Save

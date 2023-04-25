@@ -1,0 +1,14 @@
+.social-media-header{
+    display: flex;
+}
+.social-media-button{
+    margin: auto 0px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 3em;
+}
+.social-media-button:hover{
+    background-color: #ccc;
+}
