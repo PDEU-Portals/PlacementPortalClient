@@ -2,9 +2,21 @@ import React, { useState} from "react";
 import logo from "../../images/navLogo.png";
 import styles from "./Header.module.css";
 import './Header.css';
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function  Header() {
+
+  const navigate = useNavigate()
+
+  const handleClick = async() => {
+    const response = await axios.get(`http://localhost:5000/api/v1/logout`)
+    if(response.status == 200){
+      localStorage.removeItem('studentId')
+      localStorage.removeItem('studentToken')
+      navigate("/")
+    }
+  }
 
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -26,7 +38,7 @@ function  Header() {
             <a href="/students/dashboard">Dashboard</a>
           </li>
           <li>
-            <a href="/students/profile">Profile</a>
+            <Link to={`/students/profile/${localStorage.getItem('studentId')}`}>Profile</Link>
           </li>
           <li>
             <a href="/students/resource/process">Resources</a>
@@ -38,7 +50,7 @@ function  Header() {
             <a href="/students/myapplications">My Applications</a>
           </li>
           <li>
-            <a href="/">Logout</a>
+            <p onClick={handleClick}>Logout</p>
           </li>
         </ul>
       </div>

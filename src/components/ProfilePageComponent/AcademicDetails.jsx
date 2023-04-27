@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from "react";
 import "./Css/AcademicDetails.css";
+import axios from "axios";
 
-export const AcademicDetails = () => {
+export const AcademicDetails = ({rollNo,cgpa,sbranch}) => {
+  // console.log(rollNo);
   const [editMode, setEditMode] = useState(false);
   const [academicProfile, setAcademicProfile] = useState({
-    rollNo: "21BCP256",
-    SGPA: "9.2",
-    Branch: "Computer Science and Engineering",
+    rollNo: rollNo,
+    SGPA: cgpa,
+    Branch: sbranch,
   });
 
-  useEffect(() => {
-    fetch("https://dummyapi.com/academic-details")
-      .then((response) => response.json())
-      .then((data) => setAcademicProfile(data))
-      .catch((error) => console.log(error));
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://dummyapi.com/academic-details")
+  //     .then((response) => response.json())
+  //     .then((data) => setAcademicProfile(data))
+  //     .catch((error) => console.log(error));
+  // }, []);
 
   const handleEditClick = () => {
     setEditMode(true);
@@ -25,14 +27,14 @@ export const AcademicDetails = () => {
 
   const handleSaveClick = () => {
     setEditMode(false);
-    fetch("https://dummyapi.com/academic-details", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(academicProfile),
-    })
-      .then((response) => response.json())
+    const formData = new FormData()
+    formData.append("id",localStorage.getItem('studentId'))
+    formData.append("rollNo",academicProfile.rollNo)
+    // formData.append("CGPA",academicProfile.SGPA)
+    formData.append("branch", academicProfile.Branch)
+    axios
+      .post(`http://localhost:5000/api/v1/updateProfile`, formData)
+      .then((response) => console.log(response))
       .then((data) => console.log(data))
       .catch((error) => console.log(error));
   };
@@ -101,8 +103,8 @@ export const AcademicDetails = () => {
                       <td className="py-4 px-6">
                         <input
                           type="text"
-                          id="SGPA"
-                          name="SGPA"
+                          id="CGPA"
+                          name="CGPA"
                           value={AcademicDetails.SGPA}
                           onChange={handleChange}
                           placeholder="Enter your SGPA here"

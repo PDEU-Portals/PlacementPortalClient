@@ -6,6 +6,9 @@ import "../components/ProfilePageComponent/Css/ProfilePage.css";
 import ProfileSkills from "../components/ProfilePageComponent/ProfileSkills";
 import ProfileWorkExperience from "../components/ProfilePageComponent/ProfileWorkExperience";
 import FilesUpload from "../components/ProfilePageComponent/FilesUpload";
+import AcademicDetails from "../components/ProfilePageComponent/AcademicDetails"
+import About from "../components/ProfilePageComponent/About"
+import SocialMedia from "../components/ProfilePageComponent/SocialMedia"
 import axios from "axios";
 
 export const ProfilePage = () => {
@@ -15,24 +18,27 @@ export const ProfilePage = () => {
   React.useEffect(() => {
     const fetchProfile = async() => {
       const response = await axios.get(`http://localhost:5000/api/v1/getInfo/${localStorage.getItem('studentId')}`)
-      console.log(response)
+      console.log(response.data)
       setProfile(response.data)
     }
     fetchProfile()
   },[])
 
-  return (
-    <div className="final-profile-page">
-      <StudentHeader />
-      <ProfileHeader />
-      <AcademicDetails />
-      <About />
-      <SocialMedia />
-      <ProfileSkills />
-      <ProfileWorkExperience />
-      <FilesUpload />
-      <Footer />
-    </div>
-  );
+  if(profile){
+    return (
+      <div className="final-profile-page">
+        <StudentHeader />
+        <ProfileHeader sname={profile.name} semail={profile.email} swebsite={profile.website} sdesc={profile.description} ssdesc={profile.shortDescription}/>
+        <AcademicDetails rollNo={profile.rollNo} cgpa={profile.CGPA} sbranch = {profile.branch} />
+        <About />
+        {/* <SocialMedia /> */}
+        <ProfileSkills />
+        <ProfileWorkExperience />
+        <FilesUpload />
+        <Footer />
+      </div>
+    );
+  }
+  
 };
 export default ProfilePage;

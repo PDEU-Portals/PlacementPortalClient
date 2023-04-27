@@ -11,9 +11,9 @@ export default function Recruiter_Login() {
       axios
         .get("http://localhost:5000/api/v1/internal/isLoggedIn")
         .then((res) => {
-          // if (res.data.isLoggedIn) {
-          //   navigate("/students/profile");
-          // }
+          if (res.data.isLoggedIn) {
+            navigate(`/students/profile/${localStorage.getItem('studentId')}`);
+          }
           // console.log(res.data.isLoggedIn)
         })
         .catch((err) => {
@@ -40,6 +40,10 @@ export default function Recruiter_Login() {
     e.preventDefault();
     setPassword(e.target.value);
   };
+
+  const handleRegister = () => {
+    navigate("/students/register")
+  }
 
   const handleLogin = async (email, password, e) => {
 
@@ -142,11 +146,11 @@ export default function Recruiter_Login() {
               </a>
             </p>
 
-            <Link to="/students/register">
-              <p className="no-underline text-orange text-lg hover:text-white">
+            {/* <Link to="/students/register"> */}
+              <p className="no-underline text-orange text-lg hover:text-white" onClick={handleRegister}>
                 Not registered?
               </p>
-            </Link>
+            {/* </Link> */}
           </div>
 
           

@@ -46,8 +46,10 @@ const Register = () => {
     try {
       // const {data} = await axios.post("http://localhost:5000/api/v1/login", {email,password})
       const data = await axios.post("http://localhost:5000/api/v1/Register", {email, password, name})
-      if(data.status === 200)
+      if(data.status === 200){
         alert("Registered Successfully");
+        navigate("/")
+      }
       else{
         alert(data.data.message);
       }
