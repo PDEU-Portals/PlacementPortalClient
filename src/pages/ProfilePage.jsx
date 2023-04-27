@@ -10,14 +10,17 @@ import AcademicDetails from "../components/ProfilePageComponent/AcademicDetails"
 import About from "../components/ProfilePageComponent/About"
 import SocialMedia from "../components/ProfilePageComponent/SocialMedia"
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 export const ProfilePage = () => {
 
   const [profile,setProfile] = React.useState(null)
 
+  const {id} = useParams()
+
   React.useEffect(() => {
     const fetchProfile = async() => {
-      const response = await axios.get(`http://localhost:5000/api/v1/getInfo/${localStorage.getItem('studentId')}`)
+      const response = await axios.get(`http://localhost:5000/api/v1/getInfo/${id}`)
       console.log(response.data)
       setProfile(response.data)
     }

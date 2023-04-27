@@ -32,7 +32,7 @@ export default function AdminTable() {
   React.useEffect(() => {
     const fetchData = async() => {
       const response = await axios.get(`http://localhost:5000/api/v1/admin/getUsers`)
-      // console.log(response.data.map(res => res.resume[]))
+      console.log(response.data)
       setRows(response.data)
     }
     fetchData()

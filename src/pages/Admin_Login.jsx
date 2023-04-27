@@ -63,7 +63,7 @@ export default function Admin_Login() {
     // else {
       try {
         const data = await axios.post(
-          "http://localhost:5000/api/v1/login",
+          "http://localhost:5000/api/v1/admin/login",
           {
             email,
             password,
@@ -74,7 +74,7 @@ export default function Admin_Login() {
         );
         console.log(data);
         if (data.status === 200) {
-          navigate("/students/profile");
+          navigate("/admin/adminhome");
         }
       } catch (error) {
         if (error.response) {

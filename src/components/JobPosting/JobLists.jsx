@@ -17,9 +17,7 @@ const JobCard = ({ job }) => {
   }
 
   const handleDelete = async() => {
-    const response = await axios.delete(`http://localhost:5000/api/v1/recruiter/deleteJob`,{
-      jobId: job._id
-    })
+    const response = await axios.post(`http://localhost:5000/api/v1/recruiter/deleteJob/${job._id}`)
     if(response.status == 200){
       window.location.reload()
     }
