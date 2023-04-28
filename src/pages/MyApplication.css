@@ -1,0 +1,45 @@
+.my-jobs {
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    }
+    
+    .my-jobs__title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    }
+    
+    .my-jobs__count {
+    font-size: 16px;
+    margin-bottom: 20px;
+    }
+    
+    .my-jobs__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    }
+    
+    .my-jobs__item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    }
+    
+    .my-jobs__job-title {
+    font-size: 20px;
+    margin-bottom: 5px;
+    }
+    
+    .my-jobs__company,
+    .my-jobs__location {
+    font-size: 14px;
+    margin-bottom: 5px;
+    }
+    
+    .my-jobs__description {
+    font-size: 16px;
+    margin-bottom: 0;
+    }
