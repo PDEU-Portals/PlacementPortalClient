@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "./Css/ProfileSkills.css";
 
-const ProfileSkills = () => {
+const ProfileSkills = ({sg,sl,st}) => {
   const [socialMedia, setSocialMedia] = useState([
     {
       github: "",
@@ -10,6 +10,10 @@ const ProfileSkills = () => {
       twitter: "",
     },
   ]);
+
+  const [github,setGithub] = useState(sg)
+  const [twitter,setTwitter] =useState(st)
+  const [linkedin,setLinkedin] = useState(sl)
   const [initialSocialMedia, setInitialSocialMedia] = useState({
     github: "",
     linkedin: "",
@@ -32,30 +36,37 @@ const ProfileSkills = () => {
   //   fetchSkills();
   // }, []);
 
-  const handleSocialMediaChange = (e) => {
-    const { name, value } = e.target;
-    setSocialMedia((prevState) => ({ ...prevState, [name]: value }));
-  };
+  // const handleSocialMediaChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setSocialMedia((prevState) => ({ ...prevState, [name]: value }));
+  // };
 
   const handleEdit = () => {
     setIsEditing(true);
   };
 
   const handleSave = async () => {
-    console.log(socialMedia);
+    // console.log(socialMedia);
+    const formData = new FormData()
+    formData.append("id", localStorage.getItem('studentId'))
+    formData.append("github", github)
+    formData.append("twitter", twitter)
+    formData.append("linkedin", linkedin)
     try {
       const response = await axios.post(
         `http://localhost:3000/api/v1/updateProfile`,
-        socialMedia,
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        }
+        formData,
+        // {
+        //   headers: {
+        //     Authorization: `Bearer ${localStorage.getItem("token")}`,
+        //   },
+        // }
       );
-      console.log(response);
+      console.log(response.data);
       setIsEditing(false);
-      setInitialSocialMedia(socialMedia);
+      setGithub(response.data.github);
+      setLinkedin(response.data.linkedin)
+      setTwitter(response.data.twitter)
     } catch (error) {
       console.log(error);
     }
@@ -189,24 +200,24 @@ const ProfileSkills = () => {
                   className="social-media-input"
                   type="text"
                   name="github"
-                  value={socialMedia.github}
-                  onChange={handleSocialMediaChange}
+                  value={github}
+                  onChange={(e) => setGithub(e.target.value)}
                 />
                 <label>LinkedIn:</label>
                 <input
                   className="social-media-input"
                   type="text"
                   name="linkedin"
-                  value={socialMedia.linkedin}
-                  onChange={handleSocialMediaChange}
+                  value={linkedin}
+                  onChange={(e) => setLinkedin(e.target.value)}
                 />
                 <label>Twitter:</label>
                 <input
                   className="social-media-input"
                   type="text"
                   name="twitter"
-                  value={socialMedia.twitter}
-                  onChange={handleSocialMediaChange}
+                  value={twitter}
+                  onChange={(e) => setTwitter(e.target.value)}
                 />
                 <div className="social-media-buttons">
                   <button className="social-media-button" onClick={handleSave}>
@@ -224,9 +235,9 @@ const ProfileSkills = () => {
           ) : (
             <>
               <div className="link-section">
-                <p>Github: {socialMedia.github}</p>
-                <p>LinkedIn: {socialMedia.linkedin}</p>
-                <p>Twitter: {socialMedia.twitter}</p>
+                <a href={github} target="_blank" className="hover:cursor-pointer text-xl px-4 text-gray-500">Github: {github}</a>
+                <a href={linkedin} target="_blank" className="hover:cursor-pointer text-xl px-4 text-gray-500">LinkedIn: {linkedin}</a>
+                <a href={twitter} target="_blank" className="hover:cursor-pointer text-xl px-4 text-gray-500">Twitter: {twitter}</a>
                 <button className="social-media-button" onClick={handleEdit}>
                   Edit
                 </button>

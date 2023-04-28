@@ -1,29 +1,34 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 
-export const About = () => {
+export const About = ({sbout}) => {
 
   const [editMode, setEditMode] = useState(false);
-  const [about, setAbout] = useState({
-    about1 : "As a seasoned web developer and graphics designer, I bring a wealth of expertise and experience in front-end development and design to the table. With a strong understanding of the latest technologies and a keen eye for aesthetics, I have a proven track record of delivering innovative and visually appealing solutions to complex problems.",
-    about2 : "My hands-on experience in various hackathons and real-life projects has honed my ability to create user-friendly interfaces and intuitive designs that meet the needs of both users and clients. Whether I'm working on a large-scale project or a small-scale design task, I bring my passion for design and my commitment to excellence to every project I take on. If you're looking for a web developer and graphics designer who can bring creativity and technical expertise to your team, I'd be honored to put my skills to work for you. Let's connect and explore the opportunities!",
-  })
+  const [about, setAbout] = useState(sbout)
 
   const handleEditClick = () =>{
     setEditMode(true);
   }
-  const handleEditSave = () =>{
+  const handleEditSave = async() =>{
     setEditMode(false);
+    const formData = new FormData()
+    formData.append("id", localStorage.getItem('studentId'))
+    formData.append("about",about)
+    
+    const response = await axios.post(`http://localhost:5000/api/v1/updateProfile`,formData)
+    // console.log(response.data);
+    setAbout(response.data.about)
   }
   const handleEditCancle = () =>{
     setEditMode(false);
   }
 
-  const handleChange = (event) => {
-    setAbout({
-      ...About,
-      [event.target.name] : event.target.value
-    });
-  }
+  // const handleChange = (event) => {
+  //   setAbout({
+  //     ...About,
+  //     [event.target.name] : event.target.value
+  //   });
+  // }
   return (
     <div className="bg-gray-200 rounded-3xl" style={{ margin : '3em', padding : '2em '}}>
 
@@ -40,15 +45,15 @@ export const About = () => {
                 <button className="bg-gray-200 hover:bg-gray-400 font-bold py-2 px-4 rounded mx-4"
                   onClick={handleEditCancle}
                 >
-                  Cancle
+                  Cancel
                 </button>
               </div>
             </div>
             <p className="mx-8 mb-2">
              <textarea name="about1" id="about1" cols="180" rows="4" 
-              value={about.about1}
-              onChange={handleChange}
-              placeholder= "Tell us about yourslef"    
+              value={about}
+              onChange={(e) => setAbout(e.target.value)}
+              placeholder= "Tell us about yourself"    
              />
             </p>
             {/* <p className="mx-8">
@@ -72,7 +77,7 @@ export const About = () => {
               </div>
             </div>
             <p className="mx-8 mb-2" style={{fontSize : "1.2rem"}}>
-              {about.about1}
+              {about}
             </p>
             {/* <p className="mx-8">
               {about.about2}

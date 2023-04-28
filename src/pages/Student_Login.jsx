@@ -6,23 +6,23 @@ import Header from "../components/Header/Header";
 export default function Recruiter_Login() {
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   try {
-  //     axios
-  //       .get("http://localhost:5000/api/v1/internal/isLoggedIn")
-  //       .then((res) => {
-  //         if (res.data.isLoggedIn) {
-  //           navigate(`/students/profile/${localStorage.getItem('studentId')}`);
-  //         }
-  //         // console.log(res.data.isLoggedIn)
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //       });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }, []);
+  useEffect(() => {
+    try {
+      axios
+        .get("http://localhost:5000/api/v1/internal/isLoggedIn")
+        .then((res) => {
+          if (res.data.isLoggedIn) {
+            navigate(`/students/profile/${localStorage.getItem('studentId')}`);
+          }
+          // console.log(res.data.isLoggedIn)
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
 
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");

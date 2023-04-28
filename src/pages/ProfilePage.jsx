@@ -33,9 +33,9 @@ export const ProfilePage = () => {
         <StudentHeader />
         <ProfileHeader sname={profile.name} semail={profile.email} swebsite={profile.website} sdesc={profile.description} ssdesc={profile.shortDescription}/>
         <AcademicDetails rollNo={profile.rollNo} cgpa={profile.CGPA} sbranch = {profile.branch} />
-        <About />
+        <About sbout={profile.about} />
         {/* <SocialMedia /> */}
-        <ProfileSkills />
+        <ProfileSkills sg={profile.github} sl={profile.linkedin} st={profile.twitter} />
         <ProfileWorkExperience />
         <FilesUpload />
         <Footer />
