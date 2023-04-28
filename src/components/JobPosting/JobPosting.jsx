@@ -11,17 +11,15 @@ const JobPosting = () => {
     const {id} = useParams()
     // console.log(id)
 
-    const [job,setJob] = React.useState({})
+    const [job,setJob] = React.useState(null)
+    const [applicants,setApplicants] = React.useState(null)
 
     React.useEffect(() => {
         const getJob = async() => {
-            const response = await axios.get(`http://localhost:5000/api/v1/recruiter/getJob/${id}`,{
-                // params:{
-                //     id
-                // }
-            })
-            // console.log(response)
+            const response = await axios.get(`http://localhost:5000/api/v1/recruiter/getJob/${id}`)
+            console.log(response.data.job.applicants)
             setJob(response.data)
+            setApplicants(response.data.job.applicants)
             // console.log(job.applications)
         }
         getJob()
@@ -30,13 +28,13 @@ const JobPosting = () => {
     // console.log(job.applicants)
 
 
-
-  return (
+if(job){
+    return (
         
         <>
             <RecruiterHeader/>
             
-            <div className="job-title">{job.title}</div>
+            <div className="job-title">{job.job.title}</div>
             <a href="/recruiter/post_job">
                 <button className='Post-Jobs'>Post Jobs</button>
             </a>
@@ -52,6 +50,8 @@ const JobPosting = () => {
             <Footer/>
         </>
     )
+}
+  
 }
 
 export default JobPosting;

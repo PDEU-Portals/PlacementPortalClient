@@ -3,37 +3,34 @@ import "./Css/ProfileHeader.css";
 import dummyphoto from "./Dummy-Profile.jpg";
 import axios from "axios";
 
-function ProfilePage() {
+function ProfilePage({sname,semail,swebsite,sdesc,ssdesc}) {
   // Set initial state for user profile information
-  const [name, setName] = useState("John Doe");
-  const [shortDescription, setShortDescription] = useState(
-    "Web Developer | Explorer | problem solver"
-  );
-  const [email, setEmail] = useState("John.dce21@sot.pdpu.ac.in")
-  const [website, setWebsite] = useState("https://www.example.com");
+  const [name, setName] = useState(sname);
+  const [shortDescription, setShortDescription] = useState(ssdesc);
+  const [email, setEmail] = useState(semail)
+  const [website, setWebsite] = useState(swebsite);
   const [photo, setPhoto] = useState(dummyphoto);
-  const [description, setDescription] = useState(
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-  );
+  const [description, setDescription] = useState(sdesc);
   // Set initial state for editing status
   const [isEditing, setIsEditing] = useState(false);
   const [initialDataLoaded, setInitialDataLoaded] = useState(false);
 
-  useEffect(() => {
-    // Load initial data from API endpoint
-    axios
-      .get(`http://localhost:5000/api/v1/getInfo`)
-      .then((response) => {
-        console.log(response.data.resume[0].secure_url);
-        setName(response.data.name);
-        // setShortDescription(response.data.shortDescription);
-        setWebsite(response.data.website);
-        // setPhoto(dummyphoto);
-        setDescription(response.data.description);
-        setInitialDataLoaded(true);
-      })
-      .catch((error) => console.log(error));
-  }, []);
+  // useEffect(() => {
+  //   // Load initial data from API endpoint
+  //   axios
+  //     .get(`http://localhost:5000/api/v1/getInfo/${localStorage.getItem('studentId')}`)
+  //     .then((response) => {
+  //       console.log(response.data.resume[0].secure_url)
+  //       setName(response.data.name);
+  //       // setShortDescription(response.data.shortDescription);
+  //       setWebsite(response.data.website);
+  //       // setPhoto(dummyphoto);
+  //       setDescription(response.data.description);
+  //       setEmail(response.data.email)
+  //       setInitialDataLoaded(true);
+  //     })
+  //     .catch((error) => console.log(error));
+  // }, []);
 
   // Handle form submit to update user profile information
   const handleSubmit = (event) => {
@@ -42,16 +39,19 @@ function ProfilePage() {
 
     // Prepare data to send to API
     const formData = new FormData();
+    formData.append("id", localStorage.getItem('studentId'))
     formData.append("name", name);
     formData.append("shortDescription", shortDescription);
     formData.append("website", website);
-    formData.append("photo", photo);
+    // formData.append("photo", photo);
     formData.append("description", description);
 
+    console.log(formData.get('name'));
     // Send data to API endpoint
     axios
-      .post("https://dummyapi.com/profile", formData)
+      .post(`http://localhost:5000/api/v1/updateProfile`, formData)
       .then((response) => {
+        console.log(response);
         setName(response.data.name);
         setShortDescription(response.data.shortDescription);
         setWebsite(response.data.website);

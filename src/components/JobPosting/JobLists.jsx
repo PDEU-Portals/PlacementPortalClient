@@ -6,9 +6,9 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 
-const JobCard = ({ job, onDelete }) => {
+const JobCard = ({ job }) => {
   // console.log(job)
-  const { companyName, role, description, skills } = job;
+  // const { companyName, role, description, skills } = job;
 
   const navigate = useNavigate()
 
@@ -16,17 +16,24 @@ const JobCard = ({ job, onDelete }) => {
     navigate(`/recruiter/jobinformation/${job._id}`)
   }
 
+  const handleDelete = async() => {
+    const response = await axios.post(`http://localhost:5000/api/v1/recruiter/deleteJob/${job._id}`)
+    if(response.status == 200){
+      window.location.reload()
+    }
+  }
+
   return (
-    <div className="job-card-recruiter" onClick={handleClick}>
-      <h2>{companyName}</h2>
-      <h3>{role}</h3>
-      <p>{description}</p>
+    <div className="job-card-recruiter">
+      {/* <h2>{companyName}</h2> */}
+      <h3 onClick={handleClick}>{job.title}</h3>
+      <p>{job.description}</p>
       <ul>
-        {skills.map((skill, index) => (
+        {job.skills.map((skill, index) => (
           <li key={index}>{skill}</li>
         ))}
       </ul>
-      <button onClick={onDelete}>Delete Job</button>
+      <button onClick={handleDelete}>Delete Job</button>
     </div>
   );
 };

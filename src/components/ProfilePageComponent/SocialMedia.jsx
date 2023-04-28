@@ -5,7 +5,7 @@ import imageinsta from './images/akar-icons_instagram-fill.png'
 import './Css/SocialMedia.css';
 import { Link } from 'react-router-dom';
 
-export const SocialMedia = () => {
+const SocialMedia = () => {
 
   const [editMode, setEditMode] = useState(false);
   const [socials, setSocails] = useState({
@@ -130,3 +130,5 @@ export const SocialMedia = () => {
     </>
   )
 }
+
+export default SocialMedia;

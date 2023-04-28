@@ -12,6 +12,8 @@ function  Header() {
   const handleLogout = async() => {
     const res = await axios.get(`http://localhost:5000/api/v1/recruiter/logout`)
     if(res.status == 200){
+      localStorage.removeItem('id')
+      localStorage.removeItem("token")
       navigate("/")
     }
   }
@@ -30,19 +32,19 @@ function  Header() {
       <div className="nav-links">
         <ul className="nav-links-list">
           <li>
-            <a href="/recruiter/homepage">Home</a>
+            <Link to="/recruiter/homepage">Home</Link>
           </li>
           <li>
-            <a href="/recruiter/managejobs">Manage Jobs</a>
+            <Link to="/recruiter/managejobs">Manage Jobs</Link>
           </li>
           <li>
-            <a href="/recruiter/postjob">Create Job</a>
+            <Link to="/recruiter/postjob">Create Job</Link>
           </li>
           <li>
-            <a href={`/recruiter/companyprofile/${localStorage.getItem('id')}`}>Profile</a>
+            <Link to={`/recruiter/companyprofile/${localStorage.getItem('id')}`}>Profile</Link>
           </li>
           <li>
-            <a target="#" onClick={handleLogout}>Logout</a>
+            <Link onClick={handleLogout}>Logout</Link>
           </li>
         </ul>
       </div>

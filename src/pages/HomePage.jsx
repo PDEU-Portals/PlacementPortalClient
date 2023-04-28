@@ -1,6 +1,6 @@
 import React from "react";
 import "./Card_Trial.css";
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import InfoPage from "../components/HomePage/InfoPage"
 import PortalInfo from "../components/HomePage/PortalInfo"
 import Footer from "../components/Footer"
@@ -8,6 +8,13 @@ import Article from "../components/HomePage/Article"
 import Header from "../components/Header/Header";
 
 export default function Hero() {
+
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate("/admin/adminlogin")
+  }
+
   return (
     <>
     <Header />
@@ -78,7 +85,7 @@ export default function Hero() {
               Consectetur sodales morbi dignissim sed diam pharetra vitae ipsum
               odio.
             </p>
-            <Link to='/admin/adminlogin' ><button className="Read-btn">Login</button></Link>
+            <button className="Read-btn" onClick={handleClick}>Login</button>
 
           </div>
         </div>

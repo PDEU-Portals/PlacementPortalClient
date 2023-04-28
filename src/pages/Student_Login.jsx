@@ -6,23 +6,23 @@ import Header from "../components/Header/Header";
 export default function Recruiter_Login() {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    try {
-      axios
-        .get("http://localhost:5000/api/v1/internal/isLoggedIn")
-        .then((res) => {
-          if (res.data.isLoggedIn) {
-            navigate("/students/profile");
-          }
-          // console.log(res.data.isLoggedIn)
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    } catch (err) {
-      console.log(err);
-    }
-  }, []);
+  // useEffect(() => {
+  //   try {
+  //     axios
+  //       .get("http://localhost:5000/api/v1/internal/isLoggedIn")
+  //       .then((res) => {
+  //         if (res.data.isLoggedIn) {
+  //           navigate(`/students/profile/${localStorage.getItem('studentId')}`);
+  //         }
+  //         // console.log(res.data.isLoggedIn)
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       });
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // }, []);
 
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -40,6 +40,10 @@ export default function Recruiter_Login() {
     e.preventDefault();
     setPassword(e.target.value);
   };
+
+  const handleRegister = () => {
+    navigate("/students/register")
+  }
 
   const handleLogin = async (email, password, e) => {
 
@@ -79,6 +83,7 @@ export default function Recruiter_Login() {
           navigate(`/students/profile/${localStorage.getItem('studentId')}`);
         }
       } catch (error) {
+        console.log(error)
         if (error.response) {
           if (error.response.status === 401) {
             // Handle 401 status code
@@ -94,7 +99,7 @@ export default function Recruiter_Login() {
         } else {
           // Handle network errors
           console.log("Error: Network Error");
-          alert('Something Went Wrong! Try again later');
+          // alert('Something Went Wrong! Try again later');
         }
       }
     }
@@ -141,11 +146,11 @@ export default function Recruiter_Login() {
               </a>
             </p>
 
-            <Link to="/students/register">
-              <p className="no-underline text-orange text-lg hover:text-white">
+            {/* <Link to="/students/register"> */}
+              <p className="no-underline text-orange text-lg hover:text-white" onClick={handleRegister}>
                 Not registered?
               </p>
-            </Link>
+            {/* </Link> */}
           </div>
 
           

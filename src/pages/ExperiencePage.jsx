@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import StudentHeader from "../components/Header/StudentHeader";
+import { Link } from "react-router-dom";
 import './ExperiencePage.css';
 import axios from "axios";
 
@@ -17,25 +18,28 @@ function ExperiencePage() {
 
 
   // This code to fetch user's data from backend
-  // useEffect(() => {
-  //   async function fetchUserData() {
-  //     try {
-  //       const response = await axios.get("/api/v1/user");
-  //       setUserData(response.data);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   }
-  //   fetchUserData();
-  // }, []);
+  useEffect(() => {
+    async function fetchUserData() {
+      try {
+        const response = await axios.get(`http://localhost:5000/api/v1/experience/exp`);
+        setExperiences(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchUserData();
+  }, []);
 
-  const handleShare = () => {
-    
-    console.log('Button is clicked')
-    const newExperience = { title, description };
-    setExperiences([...experiences, newExperience]);
-    setTitle("");
-    setDescription("");
+  const handleShare = async(e) => {
+    e.preventDefault()
+    const response = await axios.post(`http://localhost:5000/api/v1/experience/exp`,{
+      id: localStorage.getItem('studentId'),
+      title,
+      description
+    })
+    if(response.status == 200){
+      window.location.reload()
+    }
   };
 
   // This code will fetch all experiences stored in Database
@@ -113,7 +117,7 @@ function ExperiencePage() {
           <p className="shared-experience-description">{experience.description}</p>
           <br />
         <hr />
-          <div className="shared-by"> <p className="shared-by-info"> <a href={`/students/${experience.userId}`} target="_blank"> Shared by:  {userData.name} ({userData.email}) </a> </p> </div>
+          {/* <div className="shared-by"> <p className="shared-by-info"> <Link to={`/students/profile/${experience.userId}`} target="_blank"> Shared by:  {userData.name} ({userData.email}) </Link> </p> </div> */}
         </div>
         </>
       ))}
