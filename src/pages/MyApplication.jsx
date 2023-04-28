@@ -29,7 +29,7 @@ const MyApplication = () => {
       id: 5,
       title: "Product Manager",
       company: "Microsoft",
-      location: "Redmond, WA",
+      location: "Redmond",
       description: "Manage the development of Microsoft's flagship products.",
     },
   ];
