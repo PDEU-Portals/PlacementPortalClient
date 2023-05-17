@@ -31,7 +31,7 @@ function Header() {
             <a href="/admin/managerecruiters">Manage Recruiters</a>
           </li>
           <li>
-            {/* <a href="/recruiterrequest">Recruiter Req</a> */}
+            <a href="/admin/addrecruiters">Add Recruiters</a>
           </li>
           <li>
             <a href="/">Logout</a>

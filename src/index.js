@@ -44,6 +44,7 @@ import Error_404 from "./components/Error_404/Error"
 import AdminHomePage from './components/HomePage/AdminHomePage';
 import ManageRecruiter from "./components/AdminTable/ManageRecruiter"
 import MyApplication from "./pages/MyApplication"
+import AddRecruiters from "./pages/AddRecruiters"
 
 axios.defaults.withCredentials = true
 
@@ -217,6 +218,10 @@ const router = createBrowserRouter([
   {
     path:"/admin/managerecruiters",
     element: <ManageRecruiter  />
+  },
+  {
+    path:"/admin/addrecruiters",
+    element: <AddRecruiters />
   }
 ])
 
