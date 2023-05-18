@@ -46,6 +46,7 @@ import ManageRecruiter from "./components/AdminTable/ManageRecruiter"
 import MyApplication from "./pages/MyApplication"
 import AddRecruiters from "./pages/AddRecruiters"
 import ViewOnlyCompanyProfile from "./pages/ViewOnlyCompanyProfile"
+import ViewOnlyStudentProfile from "./pages/ViewOnlyStudentProfile"
 
 axios.defaults.withCredentials = true
 
@@ -227,6 +228,10 @@ const router = createBrowserRouter([
   {
     path:"/recruiter/viewonlyprofile/:id",
     element: <ViewOnlyCompanyProfile />
+  },
+  {
+    path:"/students/viewonlyprofile/:id",
+    element: <ViewOnlyStudentProfile />
   }
 ])
 
