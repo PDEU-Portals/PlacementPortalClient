@@ -416,52 +416,6 @@ function ProfilePage() {
                    disabled={!isEditMode}
                  />
                </div>
-             
-               {/* <div className="form-group">
-                 <label htmlFor="skills">Skills</label>
-                 <div className="skills-container">
-                   {skills.map((skill, index) => (
-                     <div className="skill" key={index}>
-                       {skill}
-                       {isEditMode && (
-                         <button
-                           type="button"
-                           className="delete-skill"
-                           onClick={() => handleDeleteSkill(index)}
-                         >
-                           X
-                         </button>
-                       )}
-                     </div>
-                   ))}
-                 </div>
-                 {isEditMode && (
-                   <div className="add-skill-container">
-                     <input
-                       type="text"
-                       id="skillName"
-                       value={skillName}
-                       onChange={handleSkillNameChange}
-                       placeholder="Enter skill name"
-                     />
-                     <button type="button" onClick={handleAddSkill}>
-                       Add Skill
-                     </button>
-                   </div>
-                 )}
-               </div>
-             
-               <div className="form-group">
-                 <label htmlFor="additionalInfo">Additional Info</label>
-                 <textarea
-                   id="additionalInfo"
-                   value={additionalInfo}
-                   onChange={handleAdditionalInfoChange}
-                   placeholder="Enter additional info"
-                   disabled={!isEditMode}
-                 />
-               </div> */}
-             
                {isEditMode ? (
                  <div className="button-container">
                    <button type="submit">Save</button>
