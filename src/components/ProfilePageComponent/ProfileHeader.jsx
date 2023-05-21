@@ -88,7 +88,7 @@ function ProfilePage({sname,semail,swebsite,sdesc,ssdesc}) {
                {shortDescription}
             </p>
             <p className="profile__website">
-              Website: <a href={website}>{website}</a>
+              Website: <a href={website} target="_BLANK">{website}</a>
             </p>
             <p className="profile__email">
               Email: {email}

@@ -221,9 +221,9 @@ const ProfileSkills = ({sg,sl,st,sskills}) => {
           ) : (
             <>
               <div className="link-section">
-                <a href={github} target="_blank" className="hover:cursor-pointer text-xl px-4 text-gray-500">Github: {github}</a>
-                <a href={linkedin} target="_blank" className="hover:cursor-pointer text-xl px-4 text-gray-500">LinkedIn: {linkedin}</a>
-                <a href={twitter} target="_blank" className="hover:cursor-pointer text-xl px-4 text-gray-500">Twitter: {twitter}</a>
+                <a href={github} target="_blank" className="hover:cursor-pointer text-xl px-4 text-gray-500">Github</a>
+                <a href={linkedin} target="_blank" className="hover:cursor-pointer text-xl px-4 text-gray-500">LinkedIn:</a>
+                <a href={twitter} target="_blank" className="hover:cursor-pointer text-xl px-4 text-gray-500">Twitter:</a>
                 <button className="social-media-button" onClick={handleEdit}>
                   Edit
                 </button>

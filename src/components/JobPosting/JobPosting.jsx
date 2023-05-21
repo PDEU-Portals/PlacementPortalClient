@@ -36,15 +36,19 @@ if(job && applicants){
             
             <div className="job-title">{job.job.title}</div>
             <a href="/recruiter/post_job">
-                <button className='Post-Jobs'>Post Jobs</button>
+                <button className='Post-Jobs'>
+                    <a href="">
+                        Approved Applicants
+                    </a>
+                </button>
             </a>
             <div className="Manage-Job">
-                <div className="Posting">Manage Job Posting</div>
-                <input type="text" placeholder='Search' />
+                <div className="Posting">Manage Applicants</div>
+                {/* <input type="text" placeholder='Search' /> */}
 
-                <a href="/recruiter/post_job">
+                {/* <a href="/recruiter/post_job">
                     <button className='jobSearch-title'>A to Z</button>
-                </a>
+                </a> */}
             </div>
 
             <ApplicantsTable id={id} />

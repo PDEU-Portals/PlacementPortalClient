@@ -83,9 +83,9 @@ const ApplicantsTable = ({id}) => {
                         <th>
                             Branch
                         </th>
-                        <th>
+                        {/* <th>
                             Resume
-                        </th>
+                        </th> */}
                         <th>
                             Approval
                         </th>
@@ -115,9 +115,9 @@ const ApplicantsTable = ({id}) => {
                                     <td>
                                         {item.branch}
                                     </td>
-                                    <td>
+                                    {/* <td>
                                         <a href={item.resume.secure_url} target='_blank' className='underline text-blue-500'>resume</a>
-                                    </td>
+                                    </td> */}
                                     
                                     <td >
 
