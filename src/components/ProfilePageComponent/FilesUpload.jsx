@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 
 function FilesUpload() {
-  const [cvFile, setCvFile] = useState(null);
+  const [cv, setCvFile] = useState("");
   const [resumeFile, setResumeFile] = useState(null);
   const [marksheet12File, setMarksheet12File] = useState(null);
   const [marksheet10File, setMarksheet10File] = useState(null);
@@ -113,18 +113,25 @@ function FilesUpload() {
     const formData = new FormData()
     formData.append('resume',resumeFile)
     const response = await axios.post(`${process.env.REACT_APP_URI}/upload/resume/${localStorage.getItem('stdudentId')}`,{
-      formData
+      formData,
+      headers:{
+        "Content-Type":'multipart/form-data'
+      }
     })
     if(response.status == 200){
       alert("Resume added")
     }
   }
   const uploadCv = async() => {
-    console.log("hit");
+    console.log(cv);
     const formData = new FormData()
-    formData.append('cv',cvFile)
+    formData.append('cv',cv)
+    console.log(formData.get('cv'));
     const response = await axios.post(`${process.env.REACT_APP_URI}/upload/cv/${localStorage.getItem('stdudentId')}`,{
-      formData
+      formData,
+      headers:{
+        "Content-Type":'multipart/form-data'
+      }
     })
     if(response.status == 200){
       alert("Cv added")

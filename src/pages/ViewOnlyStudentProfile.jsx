@@ -29,7 +29,7 @@ const ViewOnlyStudentProfile = () => {
         return ( 
             <>
                 <AdminHeader />
-                <ViewOnlyProfileHeader sname={profile.name} semail={profile.email} swebsite={profile.website} sdesc={profile.description} ssdesc={profile.shortDescription}/>
+                <ViewOnlyProfileHeader sname={profile.name} semail={profile.email} swebsite={profile.website} sdesc={profile.description} ssdesc={profile.shortDescription} sprofile={profile.profilePhoto.secure_url}/>
                 <ViewOnlyAcademicDetails rollNo={profile.rollNo} cgpa={profile.CGPA} sbranch={profile.branch} />
                 <ViewOnlyAbout sbout={profile.about}/>
                 <ViewOnlySkills sg={profile.github} sl={profile.linkedin} st={profile.twitter} skills={profile.skills} />

@@ -32,7 +32,7 @@ export default function AdminTable() {
   React.useEffect(() => {
     const fetchData = async() => {
       const response = await axios.get(`http://localhost:5000/api/v1/admin/getUsers`)
-      // console.log(response.data)
+      console.log(response.data)
       setRows(response.data)
     }
     fetchData()
@@ -67,8 +67,8 @@ export default function AdminTable() {
                   <TableCell align="center">{row.name}</TableCell>
                   <TableCell align="center">
                     <Stack direction="row"  alignItems="right" justifyContent="center">
-                      {console.log(row.resume)}
-                      <a href={row.resume} target="_blank">
+                      {/* {console.log(row.resume.secure_url ? row.resume.secure_url : "None" )} */}
+                      <a href={row.resume.secure_url} target="_blank">
                         Resume
                       </a>
                     </Stack>
