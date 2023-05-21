@@ -10,7 +10,8 @@ import { useState } from 'react';
 
 function Home({tableData}) {
 
-    const [Employees,setEmployees] = useState(data);
+    console.log(tableData);
+    const [Employees,setEmployees] = useState(null);
 
     if(tableData){
         setEmployees(tableData)

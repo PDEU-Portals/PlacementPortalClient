@@ -32,22 +32,22 @@ function  Header() {
       <div className="nav-links">
         <ul className="nav-links-list">
           <li>
-            <a href="/students/homepage">Home</a>
+            <Link to="/students/homepage">Home</Link>
           </li>
           <li>
-            <a href="/students/dashboard">Dashboard</a>
+            <Link to="/students/dashboard">Dashboard</Link>
           </li>
           <li>
             <Link to={`/students/profile/${localStorage.getItem('studentId')}`}>Profile</Link>
           </li>
           <li>
-            <a href="/students/resource/process">Resources</a>
+            <Link to="/students/resource/process">Resources</Link>
           </li>
           <li>
-            <a href="/students/jobboarding">Apply Now!</a>
+            <Link to="/students/jobboarding">Apply Now!</Link>
           </li>
           <li>
-            <a href="/students/myapplications">My Applications</a>
+            <Link to="/students/myapplications">My Applications</Link>
           </li>
           <li>
             <p onClick={handleClick}>Logout</p>

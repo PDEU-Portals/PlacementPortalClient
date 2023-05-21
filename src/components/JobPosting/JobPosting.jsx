@@ -5,6 +5,7 @@ import Footer from '../Footer'
 import RecruiterHeader from '../Header/RecruiterHeader'
 import './JobPosting.css'
 import Table from './Table/Table'
+import ApplicantsTable from './Table/Table'
 
 const JobPosting = () => {
 
@@ -17,18 +18,17 @@ const JobPosting = () => {
     React.useEffect(() => {
         const getJob = async() => {
             const response = await axios.get(`http://localhost:5000/api/v1/recruiter/getJob/${id}`)
-            console.log(response.data.job.applicants)
+            // console.log(response.data.job)
             setJob(response.data)
             setApplicants(response.data.job.applicants)
-            // console.log(job.applications)
         }
         getJob()
     },[])
 
-    // console.log(job.applicants)
+    // console.log(applicants)
 
 
-if(job){
+if(job && applicants){
     return (
         
         <>
@@ -46,7 +46,8 @@ if(job){
                     <button className='jobSearch-title'>A to Z</button>
                 </a>
             </div>
-            <Table data={job.applicants}/>
+
+            <ApplicantsTable id={id} />
             <Footer/>
         </>
     )

@@ -55,7 +55,7 @@ export default function JobDetails() {
               <h1 className="text-[#E08327] text-4xl xl:text-5xl font-bold text-center sm:text-left">
                 {job.recruiter.companyName}
               </h1>
-              <p className="text-[#1F3368] font-light text-justify px-6 mt-2 sm:px-0 xl:w-4/5 2xl:w-[75%] 2xl:text-xl">
+              <p className="text-[#1F3368] font-light text-center px-6 mt-2 sm:px-0 xl:w-4/5 2xl:w-[75%] 2xl:text-xl text-2xl">
                 {job.recruiter.companyDescription}
               </p>
             </div>
@@ -63,7 +63,7 @@ export default function JobDetails() {
               <img
                 src="/images/jobdetails/1.png"
                 alt="company"
-                className="xl:h-full"
+                className="xl:h-full h-[60vh]"
               />
             </div>
           </div>
@@ -106,11 +106,11 @@ export default function JobDetails() {
             </div>
           </div>
   
-          <div className="mt-8 lg:mt-14">
+          {/* <div className="mt-8 lg:mt-14">
             <h1 className="text-[#1F3368] text-3xl font-bold text-center sm:text-left sm:text-4xl">
               Jobs and Internships offered
             </h1>
-          </div>
+          </div> */}
   
           <div className="mt-8">
             <h1 className="text-[#1F3368] text-2xl font-bold text-center sm:text-left sm:text-4xl">
@@ -125,11 +125,11 @@ export default function JobDetails() {
             </div>
           </div>
   
-          <div className="mt-8 lg:mt-14">
+          <div className="mt-8 lg:mt-14 text-center">
             <h1 className="text-[#1F3368] text-2xl font-bold text-center sm:text-left sm:text-4xl">
               Additional Information
             </h1>
-            <p className="text-[#1F3368] font-light text-justify px-6 mt-2 sm:px-0 sm:text-lg xl:w-4/5">
+            <p className="text-[#1F3368] font-light text-center px-6 mt-2 sm:px-0 sm:text-lg xl:w-4/5">
               {job.job.description}
             </p>
           </div>
