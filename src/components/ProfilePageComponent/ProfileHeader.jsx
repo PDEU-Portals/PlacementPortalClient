@@ -3,13 +3,13 @@ import "./Css/ProfileHeader.css";
 import dummyphoto from "./Dummy-Profile.jpg";
 import axios from "axios";
 
-function ProfilePage({sname,semail,swebsite,sdesc,ssdesc}) {
+function ProfilePage({sname,semail,swebsite,sdesc,ssdesc,sprofile}) {
   // Set initial state for user profile information
   const [name, setName] = useState(sname);
   const [shortDescription, setShortDescription] = useState(ssdesc);
   const [email, setEmail] = useState(semail)
   const [website, setWebsite] = useState(swebsite);
-  const [photo, setPhoto] = useState(dummyphoto);
+  const [photo, setPhoto] = useState(sprofile);
   const [description, setDescription] = useState(sdesc);
   // Set initial state for editing status
   const [isEditing, setIsEditing] = useState(false);
@@ -43,13 +43,19 @@ function ProfilePage({sname,semail,swebsite,sdesc,ssdesc}) {
     formData.append("name", name);
     formData.append("shortDescription", shortDescription);
     formData.append("website", website);
-    // formData.append("photo", photo);
     formData.append("description", description);
+    if(photo){
+      formData.append("profile", photo);
+    }
 
     console.log(formData.get('name'));
     // Send data to API endpoint
     axios
-      .post(`http://localhost:5000/api/v1/updateProfile`, formData)
+      .post(`http://localhost:5000/api/v1/updateProfile`, formData,{
+        headers:{
+          "Content-Type":'multipart/form-data'
+        }
+      })
       .then((response) => {
         console.log(response);
         setName(response.data.name);
@@ -80,7 +86,7 @@ function ProfilePage({sname,semail,swebsite,sdesc,ssdesc}) {
         <div className="profile__content">
           <div className="img_container">
             <h1>PDEU Student</h1>
-            <img className="profile__photo" src="https://source.unsplash.com/150x150/?portrait?3" alt="Profile" />
+            <img className="profile__photo object-cover" src={sprofile} alt="Profile" />
           </div>
           <div className="header-content">
             <p className="profile__name"> {name}</p>

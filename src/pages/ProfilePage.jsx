@@ -35,7 +35,7 @@ export const ProfilePage = () => {
     return (
       <div className="final-profile-page">
         <StudentHeader />
-        <ProfileHeader sname={profile.name} semail={profile.email} swebsite={profile.website} sdesc={profile.description} ssdesc={profile.shortDescription}/>
+        <ProfileHeader sname={profile.name} semail={profile.email} swebsite={profile.website} sdesc={profile.description} ssdesc={profile.shortDescription} sprofile={profile.profilePhoto.secure_url}/>
         <AcademicDetails rollNo={profile.rollNo} cgpa={profile.CGPA} sbranch = {profile.branch} />
         <About sbout={profile.about} />
         {/* <SocialMedia /> */}
