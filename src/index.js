@@ -47,6 +47,7 @@ import MyApplication from "./pages/MyApplication"
 import AddRecruiters from "./pages/AddRecruiters"
 import ViewOnlyCompanyProfile from "./pages/ViewOnlyCompanyProfile"
 import ViewOnlyStudentProfile from "./pages/ViewOnlyStudentProfile"
+import SelectedStudents from "./pages/SelectedStudents"
 
 axios.defaults.withCredentials = true
 
@@ -232,6 +233,10 @@ const router = createBrowserRouter([
   {
     path:"/students/viewonlyprofile/:id",
     element: <ViewOnlyStudentProfile />
+  },
+  {
+    path:"/recruiter/jobinformation/selectedstudents/:id",
+    element: <SelectedStudents />
   }
 ])
 

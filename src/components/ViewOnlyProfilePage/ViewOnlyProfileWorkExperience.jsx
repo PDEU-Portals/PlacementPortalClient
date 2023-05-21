@@ -10,13 +10,13 @@ function ProfileWorkExperience({we}) {
       {we.map((workExperience, index) => (
         <div key={index} className="profile-page__work-experience">
           <p className="profile-page__work-experience-company">
-            {workExperience.company}
+            {workExperience.companyName}
           </p>
           <p className="profile-page__work-experience-title">
             {workExperience.title}
           </p>
           <p className="profile-page__work-experience-date">
-            {workExperience.startDate} - {workExperience.endDate}
+          {new Date(workExperience.startDate).toDateString()} - {new Date(workExperience.endDate).toDateString()}
           </p>
           <p className="profile-page__work-experience-description">
             {workExperience.description}

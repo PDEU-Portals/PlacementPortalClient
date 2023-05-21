@@ -20,7 +20,11 @@ export const ProfilePage = () => {
 
   React.useEffect(() => {
     const fetchProfile = async() => {
-      const response = await axios.get(`http://localhost:5000/api/v1/getInfo/${id}`)
+      const response = await axios.get(`http://localhost:5000/api/v1/getInfo/${id}`,{
+        headers:{
+          "Authorization": `Bearer ${localStorage.getItem('studentToken')}`
+        }
+      })
       // console.log(response.data)
       setProfile(response.data)
     }
@@ -31,12 +35,12 @@ export const ProfilePage = () => {
     return (
       <div className="final-profile-page">
         <StudentHeader />
-        <ProfileHeader sname={profile.name} semail={profile.email} swebsite={profile.website} sdesc={profile.description} ssdesc={profile.shortDescription}/>
+        <ProfileHeader sname={profile.name} semail={profile.email} swebsite={profile.website} sdesc={profile.description} ssdesc={profile.shortDescription} sprofile={profile.profilePhoto.secure_url}/>
         <AcademicDetails rollNo={profile.rollNo} cgpa={profile.CGPA} sbranch = {profile.branch} />
         <About sbout={profile.about} />
         {/* <SocialMedia /> */}
         <ProfileSkills sg={profile.github} sl={profile.linkedin} st={profile.twitter} sskills={profile.skills} />
-        <ProfileWorkExperience />
+        <ProfileWorkExperience workExperience={profile.workExperience} />
         <FilesUpload />
         <Footer />
       </div>

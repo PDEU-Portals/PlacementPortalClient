@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios  from "axios";
 import './Css/ProfileWorkExperience.css';
 
-function ProfileWorkExperience() {
+function ProfileWorkExperience({workExperience}) {
   const [showForm, setShowForm] = useState(false);
   const [company, setCompany] = useState("");
   const [title, setTitle] = useState("");
@@ -10,7 +10,7 @@ function ProfileWorkExperience() {
   const [endDate, setEndDate] = useState("");
   const [currentlyWorking, setCurrentlyWorking] = useState(false);
   const [description, setDescription] = useState("");
-  const [workExperiences, setWorkExperiences] = useState([]);
+  const [workExperiences, setWorkExperiences] = useState(workExperience);
 
   const handleCompanyChange = (e) => setCompany(e.target.value);
   const handleTitleChange = (e) => setTitle(e.target.value);
@@ -35,9 +35,19 @@ function ProfileWorkExperience() {
       company,
       title,
       startDate,
-      endDate: currentlyWorking ? "Present" : endDate,
+      endDate: currentlyWorking ? new Date() : endDate,
       description,
     };
+
+    const response = await axios.post(`${process.env.REACT_APP_URI}/addWE/${localStorage.getItem('studentId')}`,{
+      companyName: company,
+      designation: title,
+      startDate,
+      endDate: currentlyWorking ? new Date() : endDate,
+      description
+    })
+
+    // console.log(response.data);
   
       // Add the new work experience to the existing list
       const updatedWorkExperiences = [...workExperiences, newWorkExperience];
@@ -61,17 +71,17 @@ function ProfileWorkExperience() {
 
   const handleAddWorkExperience = () => setShowForm(true);
 
-  useEffect(() => {
-    const fetchWorkExperiences = async () => {
-      try {
-        const response = await axios.get('https://dummyapi.com/work-experience');
-        setWorkExperiences(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchWorkExperiences();
-  }, []);
+  // useEffect(() => {
+  //   const fetchWorkExperiences = async () => {
+  //     try {
+  //       const response = await axios.get('https://dummyapi.com/work-experience');
+  //       setWorkExperiences(response.data);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+  //   fetchWorkExperiences();
+  // }, []);
 
   return (
     <div className="experience-section">
@@ -118,7 +128,7 @@ function ProfileWorkExperience() {
           <label className="profile-page__form-label">
             End Date:
             {currentlyWorking ? (
-              <span>Present</span>
+              <span> {new Date().toLocaleDateString()}</span>
             ) : (
               <input
                 className="profile-page__form-input"
@@ -164,13 +174,13 @@ function ProfileWorkExperience() {
       {workExperiences.map((workExperience, index) => (
         <div key={index} className="profile-page__work-experience">
           <p className="profile-page__work-experience-company">
-            {workExperience.company}
+            {workExperience.companyName}
           </p>
           <p className="profile-page__work-experience-title">
             {workExperience.title}
           </p>
           <p className="profile-page__work-experience-date">
-            {workExperience.startDate} - {workExperience.endDate}
+            {new Date(workExperience.startDate).toDateString()} - {new Date(workExperience.endDate).toDateString()}
           </p>
           <p className="profile-page__work-experience-description">
             {workExperience.description}
