@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export const fetchJobs = async() => {
-    const data = await axios.get(`http://localhost:5000/api/v1/recruiter/getJobs/${localStorage.getItem('id')}`)
+    const data = await axios.get(`${process.env.REACT_APP_URI}/recruiter/getJobs`)
     return data.data
 }
