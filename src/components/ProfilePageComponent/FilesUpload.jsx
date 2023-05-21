@@ -20,32 +20,32 @@ function FilesUpload() {
   const [initialPlacementOfferFile, setInitialPlacementOfferFile] = useState(null);
   const [initialMarksheetFile, setInitialMarksheetFile] = useState(null);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
-  const fetchData = async () => {
-    try {
-      // Fetch data from the backend
-      const response = await fetch('/api/data');
+  // const fetchData = async () => {
+  //   try {
+  //     // Fetch data from the backend
+  //     const response = await fetch('/api/data');
 
-      if (response.ok) {
-        // Extract the data from the response
-        const data = await response.json();
+  //     if (response.ok) {
+  //       // Extract the data from the response
+  //       const data = await response.json();
 
-        // Set the file state variables with the fetched data
-        setCvFile(data.cvFile);
-        setResumeFile(data.resumeFile);
-        // ... set other file state variables based on the data received
-      } else {
-        // Handle error response from the backend
-        console.error('Failed to fetch data!');
-      }
-    } catch (error) {
-      // Handle network error or other exceptions
-      console.error('An error occurred while fetching data:', error);
-    }
-  };
+  //       // Set the file state variables with the fetched data
+  //       setCvFile(data.cvFile);
+  //       setResumeFile(data.resumeFile);
+  //       // ... set other file state variables based on the data received
+  //     } else {
+  //       // Handle error response from the backend
+  //       console.error('Failed to fetch data!');
+  //     }
+  //   } catch (error) {
+  //     // Handle network error or other exceptions
+  //     console.error('An error occurred while fetching data:', error);
+  //   }
+  // };
 
   const handleCvChange = (event) => {
     setCvFile(event.target.files[0]);

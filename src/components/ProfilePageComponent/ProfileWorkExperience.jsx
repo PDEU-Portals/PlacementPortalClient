@@ -49,8 +49,8 @@ function ProfileWorkExperience() {
       setShowForm(false);
 
     try {
-      const response = await axios.post('https://dummyapi.com/work-experience', newWorkExperience);
-      setWorkExperiences([...workExperiences, response.data]);
+      // const response = await axios.post('https://dummyapi.com/work-experience', newWorkExperience);
+      // setWorkExperiences([...workExperiences, response.data]);
       setShowForm(false);
     } catch (error) {
       console.error(error);

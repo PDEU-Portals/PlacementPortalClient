@@ -1,7 +1,8 @@
 import React from "react";
 import { Icon } from "@iconify/react";
+import { Link } from "react-router-dom";
 
-const ManageRecruiterCard = ({onDelete}) => {
+const ManageRecruiterCard = ({recruiter, onDelete}) => {
     const handleDelete = () => {
         // Call the onDelete function passed from the parent component
         onDelete();
@@ -21,13 +22,13 @@ const ManageRecruiterCard = ({onDelete}) => {
             {/*divide-y divide-gray-700*/}
             <div className="my-2 space-y-1">
               <h2 className="text-xl text-[#1F3368] font-semibold sm:text-2xl">
-                company Name
+                {recruiter.companyName}
               </h2>
               <p className="px-5 text-xs text-[#1F3368] sm:text-base ">
-                Recruiter Name{" "}
+                {recruiter.name}{" "}
               </p>
               <p className="px-5 text-xs sm:text-base text-[#F68C1F] ">
-                Website
+                {recruiter.companyWebsite}
               </p>
             </div>
             <div className="flex justify-center space-x-4 align-center">
@@ -64,23 +65,23 @@ const ManageRecruiterCard = ({onDelete}) => {
           </div>
         </div>
 
-        <div className=" flex">
+        <div className="flex flex-col justify-center items-center">
           {/* <Icon icon="ant-design:like-outlined" color="black" className="cursor-pointer text-5xl" />
     <Icon icon="ant-design:dislike-outlined" color="black" className=" mx-1 cursor-pointer text-5xl" /> */}
-          <a href="/recruiter/viewonlyprofile/:id">
+            <Link to={`/recruiter/viewonlyprofile/${recruiter._id}`}>
             <button
               type="button"
               className="text-white bg-[#1F3368] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center   self-center w-32 mt-1 ml-10"
             >
               Details
             </button>
+            </Link>
             <button
               type="button"
               className="text-white bg-[#dc2c52] hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center   self-center w-32 mt-1  ml-10 " onClick={handleDelete}
             >
               Delete
             </button>
-          </a>
         </div>  
       </div>
     </>

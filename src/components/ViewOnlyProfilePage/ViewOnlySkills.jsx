@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-function ViewOnlySkills({ sg, sl, st }) {
-  const [skills, setSkills] = useState([]);
+function ViewOnlySkills({ sg, sl, st,skills }) {
+  // const [skills, setSkills] = useState([]);
 
-  useEffect(() => {
-    fetchSkills();
-  }, []);
+  // useEffect(() => {
+  //   fetchSkills();
+  // }, []);
 
-  const fetchSkills = async () => {
-    try {
-      const response = await axios.get("/api/skills");
-      setSkills(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  // const fetchSkills = async () => {
+  //   try {
+  //     const response = await axios.get("/api/skills");
+  //     setSkills(response.data);
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
   return (
     <>
       <div className="reach-out-page">

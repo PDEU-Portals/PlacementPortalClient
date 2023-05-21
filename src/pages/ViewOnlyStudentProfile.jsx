@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import StudentHeader from "../components/Header/StudentHeader";
+import AdminHeader from "../components/Header/AdminHeader";
 import ViewOnlyAcademicDetails from '../components/ViewOnlyProfilePage/ViewOnlyAcademicDetails.jsx';
 import ViewOnlyProfileHeader from '../components/ViewOnlyProfilePage/ViewOnlyProfileHeader.jsx';
 import axios from "axios";
@@ -19,7 +19,7 @@ const ViewOnlyStudentProfile = () => {
     React.useEffect(() => {
       const fetchProfile = async() => {
         const response = await axios.get(`http://localhost:5000/api/v1/getInfo/${id}`)
-        console.log(response.data)
+        // console.log(response.data)
         setProfile(response.data)
       }
       fetchProfile()
@@ -28,13 +28,13 @@ const ViewOnlyStudentProfile = () => {
     if(profile){
         return ( 
             <>
-                <StudentHeader />
+                <AdminHeader />
                 <ViewOnlyProfileHeader sname={profile.name} semail={profile.email} swebsite={profile.website} sdesc={profile.description} ssdesc={profile.shortDescription}/>
-                <ViewOnlyAcademicDetails />
+                <ViewOnlyAcademicDetails rollNo={profile.rollNo} cgpa={profile.cgpa} sbranch={profile.branch} />
                 <ViewOnlyAbout sbout={profile.about}/>
-                <ViewOnlySkills sg={profile.github} sl={profile.linkedin} st={profile.twitter} />
-                <ViewOnlyProfileWorkExperience />
-                <ViewOnlyFilesUpload />
+                <ViewOnlySkills sg={profile.github} sl={profile.linkedin} st={profile.twitter} skills={profile.skills} />
+                <ViewOnlyProfileWorkExperience we={profile.workExperience} />
+                {/* <ViewOnlyFilesUpload /> */}
                 <Footer />
             </>
          );

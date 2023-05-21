@@ -21,7 +21,7 @@ export const ProfilePage = () => {
   React.useEffect(() => {
     const fetchProfile = async() => {
       const response = await axios.get(`http://localhost:5000/api/v1/getInfo/${id}`)
-      console.log(response.data)
+      // console.log(response.data)
       setProfile(response.data)
     }
     fetchProfile()
@@ -35,7 +35,7 @@ export const ProfilePage = () => {
         <AcademicDetails rollNo={profile.rollNo} cgpa={profile.CGPA} sbranch = {profile.branch} />
         <About sbout={profile.about} />
         {/* <SocialMedia /> */}
-        <ProfileSkills sg={profile.github} sl={profile.linkedin} st={profile.twitter} />
+        <ProfileSkills sg={profile.github} sl={profile.linkedin} st={profile.twitter} sskills={profile.skills} />
         <ProfileWorkExperience />
         <FilesUpload />
         <Footer />

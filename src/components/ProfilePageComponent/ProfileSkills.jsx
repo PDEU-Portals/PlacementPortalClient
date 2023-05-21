@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Css/ProfileSkills.css";
 
-const ProfileSkills = ({sg,sl,st}) => {
+const ProfileSkills = ({sg,sl,st,sskills}) => {
   const [socialMedia, setSocialMedia] = useState([
     {
       github: "",
@@ -81,20 +81,14 @@ const ProfileSkills = ({sg,sl,st}) => {
   const [skills, setSkills] = useState([]);
   const [newSkill, setNewSkill] = useState("");
 
-  const fetchSkills = async () => {
-    try {
-      const response = await axios.get("/api/skills");
-      setSkills(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const handleAddSkill = () => {
+  const handleAddSkill = async() => {
     if (newSkill !== "") {
       const newSkills = [...skills, newSkill];
       setSkills(newSkills);
-      updateSkills(newSkills);
+      const addSkill = await axios.post(`${process.env.REACT_APP_URI}/addskills/${localStorage.getItem('studentId')}`,[newSkill])
+      console.log(newSkill);
+      console.log(addSkill);
+      // window.location.reload()
       setNewSkill("");
     }
   };
@@ -103,14 +97,6 @@ const ProfileSkills = ({sg,sl,st}) => {
     const updatedSkills = [...skills];
     updatedSkills.splice(index, 1);
     setSkills(updatedSkills);
-    updateSkills(updatedSkills);
-  };
-  const updateSkills = async (newSkills) => {
-    try {
-      await axios.post("/api/skills", newSkills);
-    } catch (error) {
-      console.error(error);
-    }
   };
   const handleNewSkillChange = (e) => {
     setNewSkill(e.target.value);
@@ -249,7 +235,7 @@ const ProfileSkills = ({sg,sl,st}) => {
         <div className="skills">
           <h2>Skills</h2>
           <ul>
-            {skills.map((skill, index) => (
+            {sskills.map((skill, index) => (
               <div className="skills-list">
                 <section className="list" key={index}>
                   {skill} {" "}

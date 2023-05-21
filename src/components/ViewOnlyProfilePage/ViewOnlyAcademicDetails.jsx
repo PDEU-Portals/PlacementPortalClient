@@ -3,22 +3,22 @@ import "../ProfilePageComponent/Css/AcademicDetails.css";
 import axios from "axios";
 
 export const ViewOnlyAcademicDetails = ({ rollNo, cgpa, sbranch }) => {
-  const [academicProfile, setAcademicProfile] = useState({
-    rollNo: rollNo,
-    SGPA: cgpa,
-    Branch: sbranch,
-  });
+  // const [academicProfile, setAcademicProfile] = useState({
+  //   rollNo: rollNo,
+  //   SGPA: cgpa,
+  //   Branch: sbranch,
+  // });
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/v1/academic-details")
-      .then((response) => {
-        setAcademicProfile(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:5000/api/v1/academic-details")
+  //     .then((response) => {
+  //       setAcademicProfile(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
 
   return (
     <>
@@ -41,7 +41,7 @@ export const ViewOnlyAcademicDetails = ({ rollNo, cgpa, sbranch }) => {
                 >
                   Roll NO
                 </th>
-                <td className="py-4 px-6">{academicProfile.rollNo}</td>
+                <td className="py-4 px-6">{rollNo}</td>
               </tr>
               <tr className="bg-white border-b hover:bg-gray-50">
                 <th
@@ -50,7 +50,7 @@ export const ViewOnlyAcademicDetails = ({ rollNo, cgpa, sbranch }) => {
                 >
                   CGPA
                 </th>
-                <td className="py-4 px-6">{academicProfile.SGPA}</td>
+                <td className="py-4 px-6">{cgpa}</td>
               </tr>
               <tr className="bg-white hover:bg-gray-50">
                 <th
@@ -59,7 +59,7 @@ export const ViewOnlyAcademicDetails = ({ rollNo, cgpa, sbranch }) => {
                 >
                   BRANCH
                 </th>
-                <td className="py-4 px-6">{academicProfile.Branch}</td>
+                <td className="py-4 px-6">{sbranch}</td>
               </tr>
             </tbody>
           </table>

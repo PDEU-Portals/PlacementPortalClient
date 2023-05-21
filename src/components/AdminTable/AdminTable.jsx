@@ -77,7 +77,7 @@ export default function AdminTable() {
                   <TableCell align="center">{row.sem}</TableCell>
                   <TableCell align="right">
                     <Stack spacing={2} direction="row" alignItems="right" justifyContent="center">
-                      <Link to={`/students/profile/${row._id}`}>
+                      <Link to={`/students/viewonlyprofile/${row._id}`}>
                         <Button variant="contained">Details</Button>
                       </Link>
                     </Stack>

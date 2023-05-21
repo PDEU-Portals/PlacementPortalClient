@@ -4,33 +4,6 @@ import dummyphoto from "../ProfilePageComponent/Dummy-Profile.jpg";
 import axios from "axios";
 
 function ViewOnlyProfileHeader ({sname,semail,swebsite,sdesc,ssdesc}) {
-  const [name, setName] = useState(sname);
-  const [shortDescription, setShortDescription] = useState(ssdesc);
-  const [email, setEmail] = useState(semail);
-  const [website, setWebsite] = useState(swebsite);
-  const [photo, setPhoto] = useState(dummyphoto);
-  const [description, setDescription] = useState(sdesc);
-  const [initialDataLoaded, setInitialDataLoaded] = useState(false);
-
-  useEffect(() => {
-    // Load initial data from API endpoint
-    axios
-      .get(
-        `http://localhost:5000/api/v1/getInfo/${localStorage.getItem(
-          "studentId"
-        )}`
-      )
-      .then((response) => {
-        console.log(response.data.resume[0].secure_url);
-        setName(response.data.name);
-        setWebsite(response.data.website);
-        setDescription(response.data.description);
-        setEmail(response.data.email);
-        setInitialDataLoaded(true);
-      })
-      .catch((error) => console.log(error));
-  }, []);
-
   return (
     <>
       <div className="profile">
@@ -44,13 +17,13 @@ function ViewOnlyProfileHeader ({sname,semail,swebsite,sdesc,ssdesc}) {
             />
           </div>
           <div className="header-content">
-            <p className="profile__name"> {name}</p>
-            <p className="profile__short-description">{shortDescription}</p>
+            <p className="profile__name"> {sname}</p>
+            <p className="profile__short-description">{ssdesc}</p>
             <p className="profile__website">
-              Website: <a href={website}>{website}</a>
+              Website: <a href={swebsite}>{swebsite}</a>
             </p>
-            <p className="profile__email">Email: {email}</p>
-            <p className="profile__description">{description}</p>
+            <p className="profile__email">Email: {semail}</p>
+            <p className="profile__description">{sdesc}</p>
           </div>
         </div>
       </div>
