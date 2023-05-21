@@ -21,26 +21,6 @@ const ProfileSkills = ({sg,sl,st,sskills}) => {
   }); // state to hold the initial values of socialMedia for cancel functionality
   const [isEditing, setIsEditing] = useState(false); // state for whether editing mode is active or not
 
-  // This useEffect will fetch the data when page is loaded
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get("api/socialMedia");
-  //       setSocialMedia(response.data);
-  //       setInitialSocialMedia(response.data);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   fetchData();
-  //   fetchSkills();
-  // }, []);
-
-  // const handleSocialMediaChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setSocialMedia((prevState) => ({ ...prevState, [name]: value }));
-  // };
-
   const handleEdit = () => {
     setIsEditing(true);
   };
@@ -78,25 +58,38 @@ const ProfileSkills = ({sg,sl,st,sskills}) => {
     setSocialMedia(initialSocialMedia);
   };
 
-  const [skills, setSkills] = useState([]);
+  const [skills, setSkills] = useState(sskills);
   const [newSkill, setNewSkill] = useState("");
 
   const handleAddSkill = async() => {
     if (newSkill !== "") {
       const newSkills = [...skills, newSkill];
       setSkills(newSkills);
-      const addSkill = await axios.post(`${process.env.REACT_APP_URI}/addskills/${localStorage.getItem('studentId')}`,[newSkill])
       console.log(newSkill);
-      console.log(addSkill);
-      // window.location.reload()
+      const addSkill = await axios.post(`${process.env.REACT_APP_URI}/addskills/${localStorage.getItem('studentId')}`,{
+        skills: [newSkill]
+      })
+      // setSkills()
+      // console.log(newSkill);
+      console.log(addSkill.data);
+      setSkills(addSkill.data)
+      window.location.reload()
       setNewSkill("");
     }
   };
 
   const handleDeleteSkill = async (index) => {
-    const updatedSkills = [...skills];
-    updatedSkills.splice(index, 1);
-    setSkills(updatedSkills);
+    console.log(skills[index]);
+    const deleteSkill = await axios.post(`${process.env.REACT_APP_URI}/deleteskills/${localStorage.getItem('studentId')}`,{
+      skill: [skills[index]]
+    })
+    console.log(deleteSkill.data);
+    if(deleteSkill.status == 200){
+      const updatedSkills = [...skills];
+      updatedSkills.splice(index, 1);
+      setSkills(updatedSkills);
+      window.location.reload()
+    }
   };
   const handleNewSkillChange = (e) => {
     setNewSkill(e.target.value);

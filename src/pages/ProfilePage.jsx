@@ -20,7 +20,11 @@ export const ProfilePage = () => {
 
   React.useEffect(() => {
     const fetchProfile = async() => {
-      const response = await axios.get(`http://localhost:5000/api/v1/getInfo/${id}`)
+      const response = await axios.get(`http://localhost:5000/api/v1/getInfo/${id}`,{
+        headers:{
+          "Authorization": `Bearer ${localStorage.getItem('studentToken')}`
+        }
+      })
       // console.log(response.data)
       setProfile(response.data)
     }
@@ -36,7 +40,7 @@ export const ProfilePage = () => {
         <About sbout={profile.about} />
         {/* <SocialMedia /> */}
         <ProfileSkills sg={profile.github} sl={profile.linkedin} st={profile.twitter} sskills={profile.skills} />
-        <ProfileWorkExperience />
+        <ProfileWorkExperience workExperience={profile.workExperience} />
         <FilesUpload />
         <Footer />
       </div>
