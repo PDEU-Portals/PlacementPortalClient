@@ -112,10 +112,9 @@ function FilesUpload() {
   const uploadResume = async() => {
     const formData = new FormData()
     formData.append('resume',resumeFile)
-    const response = await axios.post(`${process.env.REACT_APP_URI}/upload/resume/${localStorage.getItem('stdudentId')}`,{
-      formData,
+    const response = await axios.post(`${process.env.REACT_APP_URI}/upload/resume/${localStorage.getItem('studentId')}`,formData,{
       headers:{
-        "Content-Type":'multipart/form-data'
+        "Content-Type":"multipart/form-data"
       }
     })
     if(response.status == 200){
@@ -127,10 +126,9 @@ function FilesUpload() {
     const formData = new FormData()
     formData.append('cv',cv)
     console.log(formData.get('cv'));
-    const response = await axios.post(`${process.env.REACT_APP_URI}/upload/cv/${localStorage.getItem('stdudentId')}`,{
-      formData,
+    const response = await axios.post(`${process.env.REACT_APP_URI}/upload/cv/${localStorage.getItem('studentId')}`,formData,{
       headers:{
-        "Content-Type":'multipart/form-data'
+        "Content-Type": "multipart/form-data"
       }
     })
     if(response.status == 200){

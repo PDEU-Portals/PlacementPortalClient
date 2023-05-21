@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import axios from 'axios'
 import Footer from '../Footer'
 import RecruiterHeader from '../Header/RecruiterHeader'
@@ -37,9 +37,9 @@ if(job && applicants){
             <div className="job-title">{job.job.title}</div>
             <a href="/recruiter/post_job">
                 <button className='Post-Jobs'>
-                    <a href="">
+                    <Link to={`/recruiter/jobinformation/selectedstudents/${id}`}>
                         Approved Applicants
-                    </a>
+                    </Link>
                 </button>
             </a>
             <div className="Manage-Job">
